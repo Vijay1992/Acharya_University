@@ -4,6 +4,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Year_Sem;
 import com.au.repository.Year_Sem_Repository;
 
@@ -23,11 +25,14 @@ public class Year_Sem_Service {
 	}
 	
 	public Year_Sem get(Integer id) {
-        return year_repo.findById(id).get();
+        return year_repo.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Year Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	year_repo.deleteById(id);
-    }
+    Year_Sem ys = year_repo.findById(id)
+    		.orElseThrow(()-> new ResourceNotFoundException("Year Not Found:"+id));
+    	year_repo.delete(ys);
+     }
 	
 }

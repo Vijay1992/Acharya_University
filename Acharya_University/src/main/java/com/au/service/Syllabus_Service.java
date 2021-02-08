@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Syllabus;
 import com.au.repository.Syllabus_Repository;
 
@@ -25,10 +26,13 @@ public class Syllabus_Service {
 	}
 	
 	public Syllabus get(Integer id) {
-        return syllabus_repository.findById(id).get();
+        return syllabus_repository.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	syllabus_repository.deleteById(id);
+    	Syllabus s =syllabus_repository.findById(id)
+    	.orElseThrow(()-> new ResourceNotFoundException("Syllabus Not Found:"+id));    	
+    	syllabus_repository.delete(s);
     }
 }

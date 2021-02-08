@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Program_Master;
 import com.au.repository.Program_Master_Repository;
 
@@ -25,10 +26,13 @@ public class Program_Master_Service {
 	}
 	
 	public Program_Master get(Integer id) {
-        return pr_repo.findById(id).get();
+        return pr_repo.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Program Master Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	pr_repo.deleteById(id);
+     Program_Master pm =	pr_repo.findById(id)
+    	.orElseThrow(()-> new ResourceNotFoundException("Program Master Not Found:"+id));    	
+    	pr_repo.delete(pm);
     }
 }

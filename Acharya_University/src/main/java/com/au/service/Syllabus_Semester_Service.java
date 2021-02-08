@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Syllabus_semester;
 import com.au.repository.Syllabus_Semester_Repository;
 
@@ -25,10 +27,13 @@ public class Syllabus_Semester_Service {
 	}
 	
 	public Syllabus_semester get(Integer id) {
-        return sy_repo.findById(id).get();
+        return sy_repo.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	sy_repo.deleteById(id);
+    	Syllabus_semester ss = sy_repo.findById(id)
+		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester Not Found:"+id));
+		sy_repo.delete(ss);
     }
 }

@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Academic_year;
 import com.au.service.Academic_Year_Service;
 
@@ -41,6 +43,7 @@ public class Academic_year_controller {
 	    	
 	    	Academic_year product = ac_service.get(id);
 	        return new ResponseEntity<Academic_year>(product, HttpStatus.OK);
+	        
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<Academic_year>(HttpStatus.NOT_FOUND);
 	    }      

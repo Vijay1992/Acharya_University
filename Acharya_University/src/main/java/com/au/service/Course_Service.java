@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Course;
 import com.au.repository.Course_Repository;
 
@@ -25,11 +26,14 @@ public class Course_Service {
 	}
 	
 	public Course get(Integer id) {
-        return course_repository.findById(id).get();
+        return course_repository.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Course Not Found:"+id));
     }
      
     public void delete(Integer id) {
-        course_repository.deleteById(id);
+    	Course existingCourse = course_repository.findById(id)
+    	        .orElseThrow(()-> new ResourceNotFoundException("Course Not Found:"+id));
+    	this.course_repository.delete(existingCourse);
     }
 	
 }

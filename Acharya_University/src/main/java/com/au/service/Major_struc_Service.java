@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Major_struc;
 import com.au.repository.Major_struc_Repository;
 
@@ -26,10 +27,13 @@ public class Major_struc_Service {
 	}
 	
 	public Major_struc get(Integer id) {
-		return major_repo.findById(id).get();
+		return major_repo.findById(id)
+				.orElseThrow(()-> new ResourceNotFoundException("Major struc Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	major_repo.deleteById(id);
+    	Major_struc ms = major_repo.findById(id)
+    	.orElseThrow(()-> new ResourceNotFoundException("Major struc Not Found:"+id));    	
+    	major_repo.delete(ms);
     }
 }

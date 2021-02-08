@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ResourceNotFoundException;
 import com.au.model.Program;
 import com.au.repository.Program_Repository;
 
@@ -25,10 +26,13 @@ public class Program_Service {
 	}
 	
 	public Program get(Integer id) {
-        return pro_repo.findById(id).get();
+        return pro_repo.findById(id)
+        		.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));
     }
      
     public void delete(Integer id) {
-    	pro_repo.deleteById(id);
+    	Program p=pro_repo.findById(id)
+    	.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));    	
+    	pro_repo.delete(p);
     }
 }
