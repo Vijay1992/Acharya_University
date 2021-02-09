@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +28,7 @@ public class Student_Controller {
 	private Student_Service stu_service;
 	
 	@PostMapping("/stu1")
-	public Student saveCourse(@RequestBody Student s) {
+	public Student saveCourse(@RequestBody @Valid Student s) {
 		return stu_service.save_Student(s);
 	}
 	
@@ -47,7 +50,7 @@ public class Student_Controller {
 	}
 
 	@PutMapping("/stu4/{id}")
-	public ResponseEntity<Student> update(@RequestBody Student s, @PathVariable Integer id) {
+	public ResponseEntity<Student> update(@RequestBody @Valid Student s, @PathVariable Integer id) {
 	    try {
 	    	Student existProduct = stu_service.get(id);
 	    	stu_service.save_Student(s);

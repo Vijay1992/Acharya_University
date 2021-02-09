@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +29,7 @@ public class Major_Struc_Controller {
 	private Major_struc_Service major_service;
 	
 	@PostMapping("/major_Struc1")
-	public Major_struc saveCourse(@RequestBody Major_struc major) {
+	public Major_struc saveCourse(@RequestBody @Valid Major_struc major) {
 		return major_service.save_Major_struc(major);
 	}
 	
@@ -48,7 +51,7 @@ public class Major_Struc_Controller {
 
 	
 	@PutMapping("/major_Struc4/{id}")
-	public ResponseEntity<Academic_year> update(@RequestBody Major_struc major, @PathVariable Integer id) {
+	public ResponseEntity<Academic_year> update(@RequestBody @Valid Major_struc major, @PathVariable Integer id) {
 	    try {
 	    	Major_struc existProduct = major_service.get(id);
 	    	major_service.save_Major_struc(major);

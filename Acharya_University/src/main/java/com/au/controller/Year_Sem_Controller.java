@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +27,7 @@ public class Year_Sem_Controller {
 	private Year_Sem_Service sem_service;
 	
 	@PostMapping("/Year_Sem1")
-	public Year_Sem saveCourse(@RequestBody Year_Sem year) {
+	public Year_Sem saveCourse(@RequestBody @Valid Year_Sem year) {
 		return sem_service.save_Year_Sem(year);
 	}
 	
@@ -46,7 +49,7 @@ public class Year_Sem_Controller {
 	}
 
 	@PutMapping("/Year_Sem4/{id}")
-	public ResponseEntity<Year_Sem> update(@RequestBody Year_Sem sylllabus, @PathVariable Integer id) {
+	public ResponseEntity<Year_Sem> update(@RequestBody  @Valid Year_Sem sylllabus, @PathVariable Integer id) {
 	    try {
 	    	Year_Sem existProduct = sem_service.get(id);
 	    	sem_service.save_Year_Sem(sylllabus);

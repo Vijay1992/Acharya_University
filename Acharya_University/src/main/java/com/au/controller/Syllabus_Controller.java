@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +28,7 @@ public class Syllabus_Controller {
 	private Syllabus_Service sy_service;
 		
 	@PostMapping("/syllabus1")
-	public Syllabus saveCourse(@RequestBody Syllabus syllabus) {
+	public Syllabus saveCourse(@RequestBody @Valid Syllabus syllabus) {
 		return sy_service.save_Syllabus(syllabus);
 	}
 	
@@ -47,7 +50,7 @@ public class Syllabus_Controller {
 	}
 
 	@PutMapping("/syllabus4/{id}")
-	public ResponseEntity<Syllabus> update(@RequestBody Syllabus syllabus, @PathVariable Integer id) {
+	public ResponseEntity<Syllabus> update(@RequestBody @Valid Syllabus syllabus, @PathVariable Integer id) {
 	    try {
 	    	Syllabus existProduct = sy_service.get(id);
 	    	sy_service.save_Syllabus(syllabus);

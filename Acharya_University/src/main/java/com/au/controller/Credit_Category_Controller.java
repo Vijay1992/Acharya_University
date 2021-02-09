@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +28,7 @@ public class Credit_Category_Controller {
 	private Credit_Category_Service credit_service;
 	
 	@PostMapping("/Credit_Category1")
-	public Credit_Category saveCourse(@RequestBody Credit_Category credit) {
+	public Credit_Category saveCourse(@RequestBody @Valid Credit_Category credit) {
 		return credit_service.save_Credit_Category(credit);
 	}
 	
@@ -47,7 +50,7 @@ public class Credit_Category_Controller {
 	}
 
 	@PutMapping("/Credit_Category4/{id}")
-	public ResponseEntity<Credit_Category> update(@RequestBody Credit_Category credit, @PathVariable Integer id) {
+	public ResponseEntity<Credit_Category> update(@RequestBody @Valid Credit_Category credit, @PathVariable Integer id) {
 	    try {
 	    	Credit_Category existProduct = credit_service.get(id);
 	    	credit_service.save_Credit_Category(credit);

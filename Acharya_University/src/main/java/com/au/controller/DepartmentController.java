@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,7 @@ public class DepartmentController {
 	
 	
 	@PostMapping("/dept2")
-	public Department saveDept(@RequestBody Department dept) {
+	public Department saveDept(@RequestBody @Valid Department dept) {
 		return deptService.save_Department(dept);
 	}
 	
@@ -48,7 +50,7 @@ public class DepartmentController {
 	}
 
 	@PutMapping("/dept4/{id}")
-	public ResponseEntity<Department> update(@RequestBody Department dept, @PathVariable Integer id) {
+	public ResponseEntity<Department> update(@RequestBody @Valid Department dept, @PathVariable Integer id) {
 	    try {
 	    	Department existProduct = deptService.get(id);
 	    	deptService.save_Department(dept);

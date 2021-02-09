@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +28,7 @@ public class Program_Controller {
 	private Program_Service pro_service;
 	
 	@PostMapping("/program1")
-	public Program saveCourse(@RequestBody Program p) {
+	public Program saveCourse(@RequestBody @Valid Program p) {
 		return pro_service.save_Program(p);
 	}
 	
@@ -48,7 +50,7 @@ public class Program_Controller {
 	}
 
 	@PutMapping("/program4/{id}")
-	public ResponseEntity<Program> update(@RequestBody Program p, @PathVariable Integer id) {
+	public ResponseEntity<Program> update(@RequestBody @Valid Program p, @PathVariable Integer id) {
 	    try {
 	    	Program existProduct = pro_service.get(id);
 	    	pro_service.save_Program(p);

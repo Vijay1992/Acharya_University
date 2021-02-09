@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,10 @@ import com.au.exception.ResourceNotFoundException;
 import com.au.model.Academic_year;
 import com.au.service.Academic_Year_Service;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
 @RequestMapping("/api")
 public class Academic_year_controller {
@@ -26,8 +32,15 @@ public class Academic_year_controller {
 	@Autowired
 	private Academic_Year_Service ac_service;
 	
+/*	@ApiOperation(value = "Create User",notes = "Create New User",tags = {"User Management"})
+	@ApiResponses(value = {
+			@ApiResponse(code = 200,message = " Academic Year created Successfully"),
+			@ApiResponse(code = 404,message = "Invalid Data"),
+			@ApiResponse(code = 500,message = "INTERNAL SERVER ERROR")				
+	})
+*/
 	@PostMapping("/academic_year1")
-	public Academic_year saveCourse(@RequestBody Academic_year ac_year) {
+	public Academic_year saveCourse(@RequestBody @Valid Academic_year ac_year) {
 		return ac_service.save_Academic_Year(ac_year);
 	}
 	

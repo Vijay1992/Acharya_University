@@ -2,6 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +29,7 @@ public class Program_Master_Controller {
 	private Program_Master_Service pr_service;
 	
 	@PostMapping("/program_master1")
-	public Program_Master saveCourse(@RequestBody Program_Master pm) {
+	public Program_Master saveCourse(@RequestBody @Valid Program_Master pm) {
 		return pr_service.save_Program_Master(pm);
 	}
 	
@@ -48,7 +51,7 @@ public class Program_Master_Controller {
 	}
 
 	@PutMapping("/program_master4/{id}")
-	public ResponseEntity<Program_Master> update(@RequestBody Program_Master pm, @PathVariable Integer id) {
+	public ResponseEntity<Program_Master> update(@RequestBody @Valid Program_Master pm, @PathVariable Integer id) {
 	    try {
 	    	Program_Master existProduct = pr_service.get(id);
 	    	pr_service.save_Program_Master(pm);

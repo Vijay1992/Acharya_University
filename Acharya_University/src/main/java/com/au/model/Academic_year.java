@@ -1,7 +1,6 @@
 package com.au.model;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,11 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tbl_au_academic_year")
@@ -25,7 +21,9 @@ public class Academic_year {
 	@Column(name = "year_id")
 	private int year_id;	
 	
+	@Column(nullable = false)
 	private String academic_year;
+	@Column(nullable = false)
 	private String academic_year_code;
 	
 	@Column(name = "created_date",updatable = false)
