@@ -6,16 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 
 @Entity
 @Table(name = "tbl_au_course_type")
@@ -24,19 +19,21 @@ public class Course_Type {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int course_type_id;
+	@Column(nullable = false)
 	private String course_type_name;
+	@Column(nullable = false)
 	private String course_type_code;
 
-	@Column(name = "created_date",updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Column(name = "created_date", updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
 
 	@Column(name = "modified_date")
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-	
+
 	public Course_Type() {
 		super();
 	}
@@ -90,6 +87,5 @@ public class Course_Type {
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
 	}
-	
-	
+
 }

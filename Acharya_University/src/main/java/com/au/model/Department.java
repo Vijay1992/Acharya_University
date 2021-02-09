@@ -21,10 +21,10 @@ public class Department {
 	@Column(name = "dept_id")
 	private int dept_id;
 
-	@Column(name = "dept_name")
+	@Column(nullable = false)
 	private String dept_name;
 
-	@Column(name = "dept_code")
+	@Column(nullable = false)
 	private String dept_code;
 
 	@Column(name = "created_date",updatable = false)
@@ -37,28 +37,7 @@ public class Department {
 	@UpdateTimestamp
 	private Date modified_date;
 
-	private int school_id;	//FK
-	
-	public Department() {
-		super();
-	}
-
-	public Department(String dept_name, String dept_code, Date created_date, Date modified_date) {
-		super();
-		this.dept_name = dept_name;
-		this.dept_code = dept_code;
-		this.created_date = created_date;
-		this.modified_date = modified_date;
-	}
-
-	public Department(int dept_id, String dept_name, String dept_code, Date created_date, Date modified_date) {
-		super();
-		this.dept_id = dept_id;
-		this.dept_name = dept_name;
-		this.dept_code = dept_code;
-		this.created_date = created_date;
-		this.modified_date = modified_date;
-	}
+	private Integer school_id;	//FK
 
 	public int getDept_id() {
 		return dept_id;
@@ -100,27 +79,12 @@ public class Department {
 		this.modified_date = modified_date;
 	}
 
-	
-	
-
-	/**
-	 * @return the school_id
-	 */
-	public int getSchool_id() {
+	public Integer getSchool_id() {
 		return school_id;
 	}
 
-	/**
-	 * @param school_id the school_id to set
-	 */
-	public void setSchool_id(int school_id) {
+	public void setSchool_id(Integer school_id) {
 		this.school_id = school_id;
 	}
-
-	@Override
-	public String toString() {
-		return "Department [dept_id=" + dept_id + ", dept_name=" + dept_name + ", dept_code=" + dept_code
-				+ ", created_date=" + created_date + ", modified_date=" + modified_date + "]";
-	}
-
+	
 }

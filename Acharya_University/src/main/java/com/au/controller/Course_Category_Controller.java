@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +33,7 @@ public class Course_Category_Controller
 	}
 
 	@PostMapping("/couse_category2")
-	public Course_Category save_Course_Category(@RequestBody Course_Category course_category) {
+	public Course_Category save_Course_Category(@RequestBody @Valid Course_Category course_category) {
 		return cs.save_Course_Category(course_category);
 	}
 	

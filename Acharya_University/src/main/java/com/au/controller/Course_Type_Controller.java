@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,7 @@ public class Course_Type_Controller {
 	}
 	
 	@PostMapping("/course_type2")
-	public Course_Type save_Course_Type(@RequestBody Course_Type course_type) {
+	public Course_Type save_Course_Type(@RequestBody @Valid Course_Type course_type) {
 		return course_type_service.save_Course_Type(course_type);
 	}
 	
@@ -46,7 +48,7 @@ public class Course_Type_Controller {
 	}
 
 	@PutMapping("/course_type4/{id}")
-	public ResponseEntity<?> update(@RequestBody Course_Type course, @PathVariable Integer id) {
+	public ResponseEntity<?> update(@RequestBody @Valid Course_Type course, @PathVariable Integer id) {
 	    try {
 	    	Course_Type existProduct = course_type_service.get(id);
 	    	course_type_service.save_Course_Type(course);

@@ -2,6 +2,7 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,44 +23,42 @@ public class Year_Sem_Controller {
 
 	@Autowired
 	private Year_Sem_Service sem_service;
-	
+
 	@PostMapping("/Year_Sem1")
-	public Year_Sem saveCourse(@RequestBody Year_Sem year) {
+	public Year_Sem saveCourse(@RequestBody @Valid Year_Sem year) {
 		return sem_service.save_Year_Sem(year);
 	}
-	
+
 	@GetMapping("/Year_Sem2")
-	public List<Year_Sem> listAll(){
+	public List<Year_Sem> listAll() {
 		return sem_service.listAll();
 	}
 
-	
 	@GetMapping("/Year_Sem3/{id}")
 	public ResponseEntity<Year_Sem> get(@PathVariable Integer id) {
-	    try {
-	    	
-	    	Year_Sem syllabus = sem_service.get(id);
-	        return new ResponseEntity<Year_Sem>(syllabus, HttpStatus.OK);
-	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<Year_Sem>(HttpStatus.NOT_FOUND);
-	    }      
+		try {
+
+			Year_Sem syllabus = sem_service.get(id);
+			return new ResponseEntity<Year_Sem>(syllabus, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<Year_Sem>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@PutMapping("/Year_Sem4/{id}")
-	public ResponseEntity<Year_Sem> update(@RequestBody Year_Sem sylllabus, @PathVariable Integer id) {
-	    try {
-	    	Year_Sem existProduct = sem_service.get(id);
-	    	sem_service.save_Year_Sem(sylllabus);
-	        return new ResponseEntity<>(HttpStatus.OK);
-	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	    }      
+	public ResponseEntity<Year_Sem> update(@RequestBody @Valid Year_Sem sylllabus, @PathVariable Integer id) {
+		try {
+			Year_Sem existProduct = sem_service.get(id);
+			sem_service.save_Year_Sem(sylllabus);
+			return new ResponseEntity<>(HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
-	
-	
+
 	@DeleteMapping("/Year_Sem5/{id}")
 	public void delete(@PathVariable Integer id) {
 		sem_service.delete(id);
 	}
-	
+
 }

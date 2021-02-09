@@ -1,7 +1,6 @@
 package com.au.model;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -21,15 +19,16 @@ public class Schools {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int school_id;
+	@Column(nullable = false)
 	private String school_name;
 
-	@Column(name = "created_date",updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Column(name = "created_date", updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
 
 	@Column(name = "modified_date")
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
 
@@ -65,5 +64,4 @@ public class Schools {
 		this.modified_date = modified_date;
 	}
 
-	
 }

@@ -9,12 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "tbl_au_course_category")
@@ -24,20 +20,20 @@ public class Course_Category {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int course_category_id;
 
-	@NotBlank
+	@Column(nullable = false)
 	private String course_category_name;
+	@Column(nullable = false)
 	private String course_category_code;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_date",updatable = false)
+	@Column(name = "created_date", updatable = false)
 	@CreationTimestamp
 	private Date created_date;
-	
+
 	@Column(name = "modified_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-
 
 	public int getCourse_category_id() {
 		return course_category_id;
@@ -74,6 +70,5 @@ public class Course_Category {
 	public Date getCreated_date() {
 		return created_date;
 	}
-
 
 }
