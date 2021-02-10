@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,10 +23,12 @@ public class Program {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int program_id;
 	
-	@Column(name = "program_name",nullable = false)
+	@Column(name = "program_name")
+	@NotBlank
 	private String program_name;
 	
-	@Column(name = "program_code",nullable = false)
+	@Column(name = "program_code")
+	@NotBlank
 	private String program_code;
 
 	@Column(name = "created_date",updatable = false)

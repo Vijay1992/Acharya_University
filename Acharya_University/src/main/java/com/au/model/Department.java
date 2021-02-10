@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -22,10 +23,10 @@ public class Department {
 	@Column(name = "dept_id")
 	private int dept_id;
 
-	@Column(name = "dept_name",nullable = false)
+	@NotBlank
 	private String dept_name;
 
-	@Column(name = "dept_code",nullable = false)
+	@NotBlank
 	private String dept_code;
 
 	@Column(name = "created_date",updatable = false)

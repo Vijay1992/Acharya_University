@@ -14,10 +14,13 @@ public class Syllabus_semester {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer syllabus_sem_id;
+	
 	@NotNull
 	private Integer year_id;
+	
 	@NotNull
 	private Integer sem_id;
+	
 	@NotNull
 	private Integer course_id;
 	

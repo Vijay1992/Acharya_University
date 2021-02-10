@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -21,9 +23,9 @@ public class Academic_year {
 	@Column(name = "year_id")
 	private int year_id;	
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String academic_year;
-	@Column(nullable = false)
+	@NotBlank
 	private String academic_year_code;
 	
 	@Column(name = "created_date",updatable = false)

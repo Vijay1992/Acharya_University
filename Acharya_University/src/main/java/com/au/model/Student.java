@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -25,30 +26,30 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int student_id;
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String auid;
 	
-	@Column(nullable = false)	
+	@NotBlank
 	private String student_f_name;
 
-	@Column(nullable = false)
+	@NotBlank
 	private String student_l_name;
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String address;
 
-	@Column(nullable = false)
+	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date dob;
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String phone_no;
 	
-	@Column(nullable = false)
+	@NotBlank
 	@Email
 	private String email;
 	
-	@Column(nullable = false)
+	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date doa;
 	

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -20,7 +21,8 @@ public class Major_struc {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int major_id;
 	
-	@Column(name = "major_name",nullable = false)
+	@Column(name = "major_name")
+	@NotBlank
 	private String major_name;
 
 	@NotNull

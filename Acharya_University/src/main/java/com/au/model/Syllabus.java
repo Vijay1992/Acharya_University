@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,7 +23,7 @@ public class Syllabus {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int syllabus_id;
 	
-	@Column(nullable = false)
+	@NotBlank
 	private String syllabus;
 
 	@Column(name = "created_date",updatable = false)

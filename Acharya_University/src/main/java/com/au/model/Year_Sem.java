@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,7 +23,7 @@ public class Year_Sem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int sem_id;
 
-	@Column(nullable = false)
+	@NotBlank
 	private String semister;
 	
 	@NotNull
