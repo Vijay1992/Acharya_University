@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -19,14 +20,14 @@ public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int course_id;
-	@Column(nullable = false)
+	@NotBlank
 	private String course_name;
-	@Column(nullable = false)
+	@NotBlank
 	private String course_code;
 	@NotNull
 	private Integer course_type_id;// FK
 
-	@Column(name = "created_Date", updatable = false)
+	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_Date;

@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.au.model.Schools;
-import com.au.service.School_Service;
+import com.au.service.SchoolService;
 
 @RestController
 @RequestMapping("/api")
 public class SchoolController {
 
 	@Autowired
-	private School_Service sc_service;
+	private SchoolService sc_service;
 
 	@PostMapping("/school1")
 	public Schools saveCourse(@RequestBody @Valid Schools school) {

@@ -23,17 +23,17 @@ public class DepartmentController {
 
 	@Autowired
 	private DepartmentService deptService;
-
-	@GetMapping("/depts1")
-	public List<Department> getAllDept() {
-		return deptService.listAll();
-	}
-
-	@PostMapping("/dept2")
+	
+	@PostMapping("/dept1")
 	public Department saveDept(@RequestBody @Valid Department dept) {
 		return deptService.save_Department(dept);
 	}
 
+	@GetMapping("/depts2")
+	public List<Department> getAllDept() {
+		return deptService.listAll();
+	}
+	
 	@GetMapping("/dept3/{id}")
 	public ResponseEntity<Department> get(@PathVariable Integer id) {
 		try {

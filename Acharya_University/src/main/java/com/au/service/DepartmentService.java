@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.au.exception.ResourceNotFoundException;
-import com.au.model.Course_Type;
 import com.au.model.Department;
 import com.au.repository.DepartmentRepository;
 

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -18,26 +19,24 @@ public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "dept_id")
 	private int dept_id;
 
-	@Column(nullable = false)
+	@NotBlank
 	private String dept_name;
 
-	@Column(nullable = false)
+	@NotBlank
 	private String dept_code;
 
-	@Column(name = "created_date",updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Column(updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
 
-	@Column(name = "modified_date")
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-
-	private Integer school_id;	//FK
+	@NotBlank
+	private Integer school_id; // FK
 
 	public int getDept_id() {
 		return dept_id;
@@ -86,5 +85,5 @@ public class Department {
 	public void setSchool_id(Integer school_id) {
 		this.school_id = school_id;
 	}
-	
+
 }
