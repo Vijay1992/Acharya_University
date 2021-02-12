@@ -39,7 +39,7 @@ public class AcademicYearController {
 		return ac_service.save_Academic_Year(ac_year);
 	}
 	
-	@GetMapping("/academic_year2")
+	@GetMapping("/ ")
 	public List<Academic_year> listAll(){
 		return ac_service.listAll();
 	}
