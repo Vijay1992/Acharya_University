@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -36,6 +37,9 @@ public class Schools {
 	@UpdateTimestamp
 	private Date modified_date;
 
+	@NotNull
+	private Integer org_id;
+	
 	public int getSchool_id() {
 		return school_id;
 	}
@@ -66,6 +70,14 @@ public class Schools {
 
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
+	}
+
+	public Integer getOrg_id() {
+		return org_id;
+	}
+
+	public void setOrg_id(Integer org_id) {
+		this.org_id = org_id;
 	}
 
 	

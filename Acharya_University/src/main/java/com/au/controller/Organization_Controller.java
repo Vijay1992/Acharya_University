@@ -2,9 +2,7 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,52 +14,51 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.au.model.Academic_year;
-import com.au.service.AcademicYearService;
+import com.au.model.Organization;
+import com.au.service.Org_service;
 
 @RestController
 @RequestMapping("/api")
-public class AcademicYearController {
+public class Organization_Controller {
 
 	@Autowired
-	private AcademicYearService ac_service;
+	private Org_service org_service;
 	
-/*	@ApiOperation(value = "Create User",notes = "Create New User",tags = {"User Management"})
+	/*	@ApiOperation(value = "Create User",notes = "Create New User",tags = {"User Management"})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200,message = " Academic Year created Successfully"),
 			@ApiResponse(code = 404,message = "Invalid Data"),
 			@ApiResponse(code = 500,message = "INTERNAL SERVER ERROR")				
 	})
 */
-	@PostMapping("/academic_year1")
-	public Academic_year saveCourse(@RequestBody @Valid Academic_year ac_year) {
-		return ac_service.save_Academic_Year(ac_year);
+	@PostMapping("/org1")
+	public Organization saveCourse(@RequestBody @Valid Organization org) {
+		return org_service.save_Org(org);
 	}
 	
-	@GetMapping("/academic_year2")
-	public List<Academic_year> listAll(){
-		return ac_service.listAll();
+	@GetMapping("/org2")
+	public List<Organization> listAll(){
+		return org_service.listAll();
 	}
 
 	
-	@GetMapping("/academic_year3/{id}")
-	public ResponseEntity<Academic_year> get(@PathVariable Integer id) {
+	@GetMapping("/org3/{id}")
+	public ResponseEntity<Organization> get(@PathVariable Integer id) {
 	    try {
 	    	
-	    	Academic_year product = ac_service.get(id);
-	        return new ResponseEntity<Academic_year>(product, HttpStatus.OK);
+	    	Organization org = org_service.get(id);
+	        return new ResponseEntity<Organization>(org, HttpStatus.OK);
 	        
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<Academic_year>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<Organization>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 
-	@PutMapping("/academic_year4/{id}")
-	public ResponseEntity<Academic_year> update(@RequestBody Academic_year ac_year, @PathVariable Integer id) {
+	@PutMapping("/org4/{id}")
+	public ResponseEntity<Organization> update(@RequestBody Organization org, @PathVariable Integer id) {
 	    try {
-	    	Academic_year existProduct = ac_service.get(id);
-	    	ac_service.save_Academic_Year(ac_year);
+	    	Organization existProduct = org_service.get(id);
+	    	org_service.save_Org(org);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -69,10 +66,9 @@ public class AcademicYearController {
 	}
 	
 	
-	@DeleteMapping("/academic_year5/{id}")
+	@DeleteMapping("/org5/{id}")
 	public void delete(@PathVariable Integer id) {
-		ac_service.delete(id);
+		org_service.delete(id);
 	}
-	
 	
 }
