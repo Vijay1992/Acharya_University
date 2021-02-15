@@ -3,6 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,15 +19,19 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.model.AcademicYear;
 import com.au.service.AcademicYearService;
 
+
 @RestController
 @RequestMapping("/api")
 public class AcademicYearController {
+	
+	Logger log=LoggerFactory.getLogger(AcademicYearController.class);
 
 	@Autowired
 	private AcademicYearService ac_service;
 
 	@PostMapping("/AcademicYear1")
 	public AcademicYear saveCourse(@RequestBody @Valid AcademicYear ac_year) {
+		log.debug("request {}", ac_year);
 		return ac_service.save_Academic_Year(ac_year);
 	}
 
@@ -37,8 +43,9 @@ public class AcademicYearController {
 	@GetMapping("/AcademicYear3/{id}")
 	public ResponseEntity<AcademicYear> get(@PathVariable Integer id) {
 		try {
-
+			log.debug("request {}", id);
 			AcademicYear product = ac_service.get(id);
+			
 			return new ResponseEntity<AcademicYear>(product, HttpStatus.OK);
 
 		} catch (NoSuchElementException e) {

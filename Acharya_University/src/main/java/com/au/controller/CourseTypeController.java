@@ -3,6 +3,9 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +24,8 @@ import com.au.service.CourseTypeService;
 @RestController
 @RequestMapping("/api")
 public class CourseTypeController {
+	
+	Logger log=LoggerFactory.getLogger(CourseTypeController.class);
 
 	@Autowired
 	private CourseTypeService CourseType_service;
@@ -40,6 +45,7 @@ public class CourseTypeController {
 	    try {
 	    	
 	    	CourseType cstype = CourseType_service.get(id);
+	    	log.debug("request {}...........", id);
 	        return new ResponseEntity<CourseType>(cstype, HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<CourseType>(HttpStatus.NOT_FOUND);
