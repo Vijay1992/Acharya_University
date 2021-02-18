@@ -422,3 +422,37 @@
 				Generating unique operation named: listAllUsingGET_11
 2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
 				Generating unique operation named: saveCourseUsingPOST_9
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_12
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_13
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_13
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_12
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_10
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_13
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_14
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_14
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_13
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_11
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_14
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_15
+2021-02-18 09:43:31 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_15
+2021-02-18 09:43:32 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_14
+2021-02-18 09:43:32 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_12
+2021-02-18 09:43:32 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_15
+2021-02-18 09:43:32 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Started AcharyaUniversityApplication in 8.183 seconds (JVM running for 11.806)
