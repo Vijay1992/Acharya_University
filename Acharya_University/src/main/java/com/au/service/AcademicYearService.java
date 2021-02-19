@@ -1,7 +1,6 @@
 package com.au.service;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,6 +24,9 @@ public class AcademicYearService {
 	}
 
 	public AcademicYear get(Integer id) {
+		if (id.equals(5)) {
+			throw new RuntimeException("Opps Exception raised....");
+		}
 		return ac_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Academic Year Not Found:" + id));
 	}
 
