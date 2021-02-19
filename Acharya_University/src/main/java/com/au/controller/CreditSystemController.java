@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +28,7 @@ public class CreditSystemController {
 	@Autowired
 	private Credit_System_Service credit_service;
 	
+	Logger log = LoggerFactory.getLogger(CreditSystemController.class);
 	
 	@PostMapping("/Credit_System1")
 	public Credit_System saveCourse(@RequestBody @Valid Credit_System credit_sym) {
@@ -42,6 +45,7 @@ public class CreditSystemController {
 	public ResponseEntity<Credit_System> get(@PathVariable Integer id) {
 	    try {	    	
 	    	Credit_System product = credit_service.get(id);
+	    	log.debug("request ---------{}",id);
 	        return new ResponseEntity<Credit_System>(product, HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<Credit_System>(HttpStatus.NOT_FOUND);
