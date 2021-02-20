@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ import com.au.service.Syllabus_Service;
 @RequestMapping("/api")
 public class SyllabusController {
 
+	Logger log = LoggerFactory.getLogger(SyllabusController.class);
+
+	
 	@Autowired
 	private Syllabus_Service sy_service;
 		

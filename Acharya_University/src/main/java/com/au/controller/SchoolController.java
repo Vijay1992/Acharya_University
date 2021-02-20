@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +26,9 @@ import com.au.service.School_Service;
 @RequestMapping("/api")
 public class SchoolController {
 
+	
+	Logger log = LoggerFactory.getLogger(SchoolController.class);
+	
 	@Autowired
 	private School_Service sc_service;
 	
@@ -51,7 +56,7 @@ public class SchoolController {
 	@PutMapping("/school4/{id}")
 	public ResponseEntity<?> update(@RequestBody @Valid Schools school, @PathVariable Integer id) {
 	    try {
-	    	Schools existProduct = sc_service.get(id);
+	    	Schools existSchool = sc_service.get(id);
 	    	sc_service.save_School(school);
 	        return new ResponseEntity<Schools>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {

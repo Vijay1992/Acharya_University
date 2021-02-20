@@ -25,10 +25,12 @@ import com.au.service.Credit_System_Service;
 @RequestMapping("/api")
 public class CreditSystemController {
 
+	Logger log = LoggerFactory.getLogger(CreditSystemController.class);
+	
+	
 	@Autowired
 	private Credit_System_Service credit_service;
 	
-	Logger log = LoggerFactory.getLogger(CreditSystemController.class);
 	
 	@PostMapping("/Credit_System1")
 	public Credit_System saveCourse(@RequestBody @Valid Credit_System credit_sym) {

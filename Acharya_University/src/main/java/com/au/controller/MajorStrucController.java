@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,6 +27,8 @@ import com.au.service.Major_struc_Service;
 @RequestMapping("/api")
 public class MajorStrucController {
 
+	Logger log = LoggerFactory.getLogger(MajorStrucController.class); 
+	
 	@Autowired
 	private Major_struc_Service major_service;
 	

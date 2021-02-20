@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ import com.au.service.Year_Sem_Service;
 @RestController
 @RequestMapping("/api")
 public class YearSemController {
+	
+	Logger log = LoggerFactory.getLogger(YearSemController.class);
 
 	@Autowired
 	private Year_Sem_Service sem_service;

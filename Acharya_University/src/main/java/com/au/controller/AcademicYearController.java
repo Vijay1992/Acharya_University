@@ -3,6 +3,9 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,8 @@ import com.au.service.AcademicYearService;
 @RestController
 @RequestMapping("/api")
 public class AcademicYearController {
+
+	Logger log = LoggerFactory.getLogger(AcademicYearController.class);
 
 	@Autowired
 	private AcademicYearService ac_service;

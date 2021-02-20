@@ -3,6 +3,9 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +24,9 @@ import com.au.service.Org_service;
 @RequestMapping("/api")
 public class Organization_Controller {
 
+	Logger log = LoggerFactory.getLogger(Organization_Controller.class); 
+	
+	
 	@Autowired
 	private Org_service org_service;
 	
