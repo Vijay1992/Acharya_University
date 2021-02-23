@@ -27,12 +27,12 @@ public class CourseTypeService {
 	
 	public CourseType get(Integer id) {
         return CourseType_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Course Type Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Course Type id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	CourseType ct =  CourseType_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Course Type Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Course Type id Not Found:"+id));    	
     	CourseType_repo.delete(ct);
     }
 }

@@ -24,17 +24,17 @@ public class OrganizationController {
 	@Autowired
 	private OrganisationService org_con;
 
-	@PostMapping("/organization1")
-	public Organization saveCourse(@RequestBody @Valid Organization organization) {
+	@PostMapping("/Organization1")
+	public Organization saveOrganization(@RequestBody @Valid Organization organization) {
 		return org_con.saveOrganisation(organization);
 	}
 
-	@GetMapping("/organization2")
+	@GetMapping("/Organization2")
 	public List<Organization> listAll() {
 		return org_con.listAll();
 	}
 
-	@GetMapping("/organization3/{id}")
+	@GetMapping("/Organization3/{id}")
 	public ResponseEntity<Organization> get(@PathVariable Integer id) {
 		try {
 
@@ -46,7 +46,7 @@ public class OrganizationController {
 		}
 	}
 
-	@PutMapping("/organization4/{id}")
+	@PutMapping("/Organization4/{id}")
 	public ResponseEntity<Organization> update(@RequestBody @Valid Organization organization,
 			@PathVariable Integer id) {
 		try {
@@ -58,7 +58,7 @@ public class OrganizationController {
 		}
 	}
 
-	@DeleteMapping("/organization5/{id}")
+	@DeleteMapping("/Organization5/{id}")
 	public void delete(@PathVariable Integer id) {
 		org_con.delete(id);
 	}

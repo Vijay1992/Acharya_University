@@ -29,7 +29,7 @@ public class AcademicYearController {
 	private AcademicYearService ac_service;
 
 	@PostMapping("/AcademicYear1")
-	public AcademicYear saveCourse(@RequestBody @Valid AcademicYear ac_year) {
+	public AcademicYear saveAcademicYear(@RequestBody @Valid AcademicYear ac_year) {
 		log.debug("Request {}", ac_year);
 		return ac_service.save_Academic_Year(ac_year);
 	}

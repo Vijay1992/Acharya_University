@@ -1,0 +1,32 @@
+2021-02-23 10:22:38 [http-nio-8080-exec-7] DEBUG c.a.c.CourseAssignmentController -
+				Request 177
+2021-02-23 10:23:08 [http-nio-8080-exec-8] DEBUG c.a.c.CourseAssignmentController -
+				Request com.au.model.CourseAssignment@100c84f2
+2021-02-23 10:23:55 [http-nio-8080-exec-9] DEBUG c.a.c.CourseAssignmentController -
+				Request com.au.model.CourseAssignment@4e5b3731
+2021-02-23 11:02:09 [http-nio-8080-exec-3] DEBUG c.a.c.AcademicYearController -
+				Request 130
+2021-02-23 11:02:49 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.CourseBranch@5c26b4b5
+2021-02-23 11:03:27 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
+				Request 131
+2021-02-23 11:03:56 [http-nio-8080-exec-8] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.CourseBranch@43821490
+2021-02-23 12:09:42 [http-nio-8080-exec-3] DEBUG c.a.c.AcademicYearController -
+				Request 212
+2021-02-23 12:10:15 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.CourseBranchAssignment@4e8cbaa5
+2021-02-23 12:10:36 [http-nio-8080-exec-5] DEBUG c.a.c.AcademicYearController -
+				Request 213
+2021-02-23 12:11:15 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.CourseBranchAssignment@70b242b3
+2021-02-23 16:05:29 [http-nio-8080-exec-5] DEBUG c.a.c.AcademicYearController -
+				Request 16
+2021-02-23 16:06:07 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.FeeAdmissionCategory@75355739
+2021-02-23 16:06:41 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
+				Request 17
+2021-02-23 16:07:01 [http-nio-8080-exec-9] DEBUG c.a.c.AcademicYearController -
+				Request 17
+2021-02-23 16:07:33 [http-nio-8080-exec-10] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.FeeAdmissionCategory@42369dbc

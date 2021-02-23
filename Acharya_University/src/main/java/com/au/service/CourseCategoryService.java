@@ -27,12 +27,12 @@ public class CourseCategoryService {
 	
 	public CourseCategory get(Integer id) {
         return CourseCategory_repository.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Course Category Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Course Category id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	CourseCategory cc = CourseCategory_repository.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Course Category Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Course Category id Not Found:"+id));    	
     	CourseCategory_repository.delete(cc);
     }
 }

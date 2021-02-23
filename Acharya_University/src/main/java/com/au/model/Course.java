@@ -9,23 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "tbl_au_course")
 public class Course {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int course_id;
-	@NotBlank
+	private Integer course_id;
 	private String course_name;
-	@NotBlank
 	private String course_code;
-	@NotNull
-	private Integer course_type_id;// FK
+	private Integer course_type_id; // FK
 
 	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -35,30 +31,29 @@ public class Course {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_Date;
-	@NotNull
-	private Integer course_category_id;// FK
-	@NotNull
+	private String course_short_name;
+	private Integer course_category_id; // FK
 	private Integer total_credit;
-	@NotNull
 	private Integer lecture;
-	@NotNull
 	private Integer tutorial;
-	@NotNull
 	private Integer practical;
-	@NotNull
 	private Integer duration;
-	@NotNull
 	private Integer dept_id; // FK
-	@NotNull
 	private Integer cie_marks;
-	@NotNull
 	private Integer see_marks;
+	private Integer number_of_years;
+	private Integer number_of_semester;
+	private Integer created_by;
+	private Integer modified_by;
+	private boolean active;
+	private String ref_details;
+	private String hod_email;
 
-	public int getCourse_id() {
+	public Integer getCourse_id() {
 		return course_id;
 	}
 
-	public void setCourse_id(int course_id) {
+	public void setCourse_id(Integer course_id) {
 		this.course_id = course_id;
 	}
 
@@ -100,6 +95,14 @@ public class Course {
 
 	public void setModified_Date(Date modified_Date) {
 		this.modified_Date = modified_Date;
+	}
+
+	public String getCourse_short_name() {
+		return course_short_name;
+	}
+
+	public void setCourse_short_name(String course_short_name) {
+		this.course_short_name = course_short_name;
 	}
 
 	public Integer getCourse_category_id() {
@@ -172,6 +175,62 @@ public class Course {
 
 	public void setSee_marks(Integer see_marks) {
 		this.see_marks = see_marks;
+	}
+
+	public Integer getNumber_of_years() {
+		return number_of_years;
+	}
+
+	public void setNumber_of_years(Integer number_of_years) {
+		this.number_of_years = number_of_years;
+	}
+
+	public Integer getNumber_of_semester() {
+		return number_of_semester;
+	}
+
+	public void setNumber_of_semester(Integer number_of_semester) {
+		this.number_of_semester = number_of_semester;
+	}
+
+	public Integer getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+
+	public Integer getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public String getRef_details() {
+		return ref_details;
+	}
+
+	public void setRef_details(String ref_details) {
+		this.ref_details = ref_details;
+	}
+
+	public String getHod_email() {
+		return hod_email;
+	}
+
+	public void setHod_email(String hod_email) {
+		this.hod_email = hod_email;
 	}
 
 }

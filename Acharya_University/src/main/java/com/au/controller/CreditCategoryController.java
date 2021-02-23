@@ -28,7 +28,7 @@ public class CreditCategoryController {
 	private CreditCategoryService credit_service;
 	
 	@PostMapping("/CreditCategory1")
-	public CreditCategory saveCourse(@RequestBody @Valid CreditCategory credit) {
+	public CreditCategory saveCreditCategory(@RequestBody @Valid CreditCategory credit) {
 		return credit_service.save_CreditCategory(credit);
 	}
 	

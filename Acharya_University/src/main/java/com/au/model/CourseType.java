@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,10 +18,8 @@ public class CourseType {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int course_type_id;
-	@NotBlank
+	private Integer course_type_id;
 	private String course_type_name;
-	@NotBlank
 	private String course_type_code;
 
 	@Column(updatable = false)
@@ -34,11 +31,15 @@ public class CourseType {
 	@UpdateTimestamp
 	private Date modified_date;
 
-	public int getCourse_type_id() {
+	private Integer created_by;
+	private Integer modified_by;
+	private Boolean active;
+
+	public Integer getCourse_type_id() {
 		return course_type_id;
 	}
 
-	public void setCourse_type_id(int course_type_id) {
+	public void setCourse_type_id(Integer course_type_id) {
 		this.course_type_id = course_type_id;
 	}
 
@@ -72,6 +73,30 @@ public class CourseType {
 
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
+	}
+
+	public Integer getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+
+	public Integer getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 }

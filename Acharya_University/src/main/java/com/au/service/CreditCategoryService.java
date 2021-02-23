@@ -26,12 +26,12 @@ public class CreditCategoryService {
 	
 	public CreditCategory get(Integer id) {
         return credit_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Credit Category Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Credit Category id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	CreditCategory cc = credit_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Credit Category Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Credit Category id Not Found:"+id));    	
     	credit_repo.delete(cc);
     }
 	

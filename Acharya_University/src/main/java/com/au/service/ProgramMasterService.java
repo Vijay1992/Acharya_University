@@ -19,18 +19,18 @@ public class ProgramMasterService {
 		return pr_repo.findAll();
 	}
 	
-	public ProgramMaster save_ProgramMaster(ProgramMaster academic) {
-		return pr_repo.save(academic);
+	public ProgramMaster save_ProgramMaster(ProgramMaster programmaster) {
+		return pr_repo.save(programmaster);
 	}
 	
 	public ProgramMaster get(Integer id) {
         return pr_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Program Master Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Program Master id Not Found:"+id));
     }
      
     public void delete(Integer id) {
      ProgramMaster pm =	pr_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Program Master Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Program Master id Not Found:"+id));    	
     	pr_repo.delete(pm);
     }
 }

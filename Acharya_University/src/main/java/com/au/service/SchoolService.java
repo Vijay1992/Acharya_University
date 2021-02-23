@@ -20,18 +20,18 @@ public class SchoolService {
 		return sc_repo.findAll();
 	}
 	
-	public Schools save_School(Schools course) {
-		return sc_repo.save(course);
+	public Schools save_School(Schools school) {
+		return sc_repo.save(school);
 	}
 	
 	public Schools get(Integer id) {
         return sc_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("School Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("School id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Schools s = sc_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("School Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("School id Not Found:"+id));    	
     	sc_repo.delete(s);
     }
 }

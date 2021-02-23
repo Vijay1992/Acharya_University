@@ -27,12 +27,12 @@ public class DepartmentService
 	
 	public Department get(Integer id) {
         return deptrepo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Department Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Department id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Department dept = deptrepo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Department Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Department id Not Found:"+id));    	
     	deptrepo.delete(dept);
     }
 }

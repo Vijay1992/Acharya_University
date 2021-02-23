@@ -1,0 +1,26 @@
+2021-02-22 12:25:33 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
+				Request 1
+2021-02-22 12:25:40 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
+				Request 3
+2021-02-22 12:25:42 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
+				Request 4
+2021-02-22 12:26:31 [http-nio-8080-exec-8] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.AcademicYear@24e0bcc8
+2021-02-22 12:27:02 [http-nio-8080-exec-10] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.AcademicYear@106d25c0
+2021-02-22 12:28:32 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
+				Request 1
+2021-02-22 12:29:09 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
+				Request 14
+2021-02-22 12:30:15 [http-nio-8080-exec-10] DEBUG c.a.c.AcademicYearController -
+				Request com.au.model.AcademicYear@6949ffdb
+2021-02-22 15:37:56 [http-nio-8080-exec-3] DEBUG c.au.controller.GraduationController -
+				Request 1
+2021-02-22 15:37:59 [http-nio-8080-exec-4] DEBUG c.au.controller.GraduationController -
+				Request 2
+2021-02-22 15:38:04 [http-nio-8080-exec-5] DEBUG c.au.controller.GraduationController -
+				Request 3
+2021-02-22 15:38:47 [http-nio-8080-exec-6] DEBUG c.au.controller.GraduationController -
+				Request com.au.model.Graduation@cafc47b
+2021-02-22 15:40:17 [http-nio-8080-exec-1] DEBUG c.au.controller.GraduationController -
+				Request com.au.model.Graduation@58ce526d

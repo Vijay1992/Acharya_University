@@ -26,12 +26,12 @@ public class ProgramService {
 	
 	public Program get(Integer id) {
         return pro_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Program id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Program p=pro_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Program id Not Found:"+id));    	
     	pro_repo.delete(p);
     }
 }

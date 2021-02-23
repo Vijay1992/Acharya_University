@@ -27,7 +27,7 @@ public class CreditSystemController {
 	
 	
 	@PostMapping("/CreditSystem1")
-	public CreditSystem saveCourse(@RequestBody @Valid CreditSystem credit_sym) {
+	public CreditSystem saveCreditSystem(@RequestBody @Valid CreditSystem credit_sym) {
 		return credit_service.save_CreditSystem(credit_sym);
 	}
 	

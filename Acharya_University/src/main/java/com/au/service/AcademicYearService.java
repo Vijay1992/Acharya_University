@@ -27,12 +27,12 @@ public class AcademicYearService {
 		if (id.equals(5)) {
 			throw new RuntimeException("Opps Exception raised....");
 		}
-		return ac_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Academic Year Not Found:" + id));
+		return ac_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Academic Year id Not Found:" + id));
 	}
 
 	public void delete(Integer id) {
 		AcademicYear ay = ac_repo.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Academic Year Not Found:" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Academic Year id Not Found:" + id));
 		ac_repo.delete(ay);
 	}
 }

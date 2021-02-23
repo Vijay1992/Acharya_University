@@ -20,18 +20,18 @@ public class SyllabusService {
 		return syllabus_repository.findAll();
 	}
 	
-	public Syllabus save_Syllabus(Syllabus academic) {
-		return syllabus_repository.save(academic);
+	public Syllabus save_Syllabus(Syllabus syllabus) {
+		return syllabus_repository.save(syllabus);
 	}
 	
 	public Syllabus get(Integer id) {
         return syllabus_repository.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Syllabus s =syllabus_repository.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Syllabus Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Syllabus id Not Found:"+id));    	
     	syllabus_repository.delete(s);
     }
 }

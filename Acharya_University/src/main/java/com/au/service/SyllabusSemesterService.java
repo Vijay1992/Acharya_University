@@ -27,12 +27,12 @@ public class SyllabusSemesterService {
 	
 	public SyllabusSemester get(Integer id) {
         return sy_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	SyllabusSemester ss = sy_repo.findById(id)
-		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester Not Found:"+id));
+		.orElseThrow(()-> new ResourceNotFoundException("Syllabus semester id Not Found:"+id));
 		sy_repo.delete(ss);
     }
 }

@@ -27,12 +27,12 @@ public class MajorStrucService {
 	
 	public MajorStruc get(Integer id) {
 		return major_repo.findById(id)
-				.orElseThrow(()-> new ResourceNotFoundException("Major struc Not Found:"+id));
+				.orElseThrow(()-> new ResourceNotFoundException("Major struc id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	MajorStruc ms = major_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Major struc Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Major struc id Not Found:"+id));    	
     	major_repo.delete(ms);
     }
 }

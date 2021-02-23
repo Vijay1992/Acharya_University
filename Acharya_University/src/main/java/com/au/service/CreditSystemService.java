@@ -27,12 +27,12 @@ public class CreditSystemService {
 	
 	public CreditSystem get(Integer id) {
         return credit_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Credit System Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Credit System id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	CreditSystem cs = credit_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Credit System Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Credit System id Not Found:"+id));    	
     	credit_repo.delete(cs);
     }
 }

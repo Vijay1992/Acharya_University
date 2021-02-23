@@ -25,7 +25,7 @@ public class ProgramMasterController {
 	private ProgramMasterService pr_service;
 
 	@PostMapping("/ProgramMaster1")
-	public ProgramMaster saveCourse(@RequestBody @Valid ProgramMaster pm) {
+	public ProgramMaster saveProgramMaster(@RequestBody @Valid ProgramMaster pm) {
 		return pr_service.save_ProgramMaster(pm);
 	}
 

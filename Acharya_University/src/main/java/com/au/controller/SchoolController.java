@@ -24,17 +24,17 @@ public class SchoolController {
 	@Autowired
 	private SchoolService sc_service;
 
-	@PostMapping("/school1")
-	public Schools saveCourse(@RequestBody @Valid Schools school) {
+	@PostMapping("/School1")
+	public Schools saveSchools(@RequestBody @Valid Schools school) {
 		return sc_service.save_School(school);
 	}
 
-	@GetMapping("/school2")
+	@GetMapping("/School2")
 	public List<Schools> listAll() {
 		return sc_service.listAll();
 	}
 
-	@GetMapping("/school3/{id}")
+	@GetMapping("/School3/{id}")
 	public ResponseEntity<Schools> get(@PathVariable Integer id) {
 		try {
 
@@ -45,7 +45,7 @@ public class SchoolController {
 		}
 	}
 
-	@PutMapping("/school4/{id}")
+	@PutMapping("/School4/{id}")
 	public ResponseEntity<?> update(@RequestBody @Valid Schools school, @PathVariable Integer id) {
 		try {
 			Schools existProduct = sc_service.get(id);
@@ -56,7 +56,7 @@ public class SchoolController {
 		}
 	}
 
-	@DeleteMapping("/school5/{id}")
+	@DeleteMapping("/School5/{id}")
 	public void delete(@PathVariable Integer id) {
 		sc_service.delete(id);
 	}

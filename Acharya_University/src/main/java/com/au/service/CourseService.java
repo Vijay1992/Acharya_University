@@ -25,12 +25,12 @@ public class CourseService {
 
 	public Course get(Integer id) {
 		return course_repository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Course Not Found:" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Course id Not Found:" + id));
 	}
 
 	public void delete(Integer id) {
 		Course existingCourse = course_repository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Course Not Found:" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("Course id Not Found:" + id));
 		this.course_repository.delete(existingCourse);
 	}
 

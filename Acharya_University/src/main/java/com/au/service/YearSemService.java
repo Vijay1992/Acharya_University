@@ -24,11 +24,11 @@ public class YearSemService {
 	}
 
 	public YearSem get(Integer id) {
-		return year_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Year Not Found:" + id));
+		return year_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Year Sem id Not Found:" + id));
 	}
 
 	public void delete(Integer id) {
-		YearSem ys = year_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Year Not Found:" + id));
+		YearSem ys = year_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Year Sem id Not Found:" + id));
 		year_repo.delete(ys);
 	}
 

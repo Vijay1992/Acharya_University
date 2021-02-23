@@ -26,12 +26,12 @@ public class StudentService {
 	
 	public Student get(Integer id) {
         return stu_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Student Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("Student id Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Student s =stu_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Student Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("Student id Not Found:"+id));    	
     	stu_repo.delete(s);
     }
 	

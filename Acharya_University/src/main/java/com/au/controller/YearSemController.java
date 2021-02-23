@@ -25,8 +25,8 @@ public class YearSemController {
 	private YearSemService sem_service;
 
 	@PostMapping("/YearSem1")
-	public YearSem saveCourse(@RequestBody @Valid YearSem year) {
-		return sem_service.save_YearSem(year);
+	public YearSem saveYearSem(@RequestBody @Valid YearSem yearsem) {
+		return sem_service.save_YearSem(yearsem);
 	}
 
 	@GetMapping("/YearSem2")
@@ -46,10 +46,10 @@ public class YearSemController {
 	}
 
 	@PutMapping("/YearSem4/{id}")
-	public ResponseEntity<YearSem> update(@RequestBody @Valid YearSem sylllabus, @PathVariable Integer id) {
+	public ResponseEntity<YearSem> update(@RequestBody @Valid YearSem yearsem, @PathVariable Integer id) {
 		try {
 			YearSem existProduct = sem_service.get(id);
-			sem_service.save_YearSem(sylllabus);
+			sem_service.save_YearSem(yearsem);
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
