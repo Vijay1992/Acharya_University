@@ -18,46 +18,48 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.au.model.Department;
-import com.au.service.DepartmentService;
+
+import com.au.model.Graduation;
+import com.au.service.Graduation_Service;
 
 @RestController
 @RequestMapping("/api")
-public class DepartmentController {
+public class GraduationController {
 
-	Logger log = LoggerFactory.getLogger(DepartmentController.class);
+	
+	Logger log = LoggerFactory.getLogger(GraduationController.class);
 	
 	@Autowired
-	private DepartmentService deptService;
+	private Graduation_Service gs;
 	
-	@GetMapping("/dept1")
-	public List<Department> getAllDept(){
-		return deptService.listAll();
+	@PostMapping("/graduation1")
+	public Graduation saveCourse(@RequestBody @Valid Graduation g) {
+		return gs.save_Graduation(g);
 	}
 	
-	
-	@PostMapping("/dept2")
-	public Department saveDept(@RequestBody @Valid Department dept) {
-		return deptService.save_Department(dept);
+	@GetMapping("/graduation2")
+	public List<Graduation> listAll(){
+		return gs.listAll();
 	}
+
 	
-	
-	@GetMapping("/dept3/{id}")
-	public ResponseEntity<Department> get(@PathVariable Integer id) {
+	@GetMapping("/graduation3/{id}")
+	public ResponseEntity<Graduation> get(@PathVariable Integer id) {
 	    try {
 	    	
-	    	Department dept = deptService.get(id);
-	        return new ResponseEntity<Department>(dept, HttpStatus.OK);
+	    	Graduation product = gs.get(id);
+	        return new ResponseEntity<Graduation>(product, HttpStatus.OK);
+	        
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<Department>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<Graduation>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 
-	@PutMapping("/dept4/{id}")
-	public ResponseEntity<Department> update(@RequestBody @Valid Department dept, @PathVariable Integer id) {
+	@PutMapping("/graduation4/{id}")
+	public ResponseEntity<Graduation> update(@RequestBody Graduation g, @PathVariable Integer id) {
 	    try {
-	    	Department existProduct = deptService.get(id);
-	    	deptService.save_Department(dept);
+	    	Graduation existProduct = gs.get(id);
+	    	gs.save_Graduation(g);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -65,8 +67,9 @@ public class DepartmentController {
 	}
 	
 	
-	@DeleteMapping("/dept5/{id}")
+	@DeleteMapping("/graduation5/{id}")
 	public void delete(@PathVariable Integer id) {
-		deptService.delete(id);
+		gs.delete(id);
 	}
+	
 }

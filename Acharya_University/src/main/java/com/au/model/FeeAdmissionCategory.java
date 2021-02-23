@@ -1,6 +1,7 @@
 package com.au.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,21 +10,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_academic_year")
-public class Academic_year {
-
+@Table(name = "tbl_au_fee_admisison_category")
+public class FeeAdmissionCategory 
+{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer ac_year_id;	
-	
-	private String ac_year;
-	private String ac_year_code;
+	private Integer fee_admission_category_id;
+		
+	private String fee_admission_category_type;	
+	private String fee_admission_category_short_name;	
 	
 	@Column(name = "created_date",updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)	
@@ -34,51 +34,53 @@ public class Academic_year {
 	@Temporal(TemporalType.TIMESTAMP)	
 	@UpdateTimestamp
 	private Date modified_date;
-	private Integer created_by;
-	private Integer modified_by;
-	private boolean active;
-	private Integer current_year;
+
+	private Integer created_by;	
+	private Integer modified_by;	
+	private boolean active	;
+	private boolean is_check;
 	
-	public Academic_year() {
+	public FeeAdmissionCategory() {
 		super();
 	}
 
-	public Academic_year(Integer ac_year_id, String ac_year, String ac_year_code, Date created_date, Date modified_date,
-			Integer created_by, Integer modified_by, boolean active, Integer current_year) {
+	public FeeAdmissionCategory(Integer fee_admission_category_id, String fee_admission_category_type,
+			String fee_admission_category_short_name, Date created_date, Date modified_date, Integer created_by,
+			Integer modified_by, boolean active, boolean is_check) {
 		super();
-		this.ac_year_id = ac_year_id;
-		this.ac_year = ac_year;
-		this.ac_year_code = ac_year_code;
+		this.fee_admission_category_id = fee_admission_category_id;
+		this.fee_admission_category_type = fee_admission_category_type;
+		this.fee_admission_category_short_name = fee_admission_category_short_name;
 		this.created_date = created_date;
 		this.modified_date = modified_date;
 		this.created_by = created_by;
 		this.modified_by = modified_by;
 		this.active = active;
-		this.current_year = current_year;
+		this.is_check = is_check;
 	}
 
-	public Integer getAc_year_id() {
-		return ac_year_id;
+	public Integer getFee_admission_category_id() {
+		return fee_admission_category_id;
 	}
 
-	public void setAc_year_id(Integer ac_year_id) {
-		this.ac_year_id = ac_year_id;
+	public void setFee_admission_category_id(Integer fee_admission_category_id) {
+		this.fee_admission_category_id = fee_admission_category_id;
 	}
 
-	public String getAc_year() {
-		return ac_year;
+	public String getFee_admission_category_type() {
+		return fee_admission_category_type;
 	}
 
-	public void setAc_year(String ac_year) {
-		this.ac_year = ac_year;
+	public void setFee_admission_category_type(String fee_admission_category_type) {
+		this.fee_admission_category_type = fee_admission_category_type;
 	}
 
-	public String getAc_year_code() {
-		return ac_year_code;
+	public String getFee_admission_category_short_name() {
+		return fee_admission_category_short_name;
 	}
 
-	public void setAc_year_code(String ac_year_code) {
-		this.ac_year_code = ac_year_code;
+	public void setFee_admission_category_short_name(String fee_admission_category_short_name) {
+		this.fee_admission_category_short_name = fee_admission_category_short_name;
 	}
 
 	public Date getCreated_date() {
@@ -121,12 +123,16 @@ public class Academic_year {
 		this.active = active;
 	}
 
-	public Integer getCurrent_year() {
-		return current_year;
+	public boolean isIs_check() {
+		return is_check;
 	}
 
-	public void setCurrent_year(Integer current_year) {
-		this.current_year = current_year;
+	public void setIs_check(boolean is_check) {
+		this.is_check = is_check;
 	}
 
+	
+	
+	
+	
 }

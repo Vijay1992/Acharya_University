@@ -1,6 +1,7 @@
 package com.au.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,22 +10,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_course_type")
-public class Course_Type {
+@Table(name = "tbl_au_graduation_type")
+public class Graduation {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer course_type_id;
+	private Integer graduation_id;
 	
-	private String course_type_name;
-	private String course_type_code;
-
+	private String graduation_name;
+	private String graduation_name_short;
+	
 	@Column(name = "created_date",updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)	
 	@CreationTimestamp
@@ -35,20 +35,20 @@ public class Course_Type {
 	@UpdateTimestamp
 	private Date modified_date;
 	
-	private Integer created_by;
-	private Integer modified_by;
+	private int created_by;
+	private int modified_by;
 	private boolean active;
 	
-	public Course_Type() {
+	public Graduation() {
 		super();
 	}
-
-	public Course_Type(Integer course_type_id, String course_type_name, String course_type_code, Date created_date,
-			Date modified_date, Integer created_by, Integer modified_by, boolean active) {
+	
+	public Graduation(Integer graduation_id, String graduation_name, String graduation_name_short, Date created_date,
+			Date modified_date, int created_by, int modified_by, boolean active) {
 		super();
-		this.course_type_id = course_type_id;
-		this.course_type_name = course_type_name;
-		this.course_type_code = course_type_code;
+		this.graduation_id = graduation_id;
+		this.graduation_name = graduation_name;
+		this.graduation_name_short = graduation_name_short;
 		this.created_date = created_date;
 		this.modified_date = modified_date;
 		this.created_by = created_by;
@@ -56,28 +56,28 @@ public class Course_Type {
 		this.active = active;
 	}
 
-	public Integer getCourse_type_id() {
-		return course_type_id;
+	public Integer getGraduation_id() {
+		return graduation_id;
 	}
 
-	public void setCourse_type_id(Integer course_type_id) {
-		this.course_type_id = course_type_id;
+	public void setGraduation_id(Integer graduation_id) {
+		this.graduation_id = graduation_id;
 	}
 
-	public String getCourse_type_name() {
-		return course_type_name;
+	public String getGraduation_name() {
+		return graduation_name;
 	}
 
-	public void setCourse_type_name(String course_type_name) {
-		this.course_type_name = course_type_name;
+	public void setGraduation_name(String graduation_name) {
+		this.graduation_name = graduation_name;
 	}
 
-	public String getCourse_type_code() {
-		return course_type_code;
+	public String getGraduation_name_short() {
+		return graduation_name_short;
 	}
 
-	public void setCourse_type_code(String course_type_code) {
-		this.course_type_code = course_type_code;
+	public void setGraduation_name_short(String graduation_name_short) {
+		this.graduation_name_short = graduation_name_short;
 	}
 
 	public Date getCreated_date() {
@@ -96,19 +96,19 @@ public class Course_Type {
 		this.modified_date = modified_date;
 	}
 
-	public Integer getCreated_by() {
+	public int getCreated_by() {
 		return created_by;
 	}
 
-	public void setCreated_by(Integer created_by) {
+	public void setCreated_by(int created_by) {
 		this.created_by = created_by;
 	}
 
-	public Integer getModified_by() {
+	public int getModified_by() {
 		return modified_by;
 	}
 
-	public void setModified_by(Integer modified_by) {
+	public void setModified_by(int modified_by) {
 		this.modified_by = modified_by;
 	}
 
@@ -120,5 +120,6 @@ public class Course_Type {
 		this.active = active;
 	}
 
+	
 	
 }

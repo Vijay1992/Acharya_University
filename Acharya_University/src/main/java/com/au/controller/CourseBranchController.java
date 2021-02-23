@@ -2,9 +2,7 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,46 +16,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.au.model.Department;
-import com.au.service.DepartmentService;
+
+import com.au.model.CourseBranch;
+import com.au.service.CourseBranchService;
 
 @RestController
 @RequestMapping("/api")
-public class DepartmentController {
+public class CourseBranchController {
 
-	Logger log = LoggerFactory.getLogger(DepartmentController.class);
+	Logger log = LoggerFactory.getLogger(CourseBranchController.class);
 	
 	@Autowired
-	private DepartmentService deptService;
+	private CourseBranchService cb_service;
 	
-	@GetMapping("/dept1")
-	public List<Department> getAllDept(){
-		return deptService.listAll();
+	@PostMapping("/coursebranch1")
+	public CourseBranch saveCourse(@RequestBody @Valid CourseBranch cb) {
+		return cb_service.save_CourseBranch(cb);
 	}
 	
-	
-	@PostMapping("/dept2")
-	public Department saveDept(@RequestBody @Valid Department dept) {
-		return deptService.save_Department(dept);
+	@GetMapping("/coursebranch2")
+	public List<CourseBranch> listAll(){
+		return cb_service.listAll();
 	}
+
 	
-	
-	@GetMapping("/dept3/{id}")
-	public ResponseEntity<Department> get(@PathVariable Integer id) {
+	@GetMapping("/coursebranch3/{id}")
+	public ResponseEntity<CourseBranch> get(@PathVariable Integer id) {
 	    try {
 	    	
-	    	Department dept = deptService.get(id);
-	        return new ResponseEntity<Department>(dept, HttpStatus.OK);
+	    	CourseBranch cb = cb_service.get(id);
+	        return new ResponseEntity<CourseBranch>(cb, HttpStatus.OK);
+	        
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<Department>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<CourseBranch>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 
-	@PutMapping("/dept4/{id}")
-	public ResponseEntity<Department> update(@RequestBody @Valid Department dept, @PathVariable Integer id) {
+	@PutMapping("/coursebranch4/{id}")
+	public ResponseEntity<CourseBranch> update(@RequestBody CourseBranch cb, @PathVariable Integer id) {
 	    try {
-	    	Department existProduct = deptService.get(id);
-	    	deptService.save_Department(dept);
+	    	CourseBranch existProduct = cb_service.get(id);
+	    	cb_service.save_CourseBranch(cb);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -65,8 +64,10 @@ public class DepartmentController {
 	}
 	
 	
-	@DeleteMapping("/dept5/{id}")
+	@DeleteMapping("/coursebranch5/{id}")
 	public void delete(@PathVariable Integer id) {
-		deptService.delete(id);
+		cb_service.delete(id);
 	}
+	
+	
 }

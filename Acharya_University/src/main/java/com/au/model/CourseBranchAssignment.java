@@ -1,6 +1,7 @@
 package com.au.model;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,22 +10,24 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_course_type")
-public class Course_Type {
+@Table(name = "tbl_au_course_branch_assignment")
+public class CourseBranchAssignment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer course_type_id;
-	
-	private String course_type_name;
-	private String course_type_code;
+	private Integer	course_branch_assignment_id;
 
+	private Integer course_branch_id;//fk
+	private Integer course_id;//fk
+	private Integer dept_id;//fk
+	private Integer school_id;//fk
+	private String auid_format;
+	
 	@Column(name = "created_date",updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)	
 	@CreationTimestamp
@@ -34,21 +37,24 @@ public class Course_Type {
 	@Temporal(TemporalType.TIMESTAMP)	
 	@UpdateTimestamp
 	private Date modified_date;
-	
 	private Integer created_by;
 	private Integer modified_by;
 	private boolean active;
 	
-	public Course_Type() {
+	public CourseBranchAssignment() {
 		super();
 	}
 
-	public Course_Type(Integer course_type_id, String course_type_name, String course_type_code, Date created_date,
-			Date modified_date, Integer created_by, Integer modified_by, boolean active) {
+	public CourseBranchAssignment(Integer course_branch_assignment_id, Integer course_branch_id, Integer course_id,
+			Integer dept_id, Integer school_id, String auid_format, Date created_date, Date modified_date,
+			Integer created_by, Integer modified_by, boolean active) {
 		super();
-		this.course_type_id = course_type_id;
-		this.course_type_name = course_type_name;
-		this.course_type_code = course_type_code;
+		this.course_branch_assignment_id = course_branch_assignment_id;
+		this.course_branch_id = course_branch_id;
+		this.course_id = course_id;
+		this.dept_id = dept_id;
+		this.school_id = school_id;
+		this.auid_format = auid_format;
 		this.created_date = created_date;
 		this.modified_date = modified_date;
 		this.created_by = created_by;
@@ -56,28 +62,52 @@ public class Course_Type {
 		this.active = active;
 	}
 
-	public Integer getCourse_type_id() {
-		return course_type_id;
+	public Integer getCourse_branch_assignment_id() {
+		return course_branch_assignment_id;
 	}
 
-	public void setCourse_type_id(Integer course_type_id) {
-		this.course_type_id = course_type_id;
+	public void setCourse_branch_assignment_id(Integer course_branch_assignment_id) {
+		this.course_branch_assignment_id = course_branch_assignment_id;
 	}
 
-	public String getCourse_type_name() {
-		return course_type_name;
+	public Integer getCourse_branch_id() {
+		return course_branch_id;
 	}
 
-	public void setCourse_type_name(String course_type_name) {
-		this.course_type_name = course_type_name;
+	public void setCourse_branch_id(Integer course_branch_id) {
+		this.course_branch_id = course_branch_id;
 	}
 
-	public String getCourse_type_code() {
-		return course_type_code;
+	public Integer getCourse_id() {
+		return course_id;
 	}
 
-	public void setCourse_type_code(String course_type_code) {
-		this.course_type_code = course_type_code;
+	public void setCourse_id(Integer course_id) {
+		this.course_id = course_id;
+	}
+
+	public Integer getDept_id() {
+		return dept_id;
+	}
+
+	public void setDept_id(Integer dept_id) {
+		this.dept_id = dept_id;
+	}
+
+	public Integer getSchool_id() {
+		return school_id;
+	}
+
+	public void setSchool_id(Integer school_id) {
+		this.school_id = school_id;
+	}
+
+	public String getAuid_format() {
+		return auid_format;
+	}
+
+	public void setAuid_format(String auid_format) {
+		this.auid_format = auid_format;
 	}
 
 	public Date getCreated_date() {

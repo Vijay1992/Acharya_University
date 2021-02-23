@@ -20,13 +20,8 @@ public class Department {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "dept_id")
 	private int dept_id;
-
-	@NotBlank
 	private String dept_name;
-
-	@NotBlank
 	private String dept_code;
 
 	@Column(name = "created_date",updatable = false)
@@ -38,12 +33,43 @@ public class Department {
 	@Temporal(TemporalType.TIMESTAMP)	
 	@UpdateTimestamp
 	private Date modified_date;
-
-	@NotNull
+	private String dept_name_short;
+	private String duration;
+	
+	
+	
 	private Integer school_id;	//FK
+	private Integer graduation_id;	//FK
+	private Integer created_by;
+	private Integer modified_by;
+	private boolean active;
+	private Integer tag_id;
+	private Integer service_oriented;
+	private Integer priority;
 	
 	public Department() {
 		super();
+	}
+
+	public Department(int dept_id, String dept_name, String dept_code, Date created_date, Date modified_date,
+			String dept_name_short, String duration, Integer school_id, Integer graduation_id, Integer created_by,
+			Integer modified_by, boolean active, Integer tag_id, Integer service_oriented, Integer priority) {
+		super();
+		this.dept_id = dept_id;
+		this.dept_name = dept_name;
+		this.dept_code = dept_code;
+		this.created_date = created_date;
+		this.modified_date = modified_date;
+		this.dept_name_short = dept_name_short;
+		this.duration = duration;
+		this.school_id = school_id;
+		this.graduation_id = graduation_id;
+		this.created_by = created_by;
+		this.modified_by = modified_by;
+		this.active = active;
+		this.tag_id = tag_id;
+		this.service_oriented = service_oriented;
+		this.priority = priority;
 	}
 
 	public int getDept_id() {
@@ -86,27 +112,87 @@ public class Department {
 		this.modified_date = modified_date;
 	}
 
-	
-	
+	public String getDept_name_short() {
+		return dept_name_short;
+	}
 
-	/**
-	 * @return the school_id
-	 */
-	public int getSchool_id() {
+	public void setDept_name_short(String dept_name_short) {
+		this.dept_name_short = dept_name_short;
+	}
+
+	public String getDuration() {
+		return duration;
+	}
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	public Integer getSchool_id() {
 		return school_id;
 	}
 
-	/**
-	 * @param school_id the school_id to set
-	 */
-	public void setSchool_id(int school_id) {
+	public void setSchool_id(Integer school_id) {
 		this.school_id = school_id;
 	}
 
-	@Override
-	public String toString() {
-		return "Department [dept_id=" + dept_id + ", dept_name=" + dept_name + ", dept_code=" + dept_code
-				+ ", created_date=" + created_date + ", modified_date=" + modified_date + "]";
+	public Integer getGraduation_id() {
+		return graduation_id;
 	}
 
+	public void setGraduation_id(Integer graduation_id) {
+		this.graduation_id = graduation_id;
+	}
+
+	public Integer getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+
+	public Integer getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
+	}
+
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
+	public Integer getTag_id() {
+		return tag_id;
+	}
+
+	public void setTag_id(Integer tag_id) {
+		this.tag_id = tag_id;
+	}
+
+	public Integer getService_oriented() {
+		return service_oriented;
+	}
+
+	public void setService_oriented(Integer service_oriented) {
+		this.service_oriented = service_oriented;
+	}
+
+	public Integer getPriority() {
+		return priority;
+	}
+
+	public void setPriority(Integer priority) {
+		this.priority = priority;
+	}
+	
+	
+	
+	
 }

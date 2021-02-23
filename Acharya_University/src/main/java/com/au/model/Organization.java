@@ -13,16 +13,16 @@ public class Organization {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int org_id;
+	private Integer org_id;
 	@NotBlank
 	private String org_name;
 	@NotBlank
 	private String org_type;
 
-	public int getOrg_id() {
+	public Integer getOrg_id() {
 		return org_id;
 	}
-	public void setOrg_id(int org_id) {
+	public void setOrg_id(Integer org_id) {
 		this.org_id = org_id;
 	}
 	public String getOrg_name() {
