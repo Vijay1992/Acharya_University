@@ -26,18 +26,18 @@ public class CreditSystemController {
 	private CreditSystemService credit_service;
 	
 	
-	@PostMapping("/CreditSystem1")
+	@PostMapping("/CreditSystem")
 	public CreditSystem saveCreditSystem(@RequestBody @Valid CreditSystem credit_sym) {
 		return credit_service.save_CreditSystem(credit_sym);
 	}
 	
-	@GetMapping("/CreditSystem2")
+	@GetMapping("/CreditSystem")
 	public List<CreditSystem> listAll(){
 		return credit_service.listAll();
 	}
 
 	
-	@GetMapping("/CreditSystem3/{id}")
+	@GetMapping("/CreditSystem/{id}")
 	public ResponseEntity<CreditSystem> get(@PathVariable Integer id) {
 	    try {	    	
 	    	CreditSystem product = credit_service.get(id);
@@ -47,7 +47,7 @@ public class CreditSystemController {
 	    }      
 	}
 
-	@PutMapping("/CreditSystem4/{id}")
+	@PutMapping("/CreditSystem/{id}")
 	public ResponseEntity<CreditSystem> update(@RequestBody @Valid CreditSystem credit_sym, @PathVariable Integer id) {
 	    try {
 	    	CreditSystem existProduct = credit_service.get(id);
@@ -59,7 +59,7 @@ public class CreditSystemController {
 	}
 	
 	
-	@DeleteMapping("/CreditSystem5/{id}")
+	@DeleteMapping("/CreditSystem/{id}")
 	public void delete(@PathVariable Integer id) {
 		credit_service.delete(id);
 	}

@@ -24,17 +24,17 @@ public class ProgramMasterController {
 	@Autowired
 	private ProgramMasterService pr_service;
 
-	@PostMapping("/ProgramMaster1")
+	@PostMapping("/ProgramMaster")
 	public ProgramMaster saveProgramMaster(@RequestBody @Valid ProgramMaster pm) {
 		return pr_service.save_ProgramMaster(pm);
 	}
 
-	@GetMapping("/ProgramMaster2")
+	@GetMapping("/ProgramMaster")
 	public List<ProgramMaster> listAll() {
 		return pr_service.listAll();
 	}
 
-	@GetMapping("/ProgramMaster3/{id}")
+	@GetMapping("/ProgramMaster/{id}")
 	public ResponseEntity<ProgramMaster> get(@PathVariable Integer id) {
 		try {
 
@@ -45,7 +45,7 @@ public class ProgramMasterController {
 		}
 	}
 
-	@PutMapping("/ProgramMaster4/{id}")
+	@PutMapping("/ProgramMaster/{id}")
 	public ResponseEntity<ProgramMaster> update(@RequestBody @Valid ProgramMaster pm, @PathVariable Integer id) {
 		try {
 			ProgramMaster existProduct = pr_service.get(id);
@@ -56,7 +56,7 @@ public class ProgramMasterController {
 		}
 	}
 
-	@DeleteMapping("/ProgramMaster5/{id}")
+	@DeleteMapping("/ProgramMaster/{id}")
 	public void delete(@PathVariable Integer id) {
 		pr_service.delete(id);
 	}

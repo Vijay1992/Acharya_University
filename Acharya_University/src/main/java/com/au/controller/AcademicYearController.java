@@ -28,18 +28,18 @@ public class AcademicYearController {
 	@Autowired
 	private AcademicYearService ac_service;
 
-	@PostMapping("/AcademicYear1")
+	@PostMapping("/AcademicYear")
 	public AcademicYear saveAcademicYear(@RequestBody @Valid AcademicYear ac_year) {
 		log.debug("Request {}", ac_year);
 		return ac_service.save_Academic_Year(ac_year);
 	}
 
-	@GetMapping("/AcademicYear2")
+	@GetMapping("/AcademicYear")
 	public List<AcademicYear> listAll() {
 		return ac_service.listAll();
 	}
 
-	@GetMapping("/AcademicYear3/{id}")
+	@GetMapping("/AcademicYear/{id}")
 	public ResponseEntity<AcademicYear> get(@PathVariable Integer id) {
 		try {
 
@@ -52,7 +52,7 @@ public class AcademicYearController {
 		}
 	}
 
-	@PutMapping("/AcademicYear4/{id}")
+	@PutMapping("/AcademicYear/{id}")
 	public ResponseEntity<AcademicYear> update(@RequestBody @Valid AcademicYear ac_year, @PathVariable Integer id) {
 		try {
 			AcademicYear existProduct = ac_service.get(id);
@@ -64,7 +64,7 @@ public class AcademicYearController {
 		}
 	}
 
-	@DeleteMapping("/AcademicYear5/{id}")
+	@DeleteMapping("/AcademicYear/{id}")
 	public void delete(@PathVariable Integer id) {
 		ac_service.delete(id);
 	}

@@ -27,18 +27,18 @@ public class CreditCategoryController {
 	@Autowired
 	private CreditCategoryService credit_service;
 	
-	@PostMapping("/CreditCategory1")
+	@PostMapping("/CreditCategory")
 	public CreditCategory saveCreditCategory(@RequestBody @Valid CreditCategory credit) {
 		return credit_service.save_CreditCategory(credit);
 	}
 	
-	@GetMapping("/CreditCategory2")
+	@GetMapping("/CreditCategory")
 	public List<CreditCategory> listAll(){
 		return credit_service.listAll();
 	}
 
 	
-	@GetMapping("/CreditCategory3/{id}")
+	@GetMapping("/CreditCategory/{id}")
 	public ResponseEntity<CreditCategory> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -49,7 +49,7 @@ public class CreditCategoryController {
 	    }      
 	}
 
-	@PutMapping("/CreditCategory4/{id}")
+	@PutMapping("/CreditCategory/{id}")
 	public ResponseEntity<CreditCategory> update(@RequestBody @Valid CreditCategory credit, @PathVariable Integer id) {
 	    try {
 	    	CreditCategory existProduct = credit_service.get(id);
@@ -61,7 +61,7 @@ public class CreditCategoryController {
 	}
 	
 	
-	@DeleteMapping("/CreditCategory5/{id}")
+	@DeleteMapping("/CreditCategory/{id}")
 	public void delete(@PathVariable Integer id) {
 		credit_service.delete(id);
 	}

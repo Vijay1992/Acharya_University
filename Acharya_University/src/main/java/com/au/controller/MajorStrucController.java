@@ -24,18 +24,18 @@ public class MajorStrucController {
 	@Autowired
 	private MajorStrucService major_service;
 	
-	@PostMapping("/MajorStruc1")
+	@PostMapping("/MajorStruc")
 	public MajorStruc saveMajorStruc(@RequestBody @Valid MajorStruc major) {
 		return major_service.save_MajorStruc(major);
 	}
 	
-	@GetMapping("/MajorStruc2")
+	@GetMapping("/MajorStruc")
 	public List<MajorStruc> listAll(){
 		return major_service.listAll();
 	}
 
 	
-	@GetMapping("/MajorStruc3/{id}")
+	@GetMapping("/MajorStruc/{id}")
 	public ResponseEntity<MajorStruc> get(@PathVariable Integer id) {
 	    try {	    	
 	    	MajorStruc major = major_service.get(id);
@@ -46,7 +46,7 @@ public class MajorStrucController {
 	}
 
 	
-	@PutMapping("/MajorStruc4/{id}")
+	@PutMapping("/MajorStruc/{id}")
 	public ResponseEntity<MajorStruc> update(@RequestBody @Valid MajorStruc major, @PathVariable Integer id) {
 	    try {
 	    	MajorStruc existProduct = major_service.get(id);
@@ -58,7 +58,7 @@ public class MajorStrucController {
 	}
 	
 	
-	@DeleteMapping("/MajorStruc5/{id}")
+	@DeleteMapping("/MajorStruc/{id}")
 	public void delete(@PathVariable Integer id) {
 		major_service.delete(id);
 	}

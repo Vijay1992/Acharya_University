@@ -28,18 +28,18 @@ public class CourseAssignmentController {
 	@Autowired
 	private CourseAssignmentService ca_service;
 
-	@PostMapping("/CourseAssignment1")
+	@PostMapping("/CourseAssignment")
 	public CourseAssignment saveCourseAssignment(@RequestBody @Valid CourseAssignment courseassignment) {
 		log.debug("Request {}", courseassignment);
 		return ca_service.saveCourseAssignment(courseassignment);
 	}
 
-	@GetMapping("/CourseAssignment2")
+	@GetMapping("/CourseAssignment")
 	public List<CourseAssignment> listAll() {
 		return ca_service.listAll();
 	}
 
-	@GetMapping("/CourseAssignment3/{id}")
+	@GetMapping("/CourseAssignment/{id}")
 	public ResponseEntity<CourseAssignment> get(@PathVariable Integer id) {
 		try {
 
@@ -52,7 +52,7 @@ public class CourseAssignmentController {
 		}
 	}
 
-	@PutMapping("/CourseAssignment4/{id}")
+	@PutMapping("/CourseAssignment/{id}")
 	public ResponseEntity<CourseAssignment> update(@RequestBody @Valid CourseAssignment courseassignment,
 			@PathVariable Integer id) {
 		try {
@@ -65,7 +65,7 @@ public class CourseAssignmentController {
 		}
 	}
 
-	@DeleteMapping("/CourseAssignment5/{id}")
+	@DeleteMapping("/CourseAssignment/{id}")
 	public void delete(@PathVariable Integer id) {
 		ca_service.delete(id);
 	}

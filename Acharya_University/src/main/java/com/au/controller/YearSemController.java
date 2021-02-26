@@ -24,17 +24,17 @@ public class YearSemController {
 	@Autowired
 	private YearSemService sem_service;
 
-	@PostMapping("/YearSem1")
+	@PostMapping("/YearSem")
 	public YearSem saveYearSem(@RequestBody @Valid YearSem yearsem) {
 		return sem_service.save_YearSem(yearsem);
 	}
 
-	@GetMapping("/YearSem2")
+	@GetMapping("/YearSem")
 	public List<YearSem> listAll() {
 		return sem_service.listAll();
 	}
 
-	@GetMapping("/YearSem3/{id}")
+	@GetMapping("/YearSem/{id}")
 	public ResponseEntity<YearSem> get(@PathVariable Integer id) {
 		try {
 
@@ -45,7 +45,7 @@ public class YearSemController {
 		}
 	}
 
-	@PutMapping("/YearSem4/{id}")
+	@PutMapping("/YearSem/{id}")
 	public ResponseEntity<YearSem> update(@RequestBody @Valid YearSem yearsem, @PathVariable Integer id) {
 		try {
 			YearSem existProduct = sem_service.get(id);
@@ -56,7 +56,7 @@ public class YearSemController {
 		}
 	}
 
-	@DeleteMapping("/YearSem5/{id}")
+	@DeleteMapping("/YearSem/{id}")
 	public void delete(@PathVariable Integer id) {
 		sem_service.delete(id);
 	}

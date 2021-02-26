@@ -28,19 +28,19 @@ public class FeeAdmissionCategoryController {
 	@Autowired
 	private FeeAdmissionCategoryService fac_service;
 
-	@PostMapping("/FeeAdmissionCategory1")
+	@PostMapping("/FeeAdmissionCategory")
 	public FeeAdmissionCategory saveFeeAdmissionCategory(
 			@RequestBody @Valid FeeAdmissionCategory feeadmissioncategory) {
 		log.debug("Request {}", feeadmissioncategory);
 		return fac_service.saveFeeAdmissionCategory(feeadmissioncategory);
 	}
 
-	@GetMapping("/FeeAdmissionCategory2")
+	@GetMapping("/FeeAdmissionCategory")
 	public List<FeeAdmissionCategory> listAll() {
 		return fac_service.listAll();
 	}
 
-	@GetMapping("/FeeAdmissionCategory3/{id}")
+	@GetMapping("/FeeAdmissionCategory/{id}")
 	public ResponseEntity<FeeAdmissionCategory> get(@PathVariable Integer id) {
 		try {
 
@@ -53,7 +53,7 @@ public class FeeAdmissionCategoryController {
 		}
 	}
 
-	@PutMapping("/FeeAdmissionCategory4/{id}")
+	@PutMapping("/FeeAdmissionCategory/{id}")
 	public ResponseEntity<FeeAdmissionCategory> update(@RequestBody @Valid FeeAdmissionCategory feeadmissioncategory,
 			@PathVariable Integer id) {
 		try {
@@ -66,7 +66,7 @@ public class FeeAdmissionCategoryController {
 		}
 	}
 
-	@DeleteMapping("/FeeAdmissionCategory5/{id}")
+	@DeleteMapping("/FeeAdmissionCategory/{id}")
 	public void delete(@PathVariable Integer id) {
 		fac_service.delete(id);
 	}

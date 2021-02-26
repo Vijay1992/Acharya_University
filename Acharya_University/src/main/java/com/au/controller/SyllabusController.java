@@ -24,17 +24,17 @@ public class SyllabusController {
 	@Autowired
 	private SyllabusService sy_service;
 
-	@PostMapping("/Syllabus1")
+	@PostMapping("/Syllabus")
 	public Syllabus saveSyllabus(@RequestBody @Valid Syllabus syllabus) {
 		return sy_service.save_Syllabus(syllabus);
 	}
 
-	@GetMapping("/Syllabus2")
+	@GetMapping("/Syllabus")
 	public List<Syllabus> listAll() {
 		return sy_service.listAll();
 	}
 
-	@GetMapping("/Syllabus3/{id}")
+	@GetMapping("/Syllabus/{id}")
 	public ResponseEntity<Syllabus> get(@PathVariable Integer id) {
 		try {
 
@@ -45,7 +45,7 @@ public class SyllabusController {
 		}
 	}
 
-	@PutMapping("/Syllabus4/{id}")
+	@PutMapping("/Syllabus/{id}")
 	public ResponseEntity<Syllabus> update(@RequestBody @Valid Syllabus syllabus, @PathVariable Integer id) {
 		try {
 			Syllabus existProduct = sy_service.get(id);
@@ -56,7 +56,7 @@ public class SyllabusController {
 		}
 	}
 
-	@DeleteMapping("/Syllabus5/{id}")
+	@DeleteMapping("/Syllabus/{id}")
 	public void delete(@PathVariable Integer id) {
 		sy_service.delete(id);
 	}

@@ -24,17 +24,17 @@ public class DepartmentController {
 	@Autowired
 	private DepartmentService deptService;
 	
-	@PostMapping("/Dept1")
+	@PostMapping("/Dept")
 	public Department saveDept(@RequestBody @Valid Department dept) {
 		return deptService.save_Department(dept);
 	}
 
-	@GetMapping("/Dept2")
+	@GetMapping("/Dept")
 	public List<Department> getAllDept() {
 		return deptService.listAll();
 	}
 	
-	@GetMapping("/Dept3/{id}")
+	@GetMapping("/Dept/{id}")
 	public ResponseEntity<Department> get(@PathVariable Integer id) {
 		try {
 
@@ -45,7 +45,7 @@ public class DepartmentController {
 		}
 	}
 
-	@PutMapping("/Dept4/{id}")
+	@PutMapping("/Dept/{id}")
 	public ResponseEntity<Department> update(@RequestBody @Valid Department dept, @PathVariable Integer id) {
 		try {
 			Department existProduct = deptService.get(id);
@@ -56,7 +56,7 @@ public class DepartmentController {
 		}
 	}
 
-	@DeleteMapping("/Dept5/{id}")
+	@DeleteMapping("/Dept/{id}")
 	public void delete(@PathVariable Integer id) {
 		deptService.delete(id);
 	}
