@@ -1,0 +1,1132 @@
+2021-02-25 11:51:22 [background-preinit] INFO  o.h.validator.internal.util.Version -
+				HV000001: Hibernate Validator 6.1.7.Final
+2021-02-25 11:51:22 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Starting AcharyaUniversityApplication using Java 15.0.1 on DESKTOP-6O58SQ9 with PID 11216 (D:\Acharya\New folder\Acharya_University\Acharya_University\target\classes started by Admin in D:\Acharya\New folder\Acharya_University\Acharya_University)
+2021-02-25 11:51:22 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				No active profile set, falling back to default profiles: default
+2021-02-25 11:51:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-25 11:51:22 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-25 11:51:25 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 11:51:26 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 125 ms. Found 22 JPA repository interfaces.
+2021-02-25 11:51:26 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3e1203c1' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:51:26 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:51:27 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8080 (http)
+2021-02-25 11:51:27 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:51:27 [restartedMain] INFO  o.a.catalina.core.StandardService -
+				Starting service [Tomcat]
+2021-02-25 11:51:27 [restartedMain] INFO  o.a.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 11:51:27 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2021-02-25 11:51:27 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+				Root WebApplicationContext: initialization completed in 4678 ms
+2021-02-25 11:51:27 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper -
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 11:51:28 [restartedMain] INFO  org.hibernate.Version -
+				HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 11:51:28 [restartedMain] INFO  o.h.annotations.common.Version -
+				HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 11:51:28 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2021-02-25 11:51:29 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2021-02-25 11:51:29 [restartedMain] INFO  org.hibernate.dialect.Dialect -
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 11:51:30 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 11:51:30 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:51:31 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2021-02-25 11:51:31 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/v2/api-docs'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/ui'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-resources/**'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/security'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-ui.html'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/webjars/**'] with []
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7a13f586, org.springframework.security.web.context.SecurityContextPersistenceFilter@62b91b46, org.springframework.security.web.header.HeaderWriterFilter@a8eb9c1, org.springframework.security.web.authentication.logout.LogoutFilter@5ec95688, com.au.config.JwtRequestFilter@2d492132, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d0f4afc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2f12345c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@68dce23e, org.springframework.security.web.session.SessionManagementFilter@56cc400b, org.springframework.security.web.access.ExceptionTranslationFilter@6e0ff407, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@37b4ad2f]
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:51:33 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:51:33 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Context refreshed
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner -
+				Scanning for api listing references
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_1
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_1
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_1
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_1
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_1
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_2
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_2
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_2
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_2
+2021-02-25 11:51:33 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_2
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_3
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_3
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_3
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_3
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_3
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_4
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_4
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_4
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_4
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_5
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_5
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_5
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_4
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_5
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_6
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_6
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_6
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_6
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_7
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_7
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_7
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_5
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_7
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_8
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_8
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_8
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_6
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_8
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_9
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_9
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_9
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_10
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_10
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_9
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_7
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_10
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_11
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_11
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_10
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_8
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_11
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_12
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_12
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_11
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_9
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_12
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_13
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_13
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_12
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_10
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_13
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_14
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_14
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_13
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_11
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_14
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_15
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_15
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_14
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_12
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_15
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_16
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_16
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_15
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_13
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_16
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_17
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_17
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_16
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_14
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_17
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_18
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_18
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_17
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_15
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_18
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_19
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_19
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_18
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_16
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_19
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_20
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_20
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_19
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_17
+2021-02-25 11:51:34 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_20
+2021-02-25 11:51:34 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Started AcharyaUniversityApplication in 12.577 seconds (JVM running for 14.515)
+2021-02-25 11:51:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 11:51:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2021-02-25 11:51:36 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -
+				Completed initialization in 2 ms
+2021-02-25 11:51:51 [http-nio-8080-exec-3] WARN  com.au.config.JwtRequestFilter -
+				JWT Token does not begin with Bearer String
+2021-02-25 11:51:51 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver -
+				Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2021-02-25 11:51:55 [http-nio-8080-exec-5] WARN  com.au.config.JwtRequestFilter -
+				JWT Token does not begin with Bearer String
+2021-02-25 11:52:25 [http-nio-8080-exec-7] WARN  com.au.config.JwtRequestFilter -
+				JWT Token does not begin with Bearer String
+2021-02-25 11:52:57 [Thread-4] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:52:57 [Thread-4] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:52:57 [Thread-4] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2021-02-25 11:52:57 [Thread-4] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
+2021-02-25 11:52:57 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Starting AcharyaUniversityApplication using Java 15.0.1 on DESKTOP-6O58SQ9 with PID 11216 (D:\Acharya\New folder\Acharya_University\Acharya_University\target\classes started by Admin in D:\Acharya\New folder\Acharya_University\Acharya_University)
+2021-02-25 11:52:57 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				No active profile set, falling back to default profiles: default
+2021-02-25 11:52:57 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 74 ms. Found 22 JPA repository interfaces.
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@56857476' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8080 (http)
+2021-02-25 11:52:58 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:52:58 [restartedMain] INFO  o.a.catalina.core.StandardService -
+				Starting service [Tomcat]
+2021-02-25 11:52:58 [restartedMain] INFO  o.a.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 11:52:58 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+				Root WebApplicationContext: initialization completed in 1128 ms
+2021-02-25 11:52:58 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper -
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 11:52:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-2 - Starting...
+2021-02-25 11:52:58 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-2 - Start completed.
+2021-02-25 11:52:58 [restartedMain] INFO  org.hibernate.dialect.Dialect -
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 11:52:58 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:52:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2021-02-25 11:52:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/v2/api-docs'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/ui'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-resources/**'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/security'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-ui.html'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/webjars/**'] with []
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6dc4ecd3, org.springframework.security.web.context.SecurityContextPersistenceFilter@241287e7, org.springframework.security.web.header.HeaderWriterFilter@6561b2d0, org.springframework.security.web.authentication.logout.LogoutFilter@264ed845, com.au.config.JwtRequestFilter@34a41274, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@420564f4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2a9aa956, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@499a8adb, org.springframework.security.web.session.SessionManagementFilter@64bb09c3, org.springframework.security.web.access.ExceptionTranslationFilter@4b05be97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@ad975f9]
+2021-02-25 11:52:59 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:52:59 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:52:59 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 11:52:59 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Context refreshed
+2021-02-25 11:52:59 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2021-02-25 11:52:59 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner -
+				Scanning for api listing references
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_1
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_1
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_1
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_1
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_1
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_2
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_2
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_2
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_2
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_2
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_3
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_3
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_3
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_3
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_3
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_4
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_4
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_4
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_4
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_5
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_5
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_5
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_4
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_5
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_6
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_6
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_6
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_6
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_7
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_7
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_7
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_5
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_7
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_8
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_8
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_8
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_6
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_8
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_9
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_9
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_9
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_10
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_10
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_9
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_7
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_10
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_11
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_11
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_10
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_8
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_11
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_12
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_12
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_11
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_9
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_12
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_13
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_13
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_12
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_10
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_13
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_14
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_14
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_13
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_11
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_14
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_15
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_15
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_14
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_12
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_15
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_16
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_16
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_15
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_13
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_16
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_17
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_17
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_16
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_14
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_17
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_18
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_18
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_17
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_15
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_18
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_19
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_19
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_18
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_16
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_19
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_20
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_20
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_19
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_17
+2021-02-25 11:53:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_20
+2021-02-25 11:53:00 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Started AcharyaUniversityApplication in 3.218 seconds (JVM running for 100.451)
+2021-02-25 11:53:00 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener -
+				Condition evaluation unchanged
+2021-02-25 11:53:01 [Thread-8] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:53:01 [Thread-8] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:53:01 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-2 - Shutdown initiated...
+2021-02-25 11:53:01 [Thread-8] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-2 - Shutdown completed.
+2021-02-25 11:53:01 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Starting AcharyaUniversityApplication using Java 15.0.1 on DESKTOP-6O58SQ9 with PID 11216 (D:\Acharya\New folder\Acharya_University\Acharya_University\target\classes started by Admin in D:\Acharya\New folder\Acharya_University\Acharya_University)
+2021-02-25 11:53:01 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				No active profile set, falling back to default profiles: default
+2021-02-25 11:53:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 11:53:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 56 ms. Found 22 JPA repository interfaces.
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@252a1124' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8080 (http)
+2021-02-25 11:53:02 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:53:02 [restartedMain] INFO  o.a.catalina.core.StandardService -
+				Starting service [Tomcat]
+2021-02-25 11:53:02 [restartedMain] INFO  o.a.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 11:53:02 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+				Root WebApplicationContext: initialization completed in 615 ms
+2021-02-25 11:53:02 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper -
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 11:53:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-3 - Starting...
+2021-02-25 11:53:02 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-3 - Start completed.
+2021-02-25 11:53:02 [restartedMain] INFO  org.hibernate.dialect.Dialect -
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 11:53:02 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:53:02 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2021-02-25 11:53:02 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/v2/api-docs'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/ui'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-resources/**'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/security'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-ui.html'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/webjars/**'] with []
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cd75345, org.springframework.security.web.context.SecurityContextPersistenceFilter@3044cb04, org.springframework.security.web.header.HeaderWriterFilter@439b12cc, org.springframework.security.web.authentication.logout.LogoutFilter@10c4ebe1, com.au.config.JwtRequestFilter@23eabfd7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f3f63ce, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5430a116, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18a2c12e, org.springframework.security.web.session.SessionManagementFilter@45f2fbcc, org.springframework.security.web.access.ExceptionTranslationFilter@2db20479, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e38b9d5]
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:53:03 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:53:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Context refreshed
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2021-02-25 11:53:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-02-25 11:53:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -
+				Initializing Servlet 'dispatcherServlet'
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner -
+				Scanning for api listing references
+2021-02-25 11:53:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet -
+				Completed initialization in 1 ms
+2021-02-25 11:53:03 [http-nio-8080-exec-1] WARN  com.au.config.JwtRequestFilter -
+				JWT Token does not begin with Bearer String
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_1
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_1
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_1
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_1
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_1
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_2
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_2
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_2
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_2
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_2
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_3
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_3
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_3
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_3
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_3
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_4
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_4
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_4
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_4
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_5
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_5
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_5
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_4
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_5
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_6
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_6
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_6
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_6
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_7
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_7
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_7
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_5
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_7
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_8
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_8
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_8
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_6
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_8
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_9
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_9
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_9
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_10
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_10
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_9
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_7
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_10
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_11
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_11
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_10
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_8
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_11
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_12
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_12
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_11
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_9
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_12
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_13
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_13
+2021-02-25 11:53:03 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_12
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_10
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_13
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_14
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_14
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_13
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_11
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_14
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_15
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_15
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_14
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_12
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_15
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_16
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_16
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_15
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_13
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_16
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_17
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_17
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_16
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_14
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_17
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_18
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_18
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_17
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_15
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_18
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_19
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_19
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_18
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_16
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_19
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_20
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_20
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_19
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_17
+2021-02-25 11:53:04 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_20
+2021-02-25 11:53:04 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Started AcharyaUniversityApplication in 2.627 seconds (JVM running for 104.175)
+2021-02-25 11:53:04 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener -
+				Condition evaluation unchanged
+2021-02-25 11:53:29 [http-nio-8080-exec-2] WARN  com.au.config.JwtRequestFilter -
+				JWT Token does not begin with Bearer String
+2021-02-25 11:53:39 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin -
+				Application shutdown requested.
+2021-02-25 11:53:39 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 11:53:39 [RMI TCP Connection(7)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:53:39 [RMI TCP Connection(7)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-3 - Shutdown initiated...
+2021-02-25 11:53:39 [RMI TCP Connection(7)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-3 - Shutdown completed.
+2021-02-25 11:59:53 [background-preinit] INFO  o.h.validator.internal.util.Version -
+				HV000001: Hibernate Validator 6.1.7.Final
+2021-02-25 11:59:53 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Starting AcharyaUniversityApplication using Java 15.0.1 on DESKTOP-6O58SQ9 with PID 13092 (D:\Acharya\New folder\Acharya_University\Acharya_University\target\classes started by Admin in D:\Acharya\New folder\Acharya_University\Acharya_University)
+2021-02-25 11:59:53 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				No active profile set, falling back to default profiles: default
+2021-02-25 11:59:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -
+				Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-02-25 11:59:53 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor -
+				For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-02-25 11:59:54 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-02-25 11:59:55 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -
+				Finished Spring Data repository scanning in 103 ms. Found 22 JPA repository interfaces.
+2021-02-25 11:59:55 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2b25e8d3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:59:55 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -
+				Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-02-25 11:59:55 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat initialized with port(s): 8080 (http)
+2021-02-25 11:59:55 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Initializing ProtocolHandler ["http-nio-8080"]
+2021-02-25 11:59:55 [restartedMain] INFO  o.a.catalina.core.StandardService -
+				Starting service [Tomcat]
+2021-02-25 11:59:55 [restartedMain] INFO  o.a.catalina.core.StandardEngine -
+				Starting Servlet engine: [Apache Tomcat/9.0.41]
+2021-02-25 11:59:55 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -
+				Initializing Spring embedded WebApplicationContext
+2021-02-25 11:59:55 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -
+				Root WebApplicationContext: initialization completed in 1992 ms
+2021-02-25 11:59:56 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper -
+				HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-02-25 11:59:56 [restartedMain] INFO  org.hibernate.Version -
+				HHH000412: Hibernate ORM core version 5.4.27.Final
+2021-02-25 11:59:56 [restartedMain] INFO  o.h.annotations.common.Version -
+				HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-02-25 11:59:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Starting...
+2021-02-25 11:59:56 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Start completed.
+2021-02-25 11:59:56 [restartedMain] INFO  org.hibernate.dialect.Dialect -
+				HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2021-02-25 11:59:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -
+				HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-02-25 11:59:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 11:59:58 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer -
+				LiveReload server is running on port 35729
+2021-02-25 11:59:58 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -
+				spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/v2/api-docs'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/ui'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-resources/**'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/configuration/security'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/swagger-ui.html'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure Ant [pattern='/webjars/**'] with []
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain -
+				Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b7efce6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3af8ac85, org.springframework.security.web.header.HeaderWriterFilter@73f68db5, org.springframework.security.web.authentication.logout.LogoutFilter@4571b1a9, com.au.config.JwtRequestFilter@f43c302, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@79f239c3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@545bbc37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ba7a366, org.springframework.security.web.session.SessionManagementFilter@1a46d1c7, org.springframework.security.web.access.ExceptionTranslationFilter@70e17e54, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b417f10]
+2021-02-25 11:59:59 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping -
+				Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-02-25 11:59:59 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Initializing ExecutorService 'applicationTaskExecutor'
+2021-02-25 12:00:00 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol -
+				Starting ProtocolHandler ["http-nio-8080"]
+2021-02-25 12:00:00 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer -
+				Tomcat started on port(s): 8080 (http) with context path ''
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Context refreshed
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper -
+				Found 1 custom documentation plugin(s)
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner -
+				Scanning for api listing references
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_1
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_1
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_1
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_1
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_1
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_2
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_2
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_2
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_2
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_2
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_3
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_3
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_3
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_3
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_3
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_4
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_4
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_4
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_4
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_5
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_5
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_5
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_4
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_5
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_6
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_6
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_6
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_6
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_7
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_7
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_7
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_5
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_7
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_8
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_8
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_8
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_6
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_8
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_9
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_9
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_9
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_10
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_10
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_9
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_7
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_10
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_11
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_11
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_10
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_8
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_11
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_12
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_12
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_11
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_9
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_12
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_13
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_13
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_12
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_10
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_13
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_14
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_14
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_13
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_11
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_14
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_15
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_15
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_14
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_12
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_15
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_16
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_16
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_15
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_13
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_16
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_17
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_17
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_16
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_14
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_17
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_18
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_18
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_17
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_15
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_18
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_19
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_19
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_18
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_16
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_19
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: deleteUsingDELETE_20
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: getUsingGET_20
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: listAllUsingGET_19
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: saveCourseUsingPOST_17
+2021-02-25 12:00:00 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator -
+				Generating unique operation named: updateUsingPUT_20
+2021-02-25 12:00:00 [restartedMain] INFO  com.au.AcharyaUniversityApplication -
+				Started AcharyaUniversityApplication in 7.378 seconds (JVM running for 8.596)
+2021-02-25 12:00:59 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin -
+				Application shutdown requested.
+2021-02-25 12:00:59 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor -
+				Shutting down ExecutorService 'applicationTaskExecutor'
+2021-02-25 12:00:59 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -
+				Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-02-25 12:00:59 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown initiated...
+2021-02-25 12:00:59 [RMI TCP Connection(3)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource -
+				HikariPool-1 - Shutdown completed.
