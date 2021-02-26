@@ -32,18 +32,18 @@ public class MajorStrucController {
 	@Autowired
 	private Major_struc_Service major_service;
 	
-	@PostMapping("/major_Struc1")
+	@PostMapping("/major_Struc")
 	public Major_struc saveCourse(@RequestBody @Valid Major_struc major) {
 		return major_service.save_Major_struc(major);
 	}
 	
-	@GetMapping("/major_Struc2")
+	@GetMapping("/major_Struc")
 	public List<Major_struc> listAll(){
 		return major_service.listAll();
 	}
 
 	
-	@GetMapping("/major_Struc3/{id}")
+	@GetMapping("/major_Struc/{id}")
 	public ResponseEntity<Major_struc> get(@PathVariable Integer id) {
 	    try {	    	
 	    	Major_struc major = major_service.get(id);
@@ -54,7 +54,7 @@ public class MajorStrucController {
 	}
 
 	
-	@PutMapping("/major_Struc4/{id}")
+	@PutMapping("/major_Struc/{id}")
 	public ResponseEntity<Academic_year> update(@RequestBody @Valid Major_struc major, @PathVariable Integer id) {
 	    try {
 	    	Major_struc existProduct = major_service.get(id);
@@ -66,7 +66,7 @@ public class MajorStrucController {
 	}
 	
 	
-	@DeleteMapping("/major_Struc5/{id}")
+	@DeleteMapping("/major_Struc/{id}")
 	public void delete(@PathVariable Integer id) {
 		major_service.delete(id);
 	}

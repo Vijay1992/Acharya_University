@@ -23,8 +23,6 @@ import com.au.model.JwtResponse;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
-
-	
 	Logger log = LoggerFactory.getLogger(JwtAuthenticationController.class);
 	
 	@Autowired

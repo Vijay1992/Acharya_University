@@ -32,18 +32,18 @@ public class GraduationController {
 	@Autowired
 	private Graduation_Service gs;
 	
-	@PostMapping("/graduation1")
+	@PostMapping("/graduation")
 	public Graduation saveCourse(@RequestBody @Valid Graduation g) {
 		return gs.save_Graduation(g);
 	}
 	
-	@GetMapping("/graduation2")
+	@GetMapping("/graduation")
 	public List<Graduation> listAll(){
 		return gs.listAll();
 	}
 
 	
-	@GetMapping("/graduation3/{id}")
+	@GetMapping("/graduation/{id}")
 	public ResponseEntity<Graduation> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -55,7 +55,7 @@ public class GraduationController {
 	    }      
 	}
 
-	@PutMapping("/graduation4/{id}")
+	@PutMapping("/graduation/{id}")
 	public ResponseEntity<Graduation> update(@RequestBody Graduation g, @PathVariable Integer id) {
 	    try {
 	    	Graduation existProduct = gs.get(id);
@@ -67,7 +67,7 @@ public class GraduationController {
 	}
 	
 	
-	@DeleteMapping("/graduation5/{id}")
+	@DeleteMapping("/graduation/{id}")
 	public void delete(@PathVariable Integer id) {
 		gs.delete(id);
 	}

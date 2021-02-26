@@ -27,18 +27,18 @@ public class CourseBranchAssignmentController {
 	private CourseBranchAssignmentService cba_service;
 	
 	
-	@PostMapping("/CourseBranchAssignment1")
+	@PostMapping("/CourseBranchAssignment")
 	public CourseBranchAssignment saveCourse(@RequestBody @Valid CourseBranchAssignment cba) {
 		return cba_service.save_CourseBranchAssignment(cba);
 	}
 	
-	@GetMapping("/CourseBranchAssignment2")
+	@GetMapping("/CourseBranchAssignment")
 	public List<CourseBranchAssignment> listAll(){
 		return cba_service.listAll();
 	}
 
 	
-	@GetMapping("/CourseBranchAssignment3/{id}")
+	@GetMapping("/CourseBranchAssignment/{id}")
 	public ResponseEntity<CourseBranchAssignment> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -50,7 +50,7 @@ public class CourseBranchAssignmentController {
 	    }      
 	}
 
-	@PutMapping("/CourseBranchAssignment4/{id}")
+	@PutMapping("/CourseBranchAssignment/{id}")
 	public ResponseEntity<CourseBranchAssignment> update(@RequestBody CourseBranchAssignment cb, @PathVariable Integer id) {
 	    try {
 	    	CourseBranchAssignment existProduct = cba_service.get(id);
@@ -62,7 +62,7 @@ public class CourseBranchAssignmentController {
 	}
 	
 	
-	@DeleteMapping("/CourseBranchAssignment5/{id}")
+	@DeleteMapping("/CourseBranchAssignment/{id}")
 	public void delete(@PathVariable Integer id) {
 		cba_service.delete(id);
 	}

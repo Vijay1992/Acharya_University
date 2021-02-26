@@ -29,18 +29,18 @@ public class CourseBranchController {
 	@Autowired
 	private CourseBranchService cb_service;
 	
-	@PostMapping("/coursebranch1")
+	@PostMapping("/coursebranch")
 	public CourseBranch saveCourse(@RequestBody @Valid CourseBranch cb) {
 		return cb_service.save_CourseBranch(cb);
 	}
 	
-	@GetMapping("/coursebranch2")
+	@GetMapping("/coursebranch")
 	public List<CourseBranch> listAll(){
 		return cb_service.listAll();
 	}
 
 	
-	@GetMapping("/coursebranch3/{id}")
+	@GetMapping("/coursebranch/{id}")
 	public ResponseEntity<CourseBranch> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -52,7 +52,7 @@ public class CourseBranchController {
 	    }      
 	}
 
-	@PutMapping("/coursebranch4/{id}")
+	@PutMapping("/coursebranch/{id}")
 	public ResponseEntity<CourseBranch> update(@RequestBody CourseBranch cb, @PathVariable Integer id) {
 	    try {
 	    	CourseBranch existProduct = cb_service.get(id);
@@ -64,7 +64,7 @@ public class CourseBranchController {
 	}
 	
 	
-	@DeleteMapping("/coursebranch5/{id}")
+	@DeleteMapping("/coursebranch/{id}")
 	public void delete(@PathVariable Integer id) {
 		cb_service.delete(id);
 	}

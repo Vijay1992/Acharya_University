@@ -28,18 +28,18 @@ public class FeeAdmissionCategoryController {
 	private FeeAdmissionCategoryService fee_service;
 	
 	
-	@PostMapping("/FeeAdmissionCategory1")
+	@PostMapping("/FeeAdmissionCategory")
 	public FeeAdmissionCategory saveCourse(@RequestBody @Valid FeeAdmissionCategory fee) {
 		return fee_service.saveFeeAdmissionCategory(fee);
 	}
 	
-	@GetMapping("/FeeAdmissionCategory2")
+	@GetMapping("/FeeAdmissionCategory")
 	public List<FeeAdmissionCategory> listAll(){
 		return fee_service.listAll();
 	}
 
 	
-	@GetMapping("/FeeAdmissionCategory3/{id}")
+	@GetMapping("/FeeAdmissionCategory/{id}")
 	public ResponseEntity<FeeAdmissionCategory> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -51,7 +51,7 @@ public class FeeAdmissionCategoryController {
 	    }      
 	}
 
-	@PutMapping("/FeeAdmissionCategory4/{id}")
+	@PutMapping("/FeeAdmissionCategory/{id}")
 	public ResponseEntity<FeeAdmissionCategory> update(@RequestBody FeeAdmissionCategory fee, @PathVariable Integer id) {
 	    try {
 	    	FeeAdmissionCategory existProduct = fee_service.get(id);
@@ -63,7 +63,7 @@ public class FeeAdmissionCategoryController {
 	}
 	
 	
-	@DeleteMapping("/FeeAdmissionCategory5/{id}")
+	@DeleteMapping("/FeeAdmissionCategory/{id}")
 	public void delete(@PathVariable Integer id) {
 		fee_service.delete(id);
 	}

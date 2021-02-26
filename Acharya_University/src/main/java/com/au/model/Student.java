@@ -38,18 +38,14 @@ public class Student {
 	@NotBlank
 	private String address;
 
-	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date dob;
 	
-	@NotBlank
 	private String phone_no;
 	
-	@NotBlank
-	@Email
+	
 	private String email;
 	
-	@NotBlank
 	@DateTimeFormat(pattern = "yyyy-mm-dd")
 	private Date doa;
 	
@@ -65,154 +61,40 @@ public class Student {
 	@NotNull
 	private Integer school_id;//FK
 
+	/*
+	private Integer student_id;
+	private String student_name;
+	private String father_name;
+	private String mother_name;
+	private String guardian_name;
+	private String correspondance_address;
+	private String permanent_address;
+	private String auid;
+	private Date created_date;
+	private Date modified_date;
+	private Date doa;
+	private Date dob;
+	private Integer phone_no;
+	private Integer stu_mobile_no;
+	private Integer father_mobile_no;
+	private Integer mother_mobile_no;
+	private Integer guardian_mobile_no;
+	private String stu_email;
+	private String father_email;
+	private String mother_email;
+	private String guardian_email;
+	private String student_f_name;
+	private String student_l_name;
+	private Integer school_id;
+	private String nationality;
+	private String religion;
+	private String aadharcard;
+	private String joining_semester;
+
+	private String city;
+	private String state;
+	private String country;
+	private int pincode;
 	
-	
-	public Student() {
-		super();
-	}
-
-	
-	public int getStudent_id() {
-		return student_id;
-	}
-
-
-
-	public void setStudent_id(int student_id) {
-		this.student_id = student_id;
-	}
-
-
-
-	public String getAuid() {
-		return auid;
-	}
-
-
-
-	public void setAuid(String auid) {
-		this.auid = auid;
-	}
-
-
-
-	public String getStudent_f_name() {
-		return student_f_name;
-	}
-
-
-
-	public void setStudent_f_name(String student_f_name) {
-		this.student_f_name = student_f_name;
-	}
-
-
-
-	public String getStudent_l_name() {
-		return student_l_name;
-	}
-
-
-
-	public void setStudent_l_name(String student_l_name) {
-		this.student_l_name = student_l_name;
-	}
-
-
-
-	public String getAddress() {
-		return address;
-	}
-
-
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-
-
-	public Date getDob() {
-		return dob;
-	}
-
-
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
-
-
-	public String getPhone_no() {
-		return phone_no;
-	}
-
-
-
-	public void setPhone_no(String phone_no) {
-		this.phone_no = phone_no;
-	}
-
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-
-	public Date getDoa() {
-		return doa;
-	}
-
-
-
-	public void setDoa(Date doa) {
-		this.doa = doa;
-	}
-
-
-
-	public Date getCreated_Date() {
-		return created_Date;
-	}
-
-
-
-	public void setCreated_Date(Date created_Date) {
-		this.created_Date = created_Date;
-	}
-
-
-
-	public Date getModified_Date() {
-		return modified_Date;
-	}
-
-
-
-	public void setModified_Date(Date modified_Date) {
-		this.modified_Date = modified_Date;
-	}
-
-
-
-	public Integer getSchool_id() {
-		return school_id;
-	}
-
-
-
-	public void setSchool_id(Integer school_id) {
-		this.school_id = school_id;
-	}
-
-
+	*/
 }

@@ -37,19 +37,19 @@ public class Organization_Controller {
 			@ApiResponse(code = 500,message = "INTERNAL SERVER ERROR")				
 	})
 */
-	@PostMapping("/org1")
+	@PostMapping("/org")
 	public Organization saveCourse(@RequestBody @Valid Organization org) {
 		
 		return org_service.save_Org(org);
 	}
 	
-	@GetMapping("/org2")
+	@GetMapping("/org")
 	public List<Organization> listAll(){
 		return org_service.listAll();
 	}
 
 	
-	@GetMapping("/org3/{id}")
+	@GetMapping("/org/{id}")
 	public ResponseEntity<Organization> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -61,7 +61,7 @@ public class Organization_Controller {
 	    }      
 	}
 
-	@PutMapping("/org4/{id}")
+	@PutMapping("/org/{id}")
 	public ResponseEntity<Organization> update(@RequestBody Organization org, @PathVariable Integer id) {
 	    try {
 	    	Organization existProduct = org_service.get(id);
@@ -73,7 +73,7 @@ public class Organization_Controller {
 	}
 	
 	
-	@DeleteMapping("/org5/{id}")
+	@DeleteMapping("/org/{id}")
 	public void delete(@PathVariable Integer id) {
 		org_service.delete(id);
 	}

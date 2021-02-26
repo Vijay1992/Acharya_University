@@ -43,18 +43,18 @@ public class AcademicYearController {
 			@ApiResponse(code = 500,message = "INTERNAL SERVER ERROR")				
 	})
 */
-	@PostMapping("/academic_year1")
+	@PostMapping("/academic_year")
 	public Academic_year saveCourse(@RequestBody @Valid Academic_year ac_year) {
 		return ac_service.save_Academic_Year(ac_year);
 	}
 	
-	@GetMapping("/academic_year2")
+	@GetMapping("/academic_year")
 	public List<Academic_year> listAll(){
 		return ac_service.listAll();
 	}
 
 	
-	@GetMapping("/academic_year3/{id}")
+	@GetMapping("/academic_year/{id}")
 	public ResponseEntity<Academic_year> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -66,7 +66,7 @@ public class AcademicYearController {
 	    }      
 	}
 
-	@PutMapping("/academic_year4/{id}")
+	@PutMapping("/academic_year/{id}")
 	public ResponseEntity<Academic_year> update(@RequestBody Academic_year ac_year, @PathVariable Integer id) {
 	    try {
 	    	Academic_year existProduct = ac_service.get(id);
@@ -78,7 +78,7 @@ public class AcademicYearController {
 	}
 	
 	
-	@DeleteMapping("/academic_year5/{id}")
+	@DeleteMapping("/academic_year/{id}")
 	public void delete(@PathVariable Integer id) {
 		ac_service.delete(id);
 	}

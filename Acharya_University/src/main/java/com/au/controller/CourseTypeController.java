@@ -30,17 +30,17 @@ public class CourseTypeController {
 	@Autowired
 	private Course_Type_Service course_type_service;
 	
-	@GetMapping("/course_type1")
+	@GetMapping("/course_type")
 	public List<Course_Type> listAll(){
 		return course_type_service.listAll();		
 	}
 	
-	@PostMapping("/course_type2")
+	@PostMapping("/course_type")
 	public Course_Type save_Course_Type(@RequestBody @Valid Course_Type course_type) {
 		return course_type_service.save_Course_Type(course_type);
 	}
 	
-	@GetMapping("/course_type3/{id}")
+	@GetMapping("/course_type/{id}")
 	public ResponseEntity<Course_Type> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -51,7 +51,7 @@ public class CourseTypeController {
 	    }      
 	}
 
-	@PutMapping("/course_type4/{id}")
+	@PutMapping("/course_type/{id}")
 	public ResponseEntity<?> update(@RequestBody @Valid Course_Type course, @PathVariable Integer id) {
 	    try {
 	    	Course_Type existProduct = course_type_service.get(id);
@@ -63,7 +63,7 @@ public class CourseTypeController {
 	}
 	
 	
-	@DeleteMapping("/course_type5/{id}")
+	@DeleteMapping("/course_type/{id}")
 	public void delete(@PathVariable Integer id) {
 		course_type_service.delete(id);
 	}

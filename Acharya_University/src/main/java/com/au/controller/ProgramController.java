@@ -31,18 +31,18 @@ public class ProgramController {
 	@Autowired
 	private Program_Service pro_service;
 	
-	@PostMapping("/program1")
+	@PostMapping("/program")
 	public Program saveCourse(@RequestBody @Valid Program p) {
 		return pro_service.save_Program(p);
 	}
 	
-	@GetMapping("/program2")
+	@GetMapping("/program")
 	public List<Program> listAll(){
 		return pro_service.listAll();
 	}
 
 	
-	@GetMapping("/program3/{id}")
+	@GetMapping("/program/{id}")
 	public ResponseEntity<Program> get(@PathVariable Integer id) {
 	    try {
 	    	
@@ -53,7 +53,7 @@ public class ProgramController {
 	    }      
 	}
 
-	@PutMapping("/program4/{id}")
+	@PutMapping("/program/{id}")
 	public ResponseEntity<Program> update(@RequestBody @Valid Program p, @PathVariable Integer id) {
 	    try {
 	    	Program existProduct = pro_service.get(id);
@@ -65,7 +65,7 @@ public class ProgramController {
 	}
 	
 	
-	@DeleteMapping("/program5/{id}")
+	@DeleteMapping("/program/{id}")
 	public void delete(@PathVariable Integer id) {
 		pro_service.delete(id);
 	}
