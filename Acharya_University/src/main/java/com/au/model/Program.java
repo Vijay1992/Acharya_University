@@ -21,96 +21,102 @@ public class Program {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int program_id;
-	
-	@Column(name = "program_name")
-	@NotBlank
-	private String program_name;
-	
-	@Column(name = "program_code")
-	@NotBlank
-	private String program_code;
+	private Integer program_id;
 
-	@Column(name = "created_date",updatable = false)
-	@Temporal(TemporalType.TIMESTAMP)	
+	private String program_name;
+	private Integer program_type_id;//fk
+	private String program_short_name;
+	
+	private Integer school_id;//fk
+	private Integer created_by;
+	private Integer modified_by;
+
+	@Column(updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
 
-	@Column(name = "modified_date")
-	@Temporal(TemporalType.TIMESTAMP)	
+	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-
-	/**
-	 * @return the program_id
-	 */
-	public int getProgram_id() {
+	private Boolean active;
+	public Program() {
+		super();
+	}
+	public Program(Integer program_id, String program_name, Integer program_type_id, String program_short_name,
+			Integer school_id, Integer created_by, Integer modified_by, Date created_date, Date modified_date,
+			Boolean active) {
+		super();
+		this.program_id = program_id;
+		this.program_name = program_name;
+		this.program_type_id = program_type_id;
+		this.program_short_name = program_short_name;
+		this.school_id = school_id;
+		this.created_by = created_by;
+		this.modified_by = modified_by;
+		this.created_date = created_date;
+		this.modified_date = modified_date;
+		this.active = active;
+	}
+	public Integer getProgram_id() {
 		return program_id;
 	}
-
-	/**
-	 * @param program_id the program_id to set
-	 */
-	public void setProgram_id(int program_id) {
+	public void setProgram_id(Integer program_id) {
 		this.program_id = program_id;
 	}
-
-	/**
-	 * @return the program_name
-	 */
 	public String getProgram_name() {
 		return program_name;
 	}
-
-	/**
-	 * @param program_name the program_name to set
-	 */
 	public void setProgram_name(String program_name) {
 		this.program_name = program_name;
 	}
-
-	/**
-	 * @return the program_code
-	 */
-	public String getProgram_code() {
-		return program_code;
+	public Integer getProgram_type_id() {
+		return program_type_id;
 	}
-
-	/**
-	 * @param program_code the program_code to set
-	 */
-	public void setProgram_code(String program_code) {
-		this.program_code = program_code;
+	public void setProgram_type_id(Integer program_type_id) {
+		this.program_type_id = program_type_id;
 	}
-
-	/**
-	 * @return the created_date
-	 */
+	public String getProgram_short_name() {
+		return program_short_name;
+	}
+	public void setProgram_short_name(String program_short_name) {
+		this.program_short_name = program_short_name;
+	}
+	public Integer getSchool_id() {
+		return school_id;
+	}
+	public void setSchool_id(Integer school_id) {
+		this.school_id = school_id;
+	}
+	public Integer getCreated_by() {
+		return created_by;
+	}
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+	public Integer getModified_by() {
+		return modified_by;
+	}
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
+	}
 	public Date getCreated_date() {
 		return created_date;
 	}
-
-	/**
-	 * @param created_date the created_date to set
-	 */
 	public void setCreated_date(Date created_date) {
 		this.created_date = created_date;
 	}
-
-	/**
-	 * @return the modified_date
-	 */
 	public Date getModified_date() {
 		return modified_date;
 	}
-
-	/**
-	 * @param modified_date the modified_date to set
-	 */
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
 	}
-
-	
+	public Boolean getActive() {
+		return active;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 	
 }

@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.au.model.Program;
-import com.au.service.Program_Service;
+import com.au.model.Schools;
+import com.au.service.ProgramService;
 
 @RestController
 @RequestMapping("/api")
@@ -29,44 +30,61 @@ public class ProgramController {
 	Logger log = LoggerFactory.getLogger(ProgramController.class);
 
 	@Autowired
-	private Program_Service pro_service;
-	
-	@PostMapping("/program")
+	private ProgramService pro_service;
+
+	@PostMapping("/Program")
 	public Program saveCourse(@RequestBody @Valid Program p) {
-		return pro_service.save_Program(p);
+		return pro_service.save_ProgramType(p);
 	}
-	
-	@GetMapping("/program")
-	public List<Program> listAll(){
+
+	@GetMapping("/Program")
+	public List<Program> listAll() {
 		return pro_service.listAll();
 	}
 
-	
-	@GetMapping("/program/{id}")
+	@GetMapping("/Program/{id}")
 	public ResponseEntity<Program> get(@PathVariable Integer id) {
-	    try {
-	    	
-	    	Program product = pro_service.get(id);
-	        return new ResponseEntity<Program>(product, HttpStatus.OK);
-	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<Program>(HttpStatus.NOT_FOUND);
-	    }      
+		try {
+
+			Program product = pro_service.get(id);
+			return new ResponseEntity<Program>(product, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<Program>(HttpStatus.NOT_FOUND);
+		}
 	}
 
-	@PutMapping("/program/{id}")
+	@PutMapping("/Program/{id}")
 	public ResponseEntity<Program> update(@RequestBody @Valid Program p, @PathVariable Integer id) {
-	    try {
-	    	Program existProduct = pro_service.get(id);
-	    	pro_service.save_Program(p);
-	        return new ResponseEntity<>(HttpStatus.OK);
-	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	    }      
+		try {
+			Program existProduct = pro_service.get(id);
+			pro_service.save_ProgramType(p);
+			return new ResponseEntity<>(HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
-	
-	
-	@DeleteMapping("/program/{id}")
+
+	@DeleteMapping("/Program/{id}")
 	public void delete(@PathVariable Integer id) {
 		pro_service.delete(id);
 	}
+
+	@GetMapping("/Program1/{id}")
+	public List<Program> get1(@PathVariable Integer id) {
+		//try {
+
+			List<Program> school = pro_service.findById(id);
+			/*
+			 * return new List<Program>(school, HttpStatus.OK); } catch
+			 * (NoSuchElementException e) { return new List<Program>(HttpStatus.NOT_FOUND);
+			 * }
+			 */
+			return school;
+	}
+	
+	@GetMapping("pro1/{id}")
+	public Integer countRecords(@PathVariable("id")Integer id) {
+		return pro_service.countRecords(id);
+	}
+	
 }

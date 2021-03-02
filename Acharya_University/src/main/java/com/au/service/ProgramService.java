@@ -8,31 +8,43 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.Program;
-import com.au.repository.Program_Repository;
+import com.au.model.Schools;
+import com.au.repository.ProgramRepository;
 
 @Service
 @Transactional
-public class Program_Service {
+public class ProgramService {
 	
 	@Autowired
-	private Program_Repository pro_repo;
+	private ProgramRepository pro_repo;
 	
 	public List<Program> listAll(){
 		return pro_repo.findAll();
 	}
 	
-	public Program save_Program(Program academic) {
+	public Program save_ProgramType(Program academic) {
 		return pro_repo.save(academic);
 	}
 	
 	public Program get(Integer id) {
         return pro_repo.findById(id)
-        		.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));
+        		.orElseThrow(()-> new ResourceNotFoundException("ProgramType Not Found:"+id));
     }
      
     public void delete(Integer id) {
     	Program p=pro_repo.findById(id)
-    	.orElseThrow(()-> new ResourceNotFoundException("Program Not Found:"+id));    	
+    	.orElseThrow(()-> new ResourceNotFoundException("ProgramType Not Found:"+id));    	
     	pro_repo.delete(p);
     }
+
+	public List<Program> findById(Integer id) {
+		// TODO Auto-generated method stub
+		System.out.println("hello");
+		return pro_repo.findBySchoolId(id);
+	}
+
+	public Integer countRecords(Integer id) {
+		// TODO Auto-generated method stub
+		return pro_repo.countRecords(id);
+	}
 }
