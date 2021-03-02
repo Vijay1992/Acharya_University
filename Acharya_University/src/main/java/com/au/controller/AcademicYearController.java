@@ -25,7 +25,7 @@ import com.au.model.Academic_year;
 //import com.au.model.Course;
 import com.au.service.AcademicYearService;
 
-//@CrossOrigin(origins =  "http://localhost:3000")
+@CrossOrigin(origins =  "http://localhost:3000/")
 @RestController
 @RequestMapping("/api")
 public class AcademicYearController {

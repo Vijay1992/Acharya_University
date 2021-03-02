@@ -3,6 +3,9 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.model.CourseBranchAssignment;
 import com.au.service.CourseBranchAssignmentService;
 
-//@CrossOrigin(origins =  "http://localhost:3000")
+@CrossOrigin(origins =  "http://localhost:3000/")
 @RestController
 @RequestMapping("/api")
 public class CourseBranchAssignmentController {
 
+	Logger log = LoggerFactory.getLogger(CourseBranchAssignmentController.class);
+	
 	@Autowired
 	private CourseBranchAssignmentService cba_service;
 	
