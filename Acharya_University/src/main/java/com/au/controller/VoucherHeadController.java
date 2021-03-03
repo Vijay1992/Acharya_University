@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,45 +19,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.au.model.CourseAssignment;
-import com.au.service.CourseAssignmentService;
+
+import com.au.model.VoucherHead;
+import com.au.service.VoucherHeadService;
 @CrossOrigin(origins =  "http://localhost:3000")
 @RestController
 @RequestMapping("/api")
-public class CourseAssignmentController 
-{
+public class VoucherHeadController {
 
+	Logger log = LoggerFactory.getLogger(VoucherHeadController.class);
+	
 	@Autowired
-	private CourseAssignmentService cas;		
+	private VoucherHeadService vs;
 	
-	@PostMapping("/courseassignment")
-	public CourseAssignment saveCourse(@RequestBody @Valid CourseAssignment c) {
-		return cas.save_CourseAssignment(c);
+	@PostMapping("/VoucherHead")
+	public VoucherHead saveCourse(@RequestBody @Valid VoucherHead ac_year) {
+		return vs.save_VoucherHead(ac_year);
 	}
 	
-	@GetMapping("/courseassignment")
-	public List<CourseAssignment> listAll(){
-		return cas.listAll();
+	@GetMapping("/VoucherHead")
+	public List<VoucherHead> listAll(){
+		return vs.listAll();
 	}
 
 	
-	@GetMapping("/courseassignment/{id}")
-	public ResponseEntity<CourseAssignment> get(@PathVariable Integer id) {
+	@GetMapping("/VoucherHead/{id}")
+	public ResponseEntity<VoucherHead> get(@PathVariable Integer id) {
 	    try {
 	    	
-	    	CourseAssignment c = cas.get(id);
-	        return new ResponseEntity<CourseAssignment>(c, HttpStatus.OK);
+	    	VoucherHead product = vs.get(id);
+	        return new ResponseEntity<VoucherHead>(product, HttpStatus.OK);
 	        
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<CourseAssignment>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<VoucherHead>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 
-	@PutMapping("/courseassignment/{id}")
-	public ResponseEntity<CourseAssignment> update(@RequestBody CourseAssignment c, @PathVariable Integer id) {
+	@PutMapping("/VoucherHead/{id}")
+	public ResponseEntity<VoucherHead> update(@RequestBody VoucherHead ac_year, @PathVariable Integer id) {
 	    try {
-	    	CourseAssignment existProduct = cas.get(id);
-	    	cas.save_CourseAssignment(c);
+	    	VoucherHead existProduct = vs.get(id);
+	    	vs.save_VoucherHead(ac_year);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -63,10 +67,9 @@ public class CourseAssignmentController
 	}
 	
 	
-	@DeleteMapping("/courseassignment/{id}")
+	@DeleteMapping("/VoucherHead/{id}")
 	public void delete(@PathVariable Integer id) {
-		cas.delete(id);
+		vs.delete(id);
 	}
-	
 	
 }

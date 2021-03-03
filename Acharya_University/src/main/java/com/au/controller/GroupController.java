@@ -2,9 +2,9 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,45 +17,47 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.au.model.CourseAssignment;
-import com.au.service.CourseAssignmentService;
-@CrossOrigin(origins =  "http://localhost:3000")
+
+import com.au.model.Group;
+import com.au.service.GroupService;
+
 @RestController
 @RequestMapping("/api")
-public class CourseAssignmentController 
-{
+public class GroupController {
+
+	Logger log = LoggerFactory.getLogger(GroupController.class);
 
 	@Autowired
-	private CourseAssignmentService cas;		
+	private GroupService gs;
 	
-	@PostMapping("/courseassignment")
-	public CourseAssignment saveCourse(@RequestBody @Valid CourseAssignment c) {
-		return cas.save_CourseAssignment(c);
+	@PostMapping("/group")
+	public Group saveCourse(@RequestBody @Valid Group g) {
+		return gs.save_Group(g);
 	}
 	
-	@GetMapping("/courseassignment")
-	public List<CourseAssignment> listAll(){
-		return cas.listAll();
+	@GetMapping("/group")
+	public List<Group> listAll(){
+		return gs.listAll();
 	}
 
 	
-	@GetMapping("/courseassignment/{id}")
-	public ResponseEntity<CourseAssignment> get(@PathVariable Integer id) {
+	@GetMapping("/group/{id}")
+	public ResponseEntity<Group> get(@PathVariable Integer id) {
 	    try {
 	    	
-	    	CourseAssignment c = cas.get(id);
-	        return new ResponseEntity<CourseAssignment>(c, HttpStatus.OK);
+	    	Group g = gs.get(id);
+	        return new ResponseEntity<Group>(g, HttpStatus.OK);
 	        
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<CourseAssignment>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<Group>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 
-	@PutMapping("/courseassignment/{id}")
-	public ResponseEntity<CourseAssignment> update(@RequestBody CourseAssignment c, @PathVariable Integer id) {
+	@PutMapping("/group/{id}")
+	public ResponseEntity<Group> update(@RequestBody Group g, @PathVariable Integer id) {
 	    try {
-	    	CourseAssignment existProduct = cas.get(id);
-	    	cas.save_CourseAssignment(c);
+	    	Group existProduct = gs.get(id);
+	    	gs.save_Group(g);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
 	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -63,10 +65,11 @@ public class CourseAssignmentController
 	}
 	
 	
-	@DeleteMapping("/courseassignment/{id}")
+	@DeleteMapping("/group/{id}")
 	public void delete(@PathVariable Integer id) {
-		cas.delete(id);
+		gs.delete(id);
 	}
+	
 	
 	
 }
