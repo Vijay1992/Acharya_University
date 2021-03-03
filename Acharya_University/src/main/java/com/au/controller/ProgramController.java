@@ -61,4 +61,15 @@ public class ProgramController {
 	public void delete(@PathVariable Integer id) {
 		pro_service.delete(id);
 	}
+
+	@GetMapping("/Program1/{id}")
+	public List<Program> get1(@PathVariable Integer id) {
+		List<Program> school = (List<Program>) pro_service.findById(id);
+		return school;
+	}
+
+	@GetMapping("programCount/{id}")
+	public Integer countRecords(@PathVariable("id") Integer id) {
+		return pro_service.countRecords(id);
+	}
 }

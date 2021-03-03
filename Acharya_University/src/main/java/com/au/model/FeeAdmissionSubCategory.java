@@ -13,50 +13,47 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_course_type")
-public class CourseType {
+@Table(name = "tbl_au_fee_admission_sub_category")
+public class FeeAdmissionSubCategory {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer course_type_id;
-	private String course_type_name;
-	private String course_type_code;
-
+	private Integer fee_admission_sub_category_id;
+	private String fee_admission_sub_category_name;
+	private String fee_admission_sub_category_short_name;
 	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-
 	private Integer created_by;
 	private Integer modified_by;
 	private Boolean active;
 
-	public Integer getCourse_type_id() {
-		return course_type_id;
+	public Integer getFee_admission_sub_category_id() {
+		return fee_admission_sub_category_id;
 	}
 
-	public void setCourse_type_id(Integer course_type_id) {
-		this.course_type_id = course_type_id;
+	public void setFee_admission_sub_category_id(Integer fee_admission_sub_category_id) {
+		this.fee_admission_sub_category_id = fee_admission_sub_category_id;
 	}
 
-	public String getCourse_type_name() {
-		return course_type_name;
+	public String getFee_admission_sub_category_name() {
+		return fee_admission_sub_category_name;
 	}
 
-	public void setCourse_type_name(String course_type_name) {
-		this.course_type_name = course_type_name;
+	public void setFee_admission_sub_category_name(String fee_admission_sub_category_name) {
+		this.fee_admission_sub_category_name = fee_admission_sub_category_name;
 	}
 
-	public String getCourse_type_code() {
-		return course_type_code;
+	public String getFee_admission_sub_category_short_name() {
+		return fee_admission_sub_category_short_name;
 	}
 
-	public void setCourse_type_code(String course_type_code) {
-		this.course_type_code = course_type_code;
+	public void setFee_admission_sub_category_short_name(String fee_admission_sub_category_short_name) {
+		this.fee_admission_sub_category_short_name = fee_admission_sub_category_short_name;
 	}
 
 	public Date getCreated_date() {

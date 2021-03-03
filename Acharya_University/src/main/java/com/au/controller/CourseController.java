@@ -60,4 +60,17 @@ public class CourseController {
 	public void delete(@PathVariable Integer id) {
 		course_service.delete(id);
 	}
+	
+	
+	
+	@GetMapping("/Course1/{id}")
+	public ResponseEntity<Course> get1(@PathVariable Integer id) {
+		try {
+
+			Course product = course_service.find(id);
+			return new ResponseEntity<Course>(product, HttpStatus.OK);
+		} catch (NoSuchElementException e) {
+			return new ResponseEntity<Course>(HttpStatus.NOT_FOUND);
+		}
+	}
 }

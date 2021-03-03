@@ -13,60 +13,43 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_program")
-public class Program {
+@Table(name = "tbl_au_voucher_head")
+public class VoucherHead {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer program_id;
-
-	private String program_name;
-	private Integer program_type_id;
-	private String program_short_name;
-	private Integer school_id;
+	private Integer voucher_head_id;
+	private String voucher_head;
+	private Integer school_id;    //fk
+	private Integer tally_id;     //fk
 	private Integer created_by;
 	private Integer modified_by;
-	private Boolean active;
-
 	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+	private Boolean active;
+	private String ledger_type;
+	private String voucher_type;
+	private String budget_head;
 
-	public Integer getProgram_id() {
-		return program_id;
+	public Integer getVoucher_head_id() {
+		return voucher_head_id;
 	}
 
-	public void setProgram_id(Integer program_id) {
-		this.program_id = program_id;
+	public void setVoucher_head_id(Integer voucher_head_id) {
+		this.voucher_head_id = voucher_head_id;
 	}
 
-	public String getProgram_name() {
-		return program_name;
+	public String getVoucher_head() {
+		return voucher_head;
 	}
 
-	public void setProgram_name(String program_name) {
-		this.program_name = program_name;
-	}
-
-	public Integer getProgram_type_id() {
-		return program_type_id;
-	}
-
-	public void setProgram_type_id(Integer program_type_id) {
-		this.program_type_id = program_type_id;
-	}
-
-	public String getProgram_short_name() {
-		return program_short_name;
-	}
-
-	public void setProgram_short_name(String program_short_name) {
-		this.program_short_name = program_short_name;
+	public void setVoucher_head(String voucher_head) {
+		this.voucher_head = voucher_head;
 	}
 
 	public Integer getSchool_id() {
@@ -75,6 +58,14 @@ public class Program {
 
 	public void setSchool_id(Integer school_id) {
 		this.school_id = school_id;
+	}
+
+	public Integer getTally_id() {
+		return tally_id;
+	}
+
+	public void setTally_id(Integer tally_id) {
+		this.tally_id = tally_id;
 	}
 
 	public Integer getCreated_by() {
@@ -115,6 +106,30 @@ public class Program {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	public String getLedger_type() {
+		return ledger_type;
+	}
+
+	public void setLedger_type(String ledger_type) {
+		this.ledger_type = ledger_type;
+	}
+
+	public String getVoucher_type() {
+		return voucher_type;
+	}
+
+	public void setVoucher_type(String voucher_type) {
+		this.voucher_type = voucher_type;
+	}
+
+	public String getBudget_head() {
+		return budget_head;
+	}
+
+	public void setBudget_head(String budget_head) {
+		this.budget_head = budget_head;
 	}
 
 }

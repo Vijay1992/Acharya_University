@@ -35,6 +35,7 @@ public class FeeAdmissionCategory {
 	private Integer modified_by;
 	private Boolean active;
 	private Boolean is_check;
+	private String sub_category_applicable;
 
 	public Integer getFee_admission_category_id() {
 		return fee_admission_category_id;
@@ -106,6 +107,14 @@ public class FeeAdmissionCategory {
 
 	public void setIs_check(Boolean is_check) {
 		this.is_check = is_check;
+	}
+
+	public String getSub_category_applicable() {
+		return sub_category_applicable;
+	}
+
+	public void setSub_category_applicable(String sub_category_applicable) {
+		this.sub_category_applicable = sub_category_applicable;
 	}
 
 }

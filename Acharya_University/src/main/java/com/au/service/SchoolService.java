@@ -34,4 +34,11 @@ public class SchoolService {
     	.orElseThrow(()-> new ResourceNotFoundException("School id Not Found:"+id));    	
     	sc_repo.delete(s);
     }
+
+	/*
+	 * public Schools findById(Integer id) { // TODO Auto-generated method stub
+	 * return sc_repo.findById123(id); }
+	 */
+   
+    
 }

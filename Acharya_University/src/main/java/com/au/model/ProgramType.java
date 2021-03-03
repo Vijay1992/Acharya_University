@@ -13,17 +13,14 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_program")
-public class Program {
+@Table(name = "tbl_au_program_type")
+public class ProgramType {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer program_id;
-
-	private String program_name;
 	private Integer program_type_id;
-	private String program_short_name;
-	private Integer school_id;
+	private String program_type_name;
+	private String program_type_code;
 	private Integer created_by;
 	private Integer modified_by;
 	private Boolean active;
@@ -37,22 +34,6 @@ public class Program {
 	@UpdateTimestamp
 	private Date modified_date;
 
-	public Integer getProgram_id() {
-		return program_id;
-	}
-
-	public void setProgram_id(Integer program_id) {
-		this.program_id = program_id;
-	}
-
-	public String getProgram_name() {
-		return program_name;
-	}
-
-	public void setProgram_name(String program_name) {
-		this.program_name = program_name;
-	}
-
 	public Integer getProgram_type_id() {
 		return program_type_id;
 	}
@@ -61,20 +42,20 @@ public class Program {
 		this.program_type_id = program_type_id;
 	}
 
-	public String getProgram_short_name() {
-		return program_short_name;
+	public String getProgram_type_name() {
+		return program_type_name;
 	}
 
-	public void setProgram_short_name(String program_short_name) {
-		this.program_short_name = program_short_name;
+	public void setProgram_type_name(String program_type_name) {
+		this.program_type_name = program_type_name;
 	}
 
-	public Integer getSchool_id() {
-		return school_id;
+	public String getProgram_type_code() {
+		return program_type_code;
 	}
 
-	public void setSchool_id(Integer school_id) {
-		this.school_id = school_id;
+	public void setProgram_type_code(String program_type_code) {
+		this.program_type_code = program_type_code;
 	}
 
 	public Integer getCreated_by() {
@@ -93,6 +74,14 @@ public class Program {
 		this.modified_by = modified_by;
 	}
 
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 	public Date getCreated_date() {
 		return created_date;
 	}
@@ -109,12 +98,6 @@ public class Program {
 		this.modified_date = modified_date;
 	}
 
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
-	}
+	
 
 }

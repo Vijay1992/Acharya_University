@@ -34,4 +34,9 @@ public class CourseService {
 		this.course_repository.delete(existingCourse);
 	}
 
+	
+	public Course find(Integer id) {
+		return course_repository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Course id Not Found:" + id));
+	}
 }

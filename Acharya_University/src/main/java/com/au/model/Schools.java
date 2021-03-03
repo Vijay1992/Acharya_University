@@ -43,32 +43,10 @@ public class Schools {
 	private String mobile_no;
 	private String school_color;
 	private Integer creditap_production_id;
-	public Schools() {
-		super();
-	}
-	public Schools(Integer school_id, String school_name, Date created_date, Date modified_date, Integer org_id,
-			String school_name_short, String school_desc, Integer created_by, Integer modified_by, boolean active,
-			boolean week_off, String job_type, String ref_no, String email_id, String mobile_no, String school_color,
-			Integer creditap_production_id) {
-		super();
-		this.school_id = school_id;
-		this.school_name = school_name;
-		this.created_date = created_date;
-		this.modified_date = modified_date;
-		this.org_id = org_id;
-		this.school_name_short = school_name_short;
-		this.school_desc = school_desc;
-		this.created_by = created_by;
-		this.modified_by = modified_by;
-		this.active = active;
-		this.week_off = week_off;
-		this.job_type = job_type;
-		this.ref_no = ref_no;
-		this.email_id = email_id;
-		this.mobile_no = mobile_no;
-		this.school_color = school_color;
-		this.creditap_production_id = creditap_production_id;
-	}
+	private Integer board_unique_id;     //Fk
+	
+	
+	
 	public Integer getSchool_id() {
 		return school_id;
 	}
@@ -171,7 +149,11 @@ public class Schools {
 	public void setCreditap_production_id(Integer creditap_production_id) {
 		this.creditap_production_id = creditap_production_id;
 	}
-	
-	
+	public Integer getBoard_unique_id() {
+		return board_unique_id;
+	}
+	public void setBoard_unique_id(Integer board_unique_id) {
+		this.board_unique_id = board_unique_id;
+	}
 	
 }

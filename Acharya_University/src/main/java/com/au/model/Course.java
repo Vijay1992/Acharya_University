@@ -48,6 +48,7 @@ public class Course {
 	private boolean active;
 	private String ref_details;
 	private String hod_email;
+	private Integer school_id;
 
 	public Integer getCourse_id() {
 		return course_id;
@@ -231,6 +232,14 @@ public class Course {
 
 	public void setHod_email(String hod_email) {
 		this.hod_email = hod_email;
+	}
+
+	public Integer getSchool_id() {
+		return school_id;
+	}
+
+	public void setSchool_id(Integer school_id) {
+		this.school_id = school_id;
 	}
 
 }
