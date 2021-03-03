@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.model.CourseAssignment;
 import com.au.service.CourseAssignmentService;
 
+
 @RestController
 @RequestMapping("/api")
 public class CourseAssignmentController {

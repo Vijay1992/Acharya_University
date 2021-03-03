@@ -24,12 +24,14 @@ public class AcharyaUniversityApplication {
 		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/**"))
 				.apis(RequestHandlerSelectors.basePackage("com.au.controller")).build();
 	}
+	
 	/*
 	 * @Bean public WebMvcConfigurer corsConfigurer() { return new
 	 * WebMvcConfigurer() {
 	 * 
 	 * @Override public void addCorsMappings(CorsRegistry registry) {
-	 * registry.addMapping("/api/AcademicYear").allowedOrigins(
-	 * "http://localhost:8080"); } }; }
+	 * registry.addMapping("/api/AcademicYear")
+	 * .allowedOrigins("http://localhost:3000"); } }; }
 	 */
+	 
 }
