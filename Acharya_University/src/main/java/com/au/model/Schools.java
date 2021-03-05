@@ -23,7 +23,7 @@ public class Schools {
 
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
- 	@Column(updatable = false)
+	@Column(updatable = false)
 	private Date created_date;
 
 	@UpdateTimestamp
@@ -43,117 +43,141 @@ public class Schools {
 	private String mobile_no;
 	private String school_color;
 	private Integer creditap_production_id;
-	private Integer board_unique_id;     //Fk
-	
-	
-	
+
 	public Integer getSchool_id() {
 		return school_id;
 	}
+
 	public void setSchool_id(Integer school_id) {
 		this.school_id = school_id;
 	}
+
 	public String getSchool_name() {
 		return school_name;
 	}
+
 	public void setSchool_name(String school_name) {
 		this.school_name = school_name;
 	}
+
 	public Date getCreated_date() {
 		return created_date;
 	}
+
 	public void setCreated_date(Date created_date) {
 		this.created_date = created_date;
 	}
+
 	public Date getModified_date() {
 		return modified_date;
 	}
+
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
 	}
+
 	public Integer getOrg_id() {
 		return org_id;
 	}
+
 	public void setOrg_id(Integer org_id) {
 		this.org_id = org_id;
 	}
+
 	public String getSchool_name_short() {
 		return school_name_short;
 	}
+
 	public void setSchool_name_short(String school_name_short) {
 		this.school_name_short = school_name_short;
 	}
+
 	public String getSchool_desc() {
 		return school_desc;
 	}
+
 	public void setSchool_desc(String school_desc) {
 		this.school_desc = school_desc;
 	}
+
 	public Integer getCreated_by() {
 		return created_by;
 	}
+
 	public void setCreated_by(Integer created_by) {
 		this.created_by = created_by;
 	}
+
 	public Integer getModified_by() {
 		return modified_by;
 	}
+
 	public void setModified_by(Integer modified_by) {
 		this.modified_by = modified_by;
 	}
+
 	public boolean isActive() {
 		return active;
 	}
+
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 	public boolean isWeek_off() {
 		return week_off;
 	}
+
 	public void setWeek_off(boolean week_off) {
 		this.week_off = week_off;
 	}
+
 	public String getJob_type() {
 		return job_type;
 	}
+
 	public void setJob_type(String job_type) {
 		this.job_type = job_type;
 	}
+
 	public String getRef_no() {
 		return ref_no;
 	}
+
 	public void setRef_no(String ref_no) {
 		this.ref_no = ref_no;
 	}
+
 	public String getEmail_id() {
 		return email_id;
 	}
+
 	public void setEmail_id(String email_id) {
 		this.email_id = email_id;
 	}
+
 	public String getMobile_no() {
 		return mobile_no;
 	}
+
 	public void setMobile_no(String mobile_no) {
 		this.mobile_no = mobile_no;
 	}
+
 	public String getSchool_color() {
 		return school_color;
 	}
+
 	public void setSchool_color(String school_color) {
 		this.school_color = school_color;
 	}
+
 	public Integer getCreditap_production_id() {
 		return creditap_production_id;
 	}
+
 	public void setCreditap_production_id(Integer creditap_production_id) {
 		this.creditap_production_id = creditap_production_id;
 	}
-	public Integer getBoard_unique_id() {
-		return board_unique_id;
-	}
-	public void setBoard_unique_id(Integer board_unique_id) {
-		this.board_unique_id = board_unique_id;
-	}
-	
+
 }

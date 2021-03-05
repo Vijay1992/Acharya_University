@@ -20,7 +20,7 @@ public class Ledger {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer ledger_id;
 
-	private Integer group_id;
+	private Integer group_id;         //Fk
 	private String ledger_name;
 	private String remarks;
 	private Integer room_status;

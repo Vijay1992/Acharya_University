@@ -62,13 +62,13 @@ public class ProgramController {
 		pro_service.delete(id);
 	}
 
-	@GetMapping("/Program1/{id}")
-	public List<Program> get1(@PathVariable Integer id) {
+	@GetMapping("/FetchProgram/{id}")     //(Behalf of schoolid)
+	public List<Program> fetch(@PathVariable Integer id) {
 		List<Program> school = (List<Program>) pro_service.findById(id);
 		return school;
 	}
 
-	@GetMapping("programCount/{id}")
+	@GetMapping("ProgramCount/{id}")     //no of count behalf of schoolid
 	public Integer countRecords(@PathVariable("id") Integer id) {
 		return pro_service.countRecords(id);
 	}

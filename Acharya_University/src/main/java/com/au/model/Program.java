@@ -26,6 +26,9 @@ public class Program {
 	private Integer school_id;
 	private Integer created_by;
 	private Integer modified_by;
+	private Integer number_of_years;
+	private Integer number_of_semester;
+	private Integer graduation_id;
 	private Boolean active;
 
 	@Column(updatable = false)
@@ -36,6 +39,29 @@ public class Program {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+
+	public Program() {
+		super();
+	}
+
+	public Program(Integer program_id, String program_name, Integer program_type_id, String program_short_name,
+			Integer school_id, Integer created_by, Integer modified_by, Integer number_of_years,
+			Integer number_of_semester, Integer graduation_id, Boolean active, Date created_date, Date modified_date) {
+		super();
+		this.program_id = program_id;
+		this.program_name = program_name;
+		this.program_type_id = program_type_id;
+		this.program_short_name = program_short_name;
+		this.school_id = school_id;
+		this.created_by = created_by;
+		this.modified_by = modified_by;
+		this.number_of_years = number_of_years;
+		this.number_of_semester = number_of_semester;
+		this.graduation_id = graduation_id;
+		this.active = active;
+		this.created_date = created_date;
+		this.modified_date = modified_date;
+	}
 
 	public Integer getProgram_id() {
 		return program_id;
@@ -93,6 +119,38 @@ public class Program {
 		this.modified_by = modified_by;
 	}
 
+	public Integer getNumber_of_years() {
+		return number_of_years;
+	}
+
+	public void setNumber_of_years(Integer number_of_years) {
+		this.number_of_years = number_of_years;
+	}
+
+	public Integer getNumber_of_semester() {
+		return number_of_semester;
+	}
+
+	public void setNumber_of_semester(Integer number_of_semester) {
+		this.number_of_semester = number_of_semester;
+	}
+
+	public Integer getGraduation_id() {
+		return graduation_id;
+	}
+
+	public void setGraduation_id(Integer graduation_id) {
+		this.graduation_id = graduation_id;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
+
 	public Date getCreated_date() {
 		return created_date;
 	}
@@ -107,14 +165,6 @@ public class Program {
 
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
-	}
-
-	public Boolean getActive() {
-		return active;
-	}
-
-	public void setActive(Boolean active) {
-		this.active = active;
 	}
 
 }

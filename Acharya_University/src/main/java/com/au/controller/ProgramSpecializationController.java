@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.au.model.Program;
 import com.au.model.ProgramSpecialization;
 import com.au.service.ProgramSpecializationService;
 
@@ -72,13 +70,13 @@ public class ProgramSpecializationController {
 		pss_service.delete(id);
 	}
 	
-	@GetMapping("/ProgramSpecial/{id1}/{id2}")
-	public List<ProgramSpecialization> get1(@PathVariable Integer id1, @PathVariable Integer id2) {
+	@GetMapping("/FetchProgramSpecialization/{id1}/{id2}")      //(Behalf of schoolid and programid)
+	public List<ProgramSpecialization> fetch(@PathVariable Integer id1, @PathVariable Integer id2) {
 		List<ProgramSpecialization> school = (List<ProgramSpecialization>) pss_service.findById(id1,id2);
 		return school;
 	}
 
-	@GetMapping("ProgramCount/{id}")
+	@GetMapping("ProgramSpecializationCount/{id}")      //no of count behalf of schoolid
 	public Integer countRecords(@PathVariable("id") Integer id) {
 		return pss_service.countRecords(id);
 	}
