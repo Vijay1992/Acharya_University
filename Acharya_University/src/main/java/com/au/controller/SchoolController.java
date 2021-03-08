@@ -33,7 +33,7 @@ public class SchoolController {
 	private School_Service sc_service;
 	
 	@PostMapping("/school")
-	public Schools saveCourse(@RequestBody @Valid Schools school) {
+	public Schools saveSchool(@RequestBody @Valid Schools school) {
 		return sc_service.save_School(school);
 	}
 	

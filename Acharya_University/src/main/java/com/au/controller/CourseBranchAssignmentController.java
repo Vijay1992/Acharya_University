@@ -33,7 +33,7 @@ public class CourseBranchAssignmentController {
 	
 	
 	@PostMapping("/CourseBranchAssignment")
-	public CourseBranchAssignment saveCourse(@RequestBody @Valid CourseBranchAssignment cba) {
+	public CourseBranchAssignment saveCourseBranchAssignment(@RequestBody @Valid CourseBranchAssignment cba) {
 		return cba_service.save_CourseBranchAssignment(cba);
 	}
 	

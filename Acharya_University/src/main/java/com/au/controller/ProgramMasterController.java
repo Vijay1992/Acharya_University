@@ -33,7 +33,7 @@ public class ProgramMasterController {
 	private Program_Master_Service pr_service;
 	
 	@PostMapping("/program_master")
-	public Program_Master saveCourse(@RequestBody @Valid Program_Master pm) {
+	public Program_Master saveProgramMaster(@RequestBody @Valid Program_Master pm) {
 		return pr_service.save_Program_Master(pm);
 	}
 	

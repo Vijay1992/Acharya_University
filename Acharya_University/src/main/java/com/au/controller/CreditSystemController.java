@@ -33,7 +33,7 @@ public class CreditSystemController {
 	
 	
 	@PostMapping("/Credit_System")
-	public Credit_System saveCourse(@RequestBody @Valid Credit_System credit_sym) {
+	public Credit_System saveCreditSystem(@RequestBody @Valid Credit_System credit_sym) {
 		return credit_service.save_Credit_System(credit_sym);
 	}
 	

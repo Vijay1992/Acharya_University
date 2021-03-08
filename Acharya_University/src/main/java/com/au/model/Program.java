@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotBlank;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -40,12 +38,17 @@ public class Program {
 	@UpdateTimestamp
 	private Date modified_date;
 	private Boolean active;
+	
+	private Integer graduation_id;//FK
+	
+	private Integer number_of_years;
+	private Integer number_of_semester;
 	public Program() {
 		super();
 	}
 	public Program(Integer program_id, String program_name, Integer program_type_id, String program_short_name,
 			Integer school_id, Integer created_by, Integer modified_by, Date created_date, Date modified_date,
-			Boolean active) {
+			Boolean active, Integer graduation_id, Integer number_of_years, Integer number_of_semester) {
 		super();
 		this.program_id = program_id;
 		this.program_name = program_name;
@@ -57,6 +60,9 @@ public class Program {
 		this.created_date = created_date;
 		this.modified_date = modified_date;
 		this.active = active;
+		this.graduation_id = graduation_id;
+		this.number_of_years = number_of_years;
+		this.number_of_semester = number_of_semester;
 	}
 	public Integer getProgram_id() {
 		return program_id;
@@ -118,5 +124,27 @@ public class Program {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+	public Integer getGraduation_id() {
+		return graduation_id;
+	}
+	public void setGraduation_id(Integer graduation_id) {
+		this.graduation_id = graduation_id;
+	}
+	public Integer getNumber_of_years() {
+		return number_of_years;
+	}
+	public void setNumber_of_years(Integer number_of_years) {
+		this.number_of_years = number_of_years;
+	}
+	public Integer getNumber_of_semester() {
+		return number_of_semester;
+	}
+	public void setNumber_of_semester(Integer number_of_semester) {
+		this.number_of_semester = number_of_semester;
+	}
+	
+	
+	
+	
 	
 }

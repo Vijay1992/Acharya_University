@@ -2,9 +2,7 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.model.Student;
 import com.au.service.Student_Service;
 
-
 @RestController
 @RequestMapping("/api")
 public class StudentController {
@@ -32,7 +29,7 @@ public class StudentController {
 	private Student_Service stu_service;
 	
 	@PostMapping("/stu")
-	public Student saveCourse(@RequestBody @Valid Student s) {
+	public Student saveStudent(@RequestBody @Valid Student s) {
 		return stu_service.save_Student(s);
 	}
 	
@@ -56,7 +53,7 @@ public class StudentController {
 	@PutMapping("/stu/{id}")
 	public ResponseEntity<Student> update(@RequestBody @Valid Student s, @PathVariable Integer id) {
 	    try {
-	    	Student existProduct = stu_service.get(id);
+			Student existProduct = stu_service.get(id);
 	    	stu_service.save_Student(s);
 	        return new ResponseEntity<>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {

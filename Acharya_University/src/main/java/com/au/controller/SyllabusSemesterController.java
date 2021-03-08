@@ -33,7 +33,7 @@ public class SyllabusSemesterController {
 	private Syllabus_Semester_Service sy_service;
 	
 	@PostMapping("/Syllabus_Semester")
-	public Syllabus_semester saveCourse(@RequestBody @Valid Syllabus_semester sylllabus) {
+	public Syllabus_semester saveSyllabusSemester(@RequestBody @Valid Syllabus_semester sylllabus) {
 		return sy_service.save_Syllabus_Semester(sylllabus);
 	}
 	

@@ -8,4 +8,6 @@ import com.au.model.Department;
 @Repository
 public interface DepartmentRepository extends JpaRepository<Department, Integer>{
 
+	
+	
 }

@@ -29,7 +29,7 @@ public class ProgramSpecilizationController {
 	private ProgramSpecilizationService pr_service;
 	
 	@PostMapping("/ProgramSpecilization")
-	public ProgramSpecilization saveCourse(@RequestBody @Valid ProgramSpecilization p) {
+	public ProgramSpecilization saveProgramSpecilization(@RequestBody @Valid ProgramSpecilization p) {
 		return pr_service.save_ProgramSpecilization(p);
 	}
 	
@@ -67,5 +67,18 @@ public class ProgramSpecilizationController {
 	public void delete(@PathVariable Integer id) {
 		pr_service.delete(id);
 	}
+	
+	@GetMapping("/FetchProgramSpecialization/{id1}/{id2}")      //(Behalf of schoolid and programid)
+	public List<ProgramSpecilization> fetch(@PathVariable Integer id1, @PathVariable Integer id2) {
+	List<ProgramSpecilization> school = (List<ProgramSpecilization>) pr_service.findById(id1,id2);
+	return school;
+	}
+
+	@GetMapping("ProgramSpecializationCount/{id}")      //no of count behalf of schoolid
+	public Integer countRecords(@PathVariable("id") Integer id) {
+	return pr_service.countRecords(id);
+	}
+	
+
 	
 }

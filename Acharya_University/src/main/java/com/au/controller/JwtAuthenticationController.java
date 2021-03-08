@@ -1,7 +1,6 @@
 package com.au.controller;
 
 import java.util.Objects;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,7 @@ import com.au.model.JwtResponse;
 @RestController
 @CrossOrigin
 public class JwtAuthenticationController {
+	
 	Logger log = LoggerFactory.getLogger(JwtAuthenticationController.class);
 	
 	@Autowired
@@ -44,7 +44,6 @@ public class JwtAuthenticationController {
 				.loadUserByUsername(authenticationRequest.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
-
 		return ResponseEntity.ok(new JwtResponse(token));
 	}
 

@@ -33,7 +33,7 @@ public class MajorStrucController {
 	private Major_struc_Service major_service;
 	
 	@PostMapping("/major_Struc")
-	public Major_struc saveCourse(@RequestBody @Valid Major_struc major) {
+	public Major_struc saveMajorStruc(@RequestBody @Valid Major_struc major) {
 		return major_service.save_Major_struc(major);
 	}
 	

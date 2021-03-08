@@ -31,7 +31,7 @@ public class YearSemController {
 	private Year_Sem_Service sem_service;
 	
 	@PostMapping("/Year_Sem")
-	public Year_Sem saveCourse(@RequestBody @Valid Year_Sem year) {
+	public Year_Sem saveYearSem(@RequestBody @Valid Year_Sem year) {
 		return sem_service.save_Year_Sem(year);
 	}
 	

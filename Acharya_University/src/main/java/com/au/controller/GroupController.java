@@ -31,7 +31,7 @@ public class GroupController {
 	private GroupService gs;
 	
 	@PostMapping("/group")
-	public Group saveCourse(@RequestBody @Valid Group g) {
+	public Group saveGroup(@RequestBody @Valid Group g) {
 		return gs.save_Group(g);
 	}
 	

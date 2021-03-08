@@ -31,7 +31,7 @@ public class TallyHeadController {
 	
 	
 	@PostMapping("/TallyHead")
-	public TallyHead saveCourse(@RequestBody @Valid TallyHead tally) {
+	public TallyHead saveTally(@RequestBody @Valid TallyHead tally) {
 		return tally_service.save_TallyHead(tally);
 	}
 	

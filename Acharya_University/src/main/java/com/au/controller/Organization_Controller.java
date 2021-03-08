@@ -38,7 +38,7 @@ public class Organization_Controller {
 	})
 */
 	@PostMapping("/org")
-	public Organization saveCourse(@RequestBody @Valid Organization org) {
+	public Organization saveOrganization(@RequestBody @Valid Organization org) {
 		
 		return org_service.save_Org(org);
 	}

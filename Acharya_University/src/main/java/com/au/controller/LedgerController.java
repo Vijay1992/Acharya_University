@@ -33,7 +33,7 @@ public class LedgerController {
 	Logger log = LoggerFactory.getLogger(LedgerController.class);
 	
 	@PostMapping("/Ledger")
-	public Ledger saveCourse(@RequestBody @Valid Ledger l) {
+	public Ledger saveLedger(@RequestBody @Valid Ledger l) {
 		return ls.save_Ledger(l);
 	}
 	
@@ -73,4 +73,15 @@ public class LedgerController {
 	}
 	
 	
+	
+	@GetMapping("/Ledger1/{grp_id}")
+	public List<Ledger> getLedgerByGroupId(@PathVariable Integer grp_id) {
+	   return ls.getLedgerByGroupId(grp_id);
+	}
+	
+	
+	@GetMapping("/Ledger2/{grp_id}")
+	public Integer CountLedgerByGroupId(@PathVariable Integer grp_id) {
+		return ls.CountLedgerByGroupId(grp_id);
+	}
 }

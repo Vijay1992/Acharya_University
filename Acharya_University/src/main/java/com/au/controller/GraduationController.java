@@ -33,7 +33,7 @@ public class GraduationController {
 	private Graduation_Service gs;
 	
 	@PostMapping("/graduation")
-	public Graduation saveCourse(@RequestBody @Valid Graduation g) {
+	public Graduation saveGraduation(@RequestBody @Valid Graduation g) {
 		return gs.save_Graduation(g);
 	}
 	

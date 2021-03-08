@@ -3,11 +3,8 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +32,6 @@ public class AcademicYearController {
 	@Autowired
 	private AcademicYearService ac_service;
 	
-//	Logger log = LoggerFactory.getLogger(Course.class);
 /*	@ApiOperation(value = "Create User",notes = "Create New User",tags = {"User Management"})
 	@ApiResponses(value = {
 			@ApiResponse(code = 200,message = " Academic Year created Successfully"),
@@ -44,10 +40,8 @@ public class AcademicYearController {
 	})
 */
 	
-	
-	
 	@PostMapping("/academic_year")
-	public Academic_year saveCourse(@RequestBody @Valid Academic_year ac_year) {
+	public Academic_year saveAcademicYear(@RequestBody @Valid Academic_year ac_year) {
 		return ac_service.save_Academic_Year(ac_year);
 	}
 	
@@ -86,5 +80,16 @@ public class AcademicYearController {
 		ac_service.delete(id);
 	}
 	
+	
+	@GetMapping("academic_year1/{ac_year_id}")
+	public List<Object[]> getAcademicYearByACYearId(@PathVariable Integer ac_year_id) {
+		return (List<Object[]>) ac_service.getAcademicYearByACYearId(ac_year_id);
+	}
+	
+	
+	@GetMapping("academic_year2")
+	public Integer countRecords() {
+		return ac_service.countRecords();
+	}
 	
 }

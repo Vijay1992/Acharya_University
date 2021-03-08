@@ -33,7 +33,7 @@ public class ProgramController {
 	private ProgramService pro_service;
 
 	@PostMapping("/Program")
-	public Program saveCourse(@RequestBody @Valid Program p) {
+	public Program saveProgram(@RequestBody @Valid Program p) {
 		return pro_service.save_ProgramType(p);
 	}
 

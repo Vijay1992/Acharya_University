@@ -32,7 +32,7 @@ public class ProgramTypeController {
 	private ProgramTypeService pr_service;
 	
 	@PostMapping("/ProgramType")
-	public ProgramType saveCourse(@RequestBody @Valid ProgramType pr) {
+	public ProgramType saveProgramType(@RequestBody @Valid ProgramType pr) {
 		return pr_service.save_ProgramType(pr);
 	}
 	

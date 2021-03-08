@@ -36,4 +36,20 @@ public class ProgramSpecilizationService {
         		.orElseThrow(()-> new ResourceNotFoundException("ProgramSpecilization Not Found:"+id));    	
     	ps_repo.delete(ay);
     }
+    
+    
+    public List<ProgramSpecilization> get1(){
+		return ps_repo.findAll();
+	}
+
+	public List<ProgramSpecilization> findById(Integer id1, Integer id2) {
+		// TODO Auto-generated method stub
+		return ps_repo.findById1(id1, id2);
+	}
+
+	public Integer countRecords(Integer id) {
+		// TODO Auto-generated method stub
+		return ps_repo.findById2(id);
+	}
+    
 }

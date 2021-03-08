@@ -31,7 +31,7 @@ public class CourseBranchController {
 	private CourseBranchService cb_service;
 	
 	@PostMapping("/coursebranch")
-	public CourseBranch saveCourse(@RequestBody @Valid CourseBranch cb) {
+	public CourseBranch saveCourseBranch(@RequestBody @Valid CourseBranch cb) {
 		return cb_service.save_CourseBranch(cb);
 	}
 	

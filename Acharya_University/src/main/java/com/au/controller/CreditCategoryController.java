@@ -33,7 +33,7 @@ public class CreditCategoryController {
 	private Credit_Category_Service credit_service;
 	
 	@PostMapping("/Credit_Category")
-	public Credit_Category saveCourse(@RequestBody @Valid Credit_Category credit) {
+	public Credit_Category saveCreditCategory(@RequestBody @Valid Credit_Category credit) {
 		return credit_service.save_Credit_Category(credit);
 	}
 	

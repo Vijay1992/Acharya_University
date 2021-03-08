@@ -29,7 +29,7 @@ public class FeeAdmissionSubCategoryController {
 	
 	
 	@PostMapping("/FeeAdmissionSubCategory")
-	public FeeAdmissionSubCategory saveCourse(@RequestBody @Valid FeeAdmissionSubCategory fee) {
+	public FeeAdmissionSubCategory saveFeeAdmissionSubCategory(@RequestBody @Valid FeeAdmissionSubCategory fee) {
 		return fee_service.save_FeeAdmission(fee);
 	}
 	

@@ -33,7 +33,7 @@ public class VoucherHeadController {
 	private VoucherHeadService vs;
 	
 	@PostMapping("/VoucherHead")
-	public VoucherHead saveCourse(@RequestBody @Valid VoucherHead ac_year) {
+	public VoucherHead saveVoucherHead(@RequestBody @Valid VoucherHead ac_year) {
 		return vs.save_VoucherHead(ac_year);
 	}
 	
@@ -73,3 +73,9 @@ public class VoucherHeadController {
 	}
 	
 }
+
+
+
+
+
+

@@ -24,12 +24,11 @@ import com.au.service.CourseAssignmentService;
 @RequestMapping("/api")
 public class CourseAssignmentController 
 {
-
 	@Autowired
 	private CourseAssignmentService cas;		
 	
 	@PostMapping("/courseassignment")
-	public CourseAssignment saveCourse(@RequestBody @Valid CourseAssignment c) {
+	public CourseAssignment saveCourseAssignment(@RequestBody @Valid CourseAssignment c) {
 		return cas.save_CourseAssignment(c);
 	}
 	

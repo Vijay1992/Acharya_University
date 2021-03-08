@@ -33,5 +33,14 @@ public class LedgerService {
         		.orElseThrow(()-> new ResourceNotFoundException("Academic Year Not Found:"+id));    	
     	lr.delete(ay);
     }
+
+	public List<Ledger> getLedgerByGroupId(Integer grp_id) {
+		// TODO Auto-generated method stub
+		return lr.getLedgerByGroupId(grp_id);
+	}
+
+	public Integer CountLedgerByGroupId(Integer grp_id) {
+		return lr.CountLedgerByGroupId(grp_id);
+	}
 	
 }

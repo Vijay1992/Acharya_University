@@ -1,6 +1,7 @@
 package com.au.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,4 +36,14 @@ public class AcademicYearService {
         		.orElseThrow(()-> new ResourceNotFoundException("Academic Year Not Found:"+id));    	
     	ac_repo.delete(ay);
     }
+    
+    
+    public List<Object[]> getAcademicYearByACYearId(Integer ac_year_id) {
+    	return ac_repo.findByAcYearId(ac_year_id);
+    }
+
+	public Integer countRecords() {
+		// TODO Auto-generated method stub
+		return ac_repo.countRecords();
+	}
 }
