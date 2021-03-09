@@ -60,4 +60,5 @@ public class SchoolController {
 	public void delete(@PathVariable Integer id) {
 		sc_service.delete(id);
 	}
+
 }

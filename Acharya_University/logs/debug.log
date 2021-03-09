@@ -1,6 +1,2 @@
-2021-03-05 15:33:59 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.Board@5586751
-2021-03-05 15:41:19 [http-nio-8080-exec-2] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.Board@6901cb1a
-2021-03-05 15:42:32 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.Board@1a05d9b8
+2021-03-09 10:30:47 [http-nio-8080-exec-1] DEBUG c.a.c.AcademicYearController -
+				Request 3

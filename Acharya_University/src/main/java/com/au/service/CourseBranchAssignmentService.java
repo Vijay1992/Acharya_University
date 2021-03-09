@@ -19,8 +19,8 @@ public class CourseBranchAssignmentService {
 		return cba_repo.findAll();
 	}
 
-	public CourseBranchAssignment saveCourseBranchAssignment(CourseBranchAssignment coursebranchassignment) {
-		return cba_repo.save(coursebranchassignment);
+	public CourseBranchAssignment saveCourseBranchAssignment(CourseBranchAssignment academic) {
+		return cba_repo.save(academic);
 	}
 
 	public CourseBranchAssignment get(Integer id) {
@@ -28,12 +28,12 @@ public class CourseBranchAssignmentService {
 			throw new RuntimeException("Opps Exception raised....");
 		}
 		return cba_repo.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Course Branch Assignment id Not Found:" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("CourseBranchAssignment id Not Found:" + id));
 	}
 
 	public void delete(Integer id) {
 		CourseBranchAssignment ay = cba_repo.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Course Branch Assignment id:" + id));
+				.orElseThrow(() -> new ResourceNotFoundException("CourseBranchAssignment id Not Found:" + id));
 		cba_repo.delete(ay);
 	}
 

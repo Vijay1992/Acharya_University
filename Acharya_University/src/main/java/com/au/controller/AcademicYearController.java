@@ -37,7 +37,6 @@ public class AcademicYearController {
 
 	@GetMapping("/AcademicYear")
 	public List<AcademicYear> listAll() {
-
 		return ac_service.listAll();
 
 	}

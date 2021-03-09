@@ -6,13 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -34,11 +30,14 @@ public class Board {
 	private Integer created_by;
 	private Integer modified_by;
 
-	@ManyToOne
-	@Cascade(CascadeType.ALL)
-	@JoinColumn(name = "school_board_id", referencedColumnName = "school_id")
-	private Schools sch; // Fk
-
+	/*
+	 * @ManyToOne
+	 * 
+	 * @Cascade(CascadeType.ALL)
+	 * 
+	 * @JoinColumn(name = "school_board_id", referencedColumnName = "school_id")
+	 * private Schools sch; // Fk
+	 */
 	public Integer getBoard_unique_id() {
 		return board_unique_id;
 	}
@@ -93,14 +92,6 @@ public class Board {
 
 	public void setModified_by(Integer modified_by) {
 		this.modified_by = modified_by;
-	}
-
-	public Schools getSch() {
-		return sch;
-	}
-
-	public void setSch(Schools sch) {
-		this.sch = sch;
 	}
 
 }

@@ -24,7 +24,7 @@ public class AcademicYearService {
 	}
 
 	public AcademicYear get(Integer id) {
-		if (id.equals(5)) {
+		if (id.equals(2)) {
 			throw new RuntimeException("Opps Exception raised....");
 		}
 		return ac_repo.findById(id)
