@@ -40,18 +40,23 @@ public class Board {
 	@Temporal(TemporalType.TIMESTAMP)	
 	@UpdateTimestamp
 	private Date modified_date;
+	
 	private Integer created_by;
 	private Integer modified_by;
-	
-	@ManyToOne
-	@Cascade(CascadeType.ALL)
-	@JoinColumn(name ="school_id",referencedColumnName = "school_id" )
-	private Schools sch;//fk
-	
+	/*
+	 * @ManyToOne
+	 * 
+	 * @Cascade(CascadeType.ALL)
+	 * 
+	 * @JoinColumn(name ="school_id",referencedColumnName = "school_id" ) private
+	 * Schools sch;//fk
+	 */	
 	
 	public Board() {
 		super();
 	}
+
+	
 
 	public Board(Integer board_unique_id, String board_unique_name, String board_unique_short_name, Date created_date,
 			Date modified_date, Integer created_by, Integer modified_by) {
@@ -64,6 +69,8 @@ public class Board {
 		this.created_by = created_by;
 		this.modified_by = modified_by;
 	}
+
+
 
 	public Integer getBoard_unique_id() {
 		return board_unique_id;
@@ -120,4 +127,7 @@ public class Board {
 	public void setModified_by(Integer modified_by) {
 		this.modified_by = modified_by;
 	}
+	
+	
+	
 	}
