@@ -1,5 +1,6 @@
 package com.au.model;
 
+
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -23,6 +25,7 @@ public class Major_struc {
 	
 	@Column(name = "major_name")
 	@NotBlank
+	@Size(min = 2,message = "major_name should have at least 2 characters")
 	private String major_name;
 
 	@NotNull
@@ -38,6 +41,8 @@ public class Major_struc {
 	@UpdateTimestamp
 	private Date modified_date;
 
+	
+	
 	public int getMajor_id() {
 		return major_id;
 	}

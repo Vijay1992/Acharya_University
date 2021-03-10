@@ -30,8 +30,10 @@ public class BoardSchoolAssignmentController {
 	
 	
 	@PostMapping("/Board_School_Assignment")
-	public Board_School_Assignment saveAcademicYear(@RequestBody @Valid Board_School_Assignment bs) {
-		return bs_service.save_Board_School_Assignment(bs);
+	public ResponseEntity<Board_School_Assignment> saveAcademicYear(@RequestBody @Valid Board_School_Assignment bs) {
+		Board_School_Assignment bs1 = bs_service.save_Board_School_Assignment(bs);
+		return new ResponseEntity<Board_School_Assignment>(bs1, HttpStatus.CREATED);
+//		return bs_service.save_Board_School_Assignment(bs);
 	}
 	
 	@GetMapping("/Board_School_Assignment")

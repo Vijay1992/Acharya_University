@@ -68,9 +68,9 @@ public class ProgramSpecilizationController {
 		pr_service.delete(id);
 	}
 	
-	@GetMapping("/FetchProgramSpecialization/{id1}/{id2}")      //(Behalf of schoolid and programid)
-	public List<ProgramSpecilization> fetch(@PathVariable Integer id1, @PathVariable Integer id2) {
-	List<ProgramSpecilization> school = (List<ProgramSpecilization>) pr_service.findById(id1,id2);
+	@GetMapping("/FetchProgramSpecialization/{school_id}/{program_id}")      //(Behalf of schoolid and programid)
+	public List<ProgramSpecilization> fetch(@PathVariable Integer school_id, @PathVariable Integer program_id) {
+	List<ProgramSpecilization> school = (List<ProgramSpecilization>) pr_service.findById(school_id,program_id);
 	return school;
 	}
 
@@ -78,7 +78,5 @@ public class ProgramSpecilizationController {
 	public Integer countRecords(@PathVariable("id") Integer id) {
 	return pr_service.countRecords(id);
 	}
-	
 
-	
 }

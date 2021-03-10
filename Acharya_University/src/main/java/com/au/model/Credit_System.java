@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+
 @Entity
 @Table(name = "tbl_au_creditsystem")
 public class Credit_System {
@@ -16,9 +17,9 @@ public class Credit_System {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int credit_system_id;
-	
+
 	@NotBlank
-	private char grade;
+	private String grade;
 	
 	@NotNull
 	private Integer min_marks;
@@ -36,13 +37,28 @@ public class Credit_System {
 		super();
 	}
 
+
+
+	public Credit_System(int credit_system_id, @NotBlank String grade, @NotNull Integer min_marks,
+			@NotNull Integer max_marks, @NotNull Integer grade_points, @NotBlank String performance) {
+		super();
+		this.credit_system_id = credit_system_id;
+		this.grade = grade;
+		this.min_marks = min_marks;
+		this.max_marks = max_marks;
+		this.grade_points = grade_points;
+		this.performance = performance;
+	}
+
+
+
 	//setters and getters for properties of Credit_System - class
 	
-	public char getGrade() {
+	public String getGrade() {
 		return grade;
 	}
 
-	public void setGrade(char grade) {
+	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 	

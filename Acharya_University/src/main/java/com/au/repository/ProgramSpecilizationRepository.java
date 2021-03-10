@@ -11,7 +11,7 @@ import com.au.model.ProgramSpecilization;
 @Repository
 public interface ProgramSpecilizationRepository extends JpaRepository<ProgramSpecilization, Integer>{
 
-	@Query(value="SELECT * FROM tbl_au_program_specialization where program_id=?1 and school_id=?2", nativeQuery= true)
+	@Query(value="SELECT * FROM tbl_au_program_specialization where school_id=?1 and program_id=?2", nativeQuery= true)
 	public List<ProgramSpecilization> findById1(Integer program_id,Integer school_id );
 
 
