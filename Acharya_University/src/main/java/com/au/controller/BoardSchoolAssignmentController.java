@@ -78,7 +78,7 @@ public class BoardSchoolAssignmentController {
 	       
 	}
 	
-	@GetMapping("/bs1/{school_id}")
+	@GetMapping("/FetchBoardSchoolAssignment/{school_id}")
 	public List<String> getBoardSchool(@PathVariable Integer school_id){
 		return bs_service.getBoardSchool(school_id);
 	}

@@ -67,4 +67,12 @@ public class FeeAdmissionSubCategoryController {
 	public void delete(@PathVariable Integer id) {
 		fee_service.delete(id);
 	}
+	
+	@GetMapping("/FetchFeeAdmissionSubCategory/{fee_admission_category_id}")
+	public List<String> getFeeAdmissionByFeeAdmissionCategoryId(@PathVariable
+			Integer fee_admission_category_id){
+		return fee_service.getFeeAdmissionByFeeAdmissionCategoryId(fee_admission_category_id);
+	}
+	
+	
 }

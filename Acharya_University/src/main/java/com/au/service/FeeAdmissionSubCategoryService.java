@@ -37,5 +37,9 @@ public class FeeAdmissionSubCategoryService {
         		.orElseThrow(()-> new ResourceNotFoundException("FeeAdmissionSubCategory Not Found:"+id));    	
     	fee_repo.delete(ay);
     }
-	
+
+    public List<String> getFeeAdmissionByFeeAdmissionCategoryId(Integer fee_admission_category_id)
+    {
+    	return fee_repo.getFeeAdmissionByFeeAdmissionCategoryId(fee_admission_category_id);
+    }
 }
