@@ -3,7 +3,6 @@ package com.au.controller;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,11 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.au.model.Program;
 import com.au.service.ProgramService;
 
-
 @RestController
 @RequestMapping("/api")
 public class ProgramController {
-	
+
 	Logger log = LoggerFactory.getLogger(ProgramController.class);
 
 	@Autowired
@@ -67,13 +65,13 @@ public class ProgramController {
 		pro_service.delete(id);
 	}
 
-	@GetMapping("/FetchProgram/{id}")     //(Behalf of schoolid)
+	@GetMapping("/FetchProgram/{id}") // (Behalf of schoolid)
 	public List<Program> fetch(@PathVariable Integer id) {
 		List<Program> school = (List<Program>) pro_service.findById(id);
 		return school;
 	}
 
-	@GetMapping("ProgramCount/{id}")     //no of count behalf of schoolid
+	@GetMapping("ProgramCount/{id}") // no of count behalf of schoolid
 	public Integer countRecords(@PathVariable("id") Integer id) {
 		return pro_service.countRecords(id);
 	}

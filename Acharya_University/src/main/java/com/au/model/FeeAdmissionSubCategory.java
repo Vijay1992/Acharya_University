@@ -31,6 +31,26 @@ public class FeeAdmissionSubCategory {
 	private Integer created_by;
 	private Integer modified_by;
 	private Boolean active;
+	public Integer fee_admission_category_id;
+
+	public FeeAdmissionSubCategory() {
+		super();
+	}
+
+	public FeeAdmissionSubCategory(Integer fee_admission_sub_category_id, String fee_admission_sub_category_name,
+			String fee_admission_sub_category_short_name, Date created_date, Date modified_date, Integer created_by,
+			Integer modified_by, Boolean active, Integer fee_admission_category_id) {
+		super();
+		this.fee_admission_sub_category_id = fee_admission_sub_category_id;
+		this.fee_admission_sub_category_name = fee_admission_sub_category_name;
+		this.fee_admission_sub_category_short_name = fee_admission_sub_category_short_name;
+		this.created_date = created_date;
+		this.modified_date = modified_date;
+		this.created_by = created_by;
+		this.modified_by = modified_by;
+		this.active = active;
+		this.fee_admission_category_id = fee_admission_category_id;
+	}
 
 	public Integer getFee_admission_sub_category_id() {
 		return fee_admission_sub_category_id;
@@ -94,6 +114,14 @@ public class FeeAdmissionSubCategory {
 
 	public void setActive(Boolean active) {
 		this.active = active;
+	}
+
+	public Integer getFee_admission_category_id() {
+		return fee_admission_category_id;
+	}
+
+	public void setFee_admission_category_id(Integer fee_admission_category_id) {
+		this.fee_admission_category_id = fee_admission_category_id;
 	}
 
 }
