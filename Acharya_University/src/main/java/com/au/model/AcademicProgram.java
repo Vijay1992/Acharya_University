@@ -22,12 +22,11 @@ public class AcademicProgram {
 	private Integer ac_year_id; // FK
 	private Integer program_id; // FK
 
-	@Column(name = "created_date", updatable = false)
+	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
 	private Date created_date;
 
-	@Column(name = "modified_date")
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;

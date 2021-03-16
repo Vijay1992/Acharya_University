@@ -36,10 +36,8 @@ public class ProgramMaster {
 	@NotNull
 	private Integer credits_completion_fourth_year;
 
-	@NotNull
 	private Integer Total_Min_credits;
 
-	@NotNull
 	private Integer Total_Max_credits;
 
 	@Temporal(TemporalType.TIMESTAMP)

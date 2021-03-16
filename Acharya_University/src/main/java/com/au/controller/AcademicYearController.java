@@ -71,10 +71,9 @@ public class AcademicYearController {
 		ac_service.delete(id);
 	}
 
-	@GetMapping("FetchAcademicYear/{current_year}")
-	public List<AcademicYear> get1(@PathVariable Integer current_year) {
-		List<AcademicYear> school = (List<AcademicYear>) ac_service.findByfetchDetails(current_year);
-		return school;
+	@GetMapping("FetchAcademicYear")
+	public List<AcademicYear> get1() {
+		return ac_service.findByfetchDetails();
 	}
 
 }

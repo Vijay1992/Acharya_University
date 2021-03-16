@@ -37,8 +37,8 @@ public class AcademicYearService {
 		ac_repo.delete(ay);
 	}
 
-	public List<AcademicYear> findByfetchDetails(Integer current_year) {
-		return ac_repo.findById12(current_year);
+	public List<AcademicYear> findByfetchDetails() {
+		return ac_repo.findById12();
 	}
 
 }

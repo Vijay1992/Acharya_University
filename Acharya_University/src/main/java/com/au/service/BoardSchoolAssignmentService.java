@@ -1,9 +1,6 @@
 package com.au.service;
 
 import java.util.List;
-
-import javax.management.RuntimeErrorException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,7 +36,7 @@ public class BoardSchoolAssignmentService {
 
 	public List<String> findByfetchDetails(Integer school_id) {
 		return bs_repo.findById12(school_id);
-				
+
 	}
 
 	public Integer countRecords(Integer id) {
