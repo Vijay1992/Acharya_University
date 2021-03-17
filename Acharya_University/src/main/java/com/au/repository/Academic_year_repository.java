@@ -10,10 +10,10 @@ import com.au.model.Academic_year;
 public interface Academic_year_repository extends JpaRepository<Academic_year,Integer>
 {
 
-	public static final String FIND_PROJECTS = "select ac_year_id,ac_year from tbl_au_academic_year where ac_year_id=?1";
+	public static final String FIND_PROJECTS = "SELECT * FROM tbl_au_academic_year where current_year>=year(now())-1;";
 
 	@Query(value = FIND_PROJECTS, nativeQuery = true)
-	public  List<Object[]> findByAcYearId(Integer ac_year_id);
+	public  List<Academic_year> findByAcYearId();
 	
 	@Query(value = "select count(*) from tbl_au_academic_year",nativeQuery = true)
 	public Integer countRecords();

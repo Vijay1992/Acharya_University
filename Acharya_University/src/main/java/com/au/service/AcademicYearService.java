@@ -38,8 +38,8 @@ public class AcademicYearService {
     }
     
     
-    public List<Object[]> getAcademicYearByACYearId(Integer ac_year_id) {
-    	return ac_repo.findByAcYearId(ac_year_id);
+    public List<Academic_year> getAcademicYearByACYearId() {
+    	return ac_repo.findByAcYearId();
     }
 
 	public Integer countRecords() {

@@ -32,17 +32,17 @@ public class CourseCategoryController
 	@Autowired
 	private Course_Category_Service cs;
 
-	@GetMapping("/couse_category")
+	@GetMapping("/cousre_category")
 	public List<Course_Category> listAll(){
 		return cs.listAll();
 	}
 
-	@PostMapping("/couse_category")
+	@PostMapping("/cousre_category")
 	public Course_Category save_Course_Category(@RequestBody  @Valid Course_Category course_category) {
 		return cs.save_Course_Category(course_category);
 	}
 	
-	@GetMapping("/couse_category/{id}")
+	@GetMapping("/cousre_category/{id}")
 	public ResponseEntity<Course_Category> get(@PathVariable Integer id) {
 	    try {
 	    	Course_Category cc = cs.get(id);
@@ -53,7 +53,7 @@ public class CourseCategoryController
 	}
 	
 
-	@PutMapping("/couse_category/{id}")
+	@PutMapping("/cousre_category/{id}")
 	public ResponseEntity<?> update(@RequestBody @Valid Course_Category course, @PathVariable Integer id) {
 	    try {
 	    	Course_Category existProduct = cs.get(id);
@@ -65,7 +65,7 @@ public class CourseCategoryController
 	}
 	
 	
-	@DeleteMapping("/couse_category/{id}")
+	@DeleteMapping("/cousre_category/{id}")
 	public void delete(@PathVariable Integer id) {
 		cs.delete(id);
 	}

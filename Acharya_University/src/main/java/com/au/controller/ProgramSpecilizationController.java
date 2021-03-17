@@ -74,8 +74,8 @@ public class ProgramSpecilizationController {
 	return school;
 	}
 
-	@GetMapping("ProgramSpecializationCount/{id}")      //no of count behalf of schoolid
-	public Integer countRecords(@PathVariable("id") Integer id) {
+	@GetMapping("ProgramSpecializationCount/{school_id}")      //no of count behalf of school_id
+	public Integer countRecords(@PathVariable("school_id") Integer id) {
 	return pr_service.countRecords(id);
 	}
 

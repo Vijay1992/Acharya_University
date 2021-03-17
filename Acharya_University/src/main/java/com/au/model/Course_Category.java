@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -23,6 +24,7 @@ public class Course_Category {
 	private int course_category_id;
 
 	@NotBlank
+	@Size(min = 2,max = 5,message = "course_category_name should be in 2 to 5 chars")
 	private String course_category_name;
 	@NotBlank
 	private String course_category_code;
@@ -73,6 +75,4 @@ public class Course_Category {
 	public Date getCreated_date() {
 		return created_date;
 	}
-
-
 }

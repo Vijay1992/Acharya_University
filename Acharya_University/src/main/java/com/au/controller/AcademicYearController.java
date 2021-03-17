@@ -81,11 +81,16 @@ public class AcademicYearController {
 	}
 	
 	
-	@GetMapping("academic_year1/{ac_year_id}")
-	public List<Object[]> getAcademicYearByACYearId(@PathVariable Integer ac_year_id) {
-		return (List<Object[]>) ac_service.getAcademicYearByACYearId(ac_year_id);
-	}
+	/*
+	  @GetMapping("FetchAcademicYear/{ac_year_id}") public List<Integer>
+	  getAcademicYearByACYearId(@PathVariable Integer ac_year_id) { return
+	  (List<Integer>) ac_service.getAcademicYearByACYearId(ac_year_id); }
+	 */
 	
+	@GetMapping("FetchAcademicYear")
+	public List<Academic_year> getAcademicYearByACYearId() {
+		return  ac_service.getAcademicYearByACYearId();
+	}
 	
 	@GetMapping("academic_year2")
 	public Integer countRecords() {
