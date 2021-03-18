@@ -38,7 +38,7 @@ public class FeeAdmissionSubCategoryService {
     	fee_repo.delete(ay);
     }
 
-    public List<String> getFeeAdmissionByFeeAdmissionCategoryId(Integer fee_admission_category_id)
+    public List<FeeAdmissionSubCategory> getFeeAdmissionByFeeAdmissionCategoryId(Integer fee_admission_category_id)
     {
     	return fee_repo.getFeeAdmissionByFeeAdmissionCategoryId(fee_admission_category_id);
     }

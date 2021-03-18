@@ -69,7 +69,7 @@ public class FeeAdmissionSubCategoryController {
 	}
 	
 	@GetMapping("/FetchFeeAdmissionSubCategory/{fee_admission_category_id}")
-	public List<String> getFeeAdmissionByFeeAdmissionCategoryId(@PathVariable
+	public List<FeeAdmissionSubCategory> getFeeAdmissionByFeeAdmissionCategoryId(@PathVariable
 			Integer fee_admission_category_id){
 		return fee_service.getFeeAdmissionByFeeAdmissionCategoryId(fee_admission_category_id);
 	}

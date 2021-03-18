@@ -36,7 +36,7 @@ public class FeeAdmissionSubCategory {
 	
 	private Integer created_by;
 	private Integer modified_by;
-	private boolean active;
+	private Boolean active;
 	private Integer fee_admission_category_id; //FK
 	
 	public FeeAdmissionSubCategory() {
