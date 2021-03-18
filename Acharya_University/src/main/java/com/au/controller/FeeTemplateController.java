@@ -1,3 +1,4 @@
+
 package com.au.controller;
 
 import java.util.List;
@@ -63,12 +64,13 @@ public class FeeTemplateController {
 	public void delete(@PathVariable Integer id) {
 		fts_service.delete(id);
 	}
-	
+
 	@GetMapping("FeeTemplateCount/{id1}/{id2}/{id3}") // no of count behalf of schoolid
-	public Integer countRecords(@PathVariable("id1") Integer id1,  @PathVariable("id2") Integer id2,@PathVariable("id3") Integer id3) {
-		return fts_service.countRecords(id1,id2,id3);
+	public Integer countRecords(@PathVariable("id1") Integer id1, @PathVariable("id2") Integer id2,
+			@PathVariable("id3") Integer id3) {
+		return fts_service.countRecords(id1, id2, id3);
 	}
-	
+
 	@PostMapping("/checkApi")
 	public FeeTemplate saveFeeTemplate(@RequestBody @Valid FeeTemplate board) {
 		return fts_service.saveFeeTemplate1(board);

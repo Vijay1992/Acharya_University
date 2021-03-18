@@ -9,12 +9,7 @@ import com.au.exception.ResourceNotFoundException;
 import com.au.model.AcademicYear;
 import com.au.model.FeeTemplate;
 import com.au.model.FeeTemplateRequest;
-import com.au.repository.AcademicYearRepository;
-import com.au.repository.CurrencyTypeRepository;
-import com.au.repository.FeeAdmissionCategoryRepository;
-import com.au.repository.FeeAdmissionSubCategoryRepository;
 import com.au.repository.FeeTemplateRepository;
-import com.au.repository.ProgramRepository;
 
 @Service
 @Transactional
@@ -22,21 +17,6 @@ public class FeeTemplateService {
 
 	@Autowired
 	private FeeTemplateRepository ft_repo;
-
-	@Autowired
-	private AcademicYearRepository ac_repo;
-
-	@Autowired
-	private ProgramRepository p_repo;
-
-	@Autowired
-	private FeeAdmissionCategoryRepository fee_repo;
-
-	@Autowired
-	private FeeAdmissionSubCategoryRepository fee_sub_repo;
-
-	@Autowired
-	private CurrencyTypeRepository cs_repo;
 
 	public List<FeeTemplate> listAll() {
 		return ft_repo.findAll();
@@ -76,21 +56,25 @@ public class FeeTemplateService {
 					feetemplaterequest.getFee_admission_category_id(), feetemplaterequest.getProgram_id()) + 1);
 			feeTemp += feetemplaterequest.getFee_admission_sub_category_id().get(a);
 			feeTemp += feetemplaterequest.getCurrency_short();
-			
+
 			ft.setFee_template_name(feeTemp);
 			ft.setAc_year_id(feetemplaterequest.getAc_year_id());
 			ft.setSchool_id(feetemplaterequest.getSchool_id());
 			ft.setProgram_id(feetemplaterequest.getProgram_id());
-			ft.setProgram_Specialization_id(feetemplaterequest.getProgram_Specialization_id());
 			ft.setCurrency_id(feetemplaterequest.getCurrency_id());
 			ft.setFee_admission_category_id(feetemplaterequest.getFee_admission_category_id());
 			ft.setFee_admission_sub_category_id(a);
-			ft.setNationality_id(feetemplaterequest.getNationality_id());
+			ft.setNationality(feetemplaterequest.getNationality());
+			//ft.setProgram_specialization(feetemplaterequest.getProgram_specialization());
+			ft.setProgram_specialization_id(feetemplaterequest.getProgram_specialization_id());
 			ft.setProgram_type_id(feetemplaterequest.getProgram_type_id());
+			ft.setIs_nri(feetemplaterequest.getIs_nri());
+			ft.setIs_paid_at_board(feetemplaterequest.getIs_paid_at_board());
 			ft.setApproved_by(feetemplaterequest.getApproved_by());
 			ft.setCreated_by(feetemplaterequest.getCreated_by());
 			ft.setModified_by(feetemplaterequest.getModified_by());
 			ft.setRemarks(feetemplaterequest.getRemarks());
+			ft.setActive(feetemplaterequest.getActive());
 			saveFeeTemplate(ft);
 			lt.add(ft);
 		});
@@ -101,7 +85,7 @@ public class FeeTemplateService {
 	public Integer countRecords(Integer id1, Integer id2, Integer id3) {
 		return ft_repo.findById123(id1, id2, id3);
 	}
-	
+
 	public FeeTemplate saveFeeTemplate1(FeeTemplate academic) {
 		return ft_repo.save(academic);
 	}

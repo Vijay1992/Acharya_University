@@ -65,7 +65,7 @@ public class AcademicYearController {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
-
+ 
 	@DeleteMapping("/AcademicYear/{id}")
 	public void delete(@PathVariable Integer id) {
 		ac_service.delete(id);

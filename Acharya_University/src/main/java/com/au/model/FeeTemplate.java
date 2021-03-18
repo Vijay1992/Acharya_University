@@ -3,6 +3,8 @@ package com.au.model;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -15,20 +17,23 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class FeeTemplate {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer fee_template_id;
 	private String fee_template_name;
 	private Integer ac_year_id;
-	private Integer school_id; // Fk
-	private Integer program_id; // Fk
-	private String Program_Specialization_id;
+	private Integer school_id;
+	private Integer program_id;
+	// private String program_specialization;
+	private String program_specialization_id;
 	private Integer currency_id;
 	private Integer fee_admission_category_id;
 	private Integer fee_admission_sub_category_id;
-	private boolean Is_paid_at_board;
-	private String nationality_id;
-	private boolean Is_NRI;
+	private Boolean Is_paid_at_board;
+	private String nationality;
+	private Boolean Is_nri;
 	private Integer program_type_id;
 	private Integer approved_by;
-	private boolean approved_status;
+	private Boolean approved_status;
 	private Date approved_date;
 	private Integer created_by;
 	private Integer modified_by;
@@ -40,41 +45,19 @@ public class FeeTemplate {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-	private boolean active;
+	private Boolean active;
 	private String remarks;
 
 	public FeeTemplate() {
 		super();
 	}
 
-	public FeeTemplate(String fee_template_name, Integer ac_year_id, Integer school_id, Integer program_id,
-			String program_Specialization_id, Integer currency_id, Integer fee_admission_category_id,
-			Integer fee_admission_sub_category_id, boolean is_paid_at_board, String nationality_id, boolean is_NRI,
-			Integer program_type_id, Integer approved_by, boolean approved_status, Date approved_date,
-			Integer created_by, Integer modified_by, Date created_date, Date modified_date, boolean active,
-			String remarks) {
-		super();
-		this.fee_template_name = fee_template_name;
-		this.ac_year_id = ac_year_id;
-		this.school_id = school_id;
-		this.program_id = program_id;
-		Program_Specialization_id = program_Specialization_id;
-		this.currency_id = currency_id;
-		this.fee_admission_category_id = fee_admission_category_id;
-		this.fee_admission_sub_category_id = fee_admission_sub_category_id;
-		Is_paid_at_board = is_paid_at_board;
-		this.nationality_id = nationality_id;
-		Is_NRI = is_NRI;
-		this.program_type_id = program_type_id;
-		this.approved_by = approved_by;
-		this.approved_status = approved_status;
-		this.approved_date = approved_date;
-		this.created_by = created_by;
-		this.modified_by = modified_by;
-		this.created_date = created_date;
-		this.modified_date = modified_date;
-		this.active = active;
-		this.remarks = remarks;
+	public Integer getFee_template_id() {
+		return fee_template_id;
+	}
+
+	public void setFee_template_id(Integer fee_template_id) {
+		this.fee_template_id = fee_template_id;
 	}
 
 	public String getFee_template_name() {
@@ -109,14 +92,20 @@ public class FeeTemplate {
 		this.program_id = program_id;
 	}
 
-	public String getProgram_Specialization_id() {
-		return Program_Specialization_id;
+	public String getProgram_specialization_id() {
+		return program_specialization_id;
 	}
 
-	public void setProgram_Specialization_id(String program_Specialization_id) {
-		Program_Specialization_id = program_Specialization_id;
+	public void setProgram_specialization_id(String program_specialization_id) {
+		this.program_specialization_id = program_specialization_id;
 	}
 
+	/*
+	 * public String getProgram_specialization() { return program_specialization; }
+	 * 
+	 * public void setProgram_specialization(String program_specialization) {
+	 * this.program_specialization = program_specialization; }
+	 */
 	public Integer getCurrency_id() {
 		return currency_id;
 	}
@@ -141,28 +130,28 @@ public class FeeTemplate {
 		this.fee_admission_sub_category_id = fee_admission_sub_category_id;
 	}
 
-	public boolean isIs_paid_at_board() {
+	public Boolean getIs_paid_at_board() {
 		return Is_paid_at_board;
 	}
 
-	public void setIs_paid_at_board(boolean is_paid_at_board) {
+	public void setIs_paid_at_board(Boolean is_paid_at_board) {
 		Is_paid_at_board = is_paid_at_board;
 	}
 
-	public String getNationality_id() {
-		return nationality_id;
+	public String getNationality() {
+		return nationality;
 	}
 
-	public void setNationality_id(String nationality_id) {
-		this.nationality_id = nationality_id;
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
 	}
 
-	public boolean isIs_NRI() {
-		return Is_NRI;
+	public Boolean getIs_nri() {
+		return Is_nri;
 	}
 
-	public void setIs_NRI(boolean is_NRI) {
-		Is_NRI = is_NRI;
+	public void setIs_nri(Boolean is_nri) {
+		Is_nri = is_nri;
 	}
 
 	public Integer getProgram_type_id() {
@@ -181,11 +170,11 @@ public class FeeTemplate {
 		this.approved_by = approved_by;
 	}
 
-	public boolean isApproved_status() {
+	public Boolean getApproved_status() {
 		return approved_status;
 	}
 
-	public void setApproved_status(boolean approved_status) {
+	public void setApproved_status(Boolean approved_status) {
 		this.approved_status = approved_status;
 	}
 
@@ -229,11 +218,11 @@ public class FeeTemplate {
 		this.modified_date = modified_date;
 	}
 
-	public boolean isActive() {
+	public Boolean getActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 
