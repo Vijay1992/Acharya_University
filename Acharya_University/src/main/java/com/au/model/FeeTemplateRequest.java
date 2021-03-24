@@ -10,8 +10,8 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-public class FeeTemplateRequest {
-	
+public class FeeTemplateRequest
+{	
 		private String fee_template_name;
 		private Integer ac_year_id;
 		private String ac_year; // na

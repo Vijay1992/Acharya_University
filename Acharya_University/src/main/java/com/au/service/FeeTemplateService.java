@@ -1,6 +1,8 @@
 package com.au.service;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -89,5 +91,18 @@ public class FeeTemplateService {
 		return ft_repo.save(academic);
 	}
 
+	public List<String> getTemplates(List<String> fee_template_id) {
+		// TODO Auto-generated method stub
+		return ft_repo.findByTemplateDetails(fee_template_id);
+	}
+/*
+	public List<HashMap<String , Object>> getTemplates1(List<Integer> fee_template_id){
+		return ft_repo.getTemplates(fee_template_id);
+	}
+*/
+	
+	public List< HashMap<String,Object>> findById(List<Integer> fee_template_id) {
+		return ft_repo.fetchFeeTemplateDetails(fee_template_id);
+		}
 }
 

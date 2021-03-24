@@ -12,7 +12,9 @@ import com.au.model.FeeAdmissionSubCategory;
 public interface FeeAdmissionSubCategoryRepository extends JpaRepository<FeeAdmissionSubCategory, Integer>
 {
 
-	@Query(value = "SELECT * FROM tbl_au_fee_admission_sub_category where fee_admission_category_id=?1",nativeQuery = true)
+	@Query(value = "SELECT * FROM tbl_au_fee_admission_sub_category where fee_admission_category_id=?1 and active=1",nativeQuery = true)
 	public List<FeeAdmissionSubCategory> getFeeAdmissionByFeeAdmissionCategoryId(Integer fee_admission_category_id);
+	
+	
 	
 }

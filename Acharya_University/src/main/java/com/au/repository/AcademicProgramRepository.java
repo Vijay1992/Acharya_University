@@ -10,7 +10,7 @@ import com.au.model.AcademicProgram;
 @Repository
 public interface AcademicProgramRepository extends JpaRepository<AcademicProgram, Integer>{
 
-	@Query(value = "select number_of_years,number_of_semester from tbl_au_academic_program where program_id=?1 and ac_year_id=?2",nativeQuery = true)
-	public List<Integer[]> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer program_id,Integer ac_year_id);
+	@Query(value = "select * from tbl_au_academic_program where program_id=?1 and ac_year_id=?2",nativeQuery = true)
+	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer program_id,Integer ac_year_id);
 	
 }

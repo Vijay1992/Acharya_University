@@ -1,5 +1,7 @@
 package com.au.controller;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.au.model.FeeTemplate;
 import com.au.model.FeeTemplateRequest;
@@ -78,5 +81,33 @@ public class FeeTemplateController {
 	public FeeTemplate saveFeeTemplate(@RequestBody @Valid FeeTemplate board) {
 		return fts_service.saveFeeTemplate1(board);
 	}
-
+	
+	@GetMapping("/fetchTemplates2/{fee_template_id}")
+	@ResponseBody
+	public List<String> getTemplates(@PathVariable("fee_template_id") List<String> fee_template_id){
+		return fts_service.getTemplates(fee_template_id);
+	}
+	
+	
+/*	@PostMapping("/getTemplates") //Behalf of school_id
+	public List<HashMap<String, Object>> getTemplates1(@RequestBody List<Integer> fee_template_id){
+		return fts_service.getTemplates1(fee_template_id);
+	}
+	*/
+	
+	@PostMapping("/FeeTemplateDetails") // (Behalf of fee_template_id)
+	public List< HashMap<String,Object>> fetch(@RequestBody List<Integer> fee_template_id) {
+	List< HashMap<String,Object>> feetemplate = fts_service.findById(fee_template_id);
+	return feetemplate;
+	}
 }
+
+
+
+
+
+
+
+
+
+

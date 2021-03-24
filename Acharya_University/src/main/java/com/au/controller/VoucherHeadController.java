@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.au.model.VoucherHead;
+import com.au.model.VoucherHeadRequest;
 import com.au.service.VoucherHeadService;
 @CrossOrigin(origins =  "http://localhost:3000")
 @RestController
@@ -33,10 +35,16 @@ public class VoucherHeadController {
 	private VoucherHeadService vs;
 	
 	@PostMapping("/VoucherHead")
-	public VoucherHead saveVoucherHead(@RequestBody @Valid VoucherHead ac_year) {
-		return vs.save_VoucherHead(ac_year);
+	public List<VoucherHead> saveVoucherHead(@RequestBody @Valid VoucherHeadRequest  vou,Model model) {
+		model.addAttribute("msg", "Voucher Head inserted Successfully");
+		return vs.getAllVouchers(vou);
 	}
-	
+
+	@PostMapping("/saveVoucherHead")
+	public VoucherHead saveVoucherHead(@RequestBody @Valid VoucherHead vou){//Request  vou) {
+		return vs.save_VoucherHead(vou);
+	}
+
 	@GetMapping("/VoucherHead")
 	public List<VoucherHead> listAll(){
 		return vs.listAll();
@@ -71,6 +79,14 @@ public class VoucherHeadController {
 	public void delete(@PathVariable Integer id) {
 		vs.delete(id);
 	}
+	
+	@GetMapping("/FetchVoucherHead/{school_id}")
+	 public List<VoucherHead> getVoucherBySchoolId(@PathVariable Integer school_id){
+
+		return vs.getVoucherBySchoolId(school_id);
+		
+	 }
+	
 	
 }
 

@@ -15,7 +15,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tbl_au_fee_template")
+@Table(name = "tbl_au_fee_template", schema = "targetSchemaName")
 public class FeeTemplate 
 {	
 	@Id
@@ -23,19 +23,19 @@ public class FeeTemplate
 	private Integer fee_template_id;
 
 	private String fee_template_name;
-	private Integer ac_year_id;
+	private Integer ac_year_id;//FK
 	private Integer school_id; // Fk
 	private Integer program_id; // Fk
 //	private String program_specialization;
-	private String program_specialization_id;
+	private String program_specialization_id;//FK
 
-	private Integer currency_id;
-	private Integer fee_admission_category_id;
-	private Integer fee_admission_sub_category_id;
+	private Integer currency_id;//FK
+	private Integer fee_admission_category_id;//FK
+	private Integer fee_admission_sub_category_id;//FK
 	private Boolean is_paid_at_board;
 	private String nationality;
 	private Boolean is_nri;
-	private Integer program_type_id;
+	private Integer program_type_id;//FK
 	private Integer approved_by;
 	private Boolean approved_status;
 	private Date approved_date;

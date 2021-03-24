@@ -20,7 +20,7 @@ public class Currency_Type {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer currency_type_id;
+	private Integer currency_id;
 	private String currency_type_name;
 	private String currency_type_short_name;
 	
@@ -40,10 +40,10 @@ public class Currency_Type {
 	public Currency_Type() {
 		super();
 	}
-	public Currency_Type(Integer currency_type_id, String currency_type_name, String currency_type_short_name,
+	public Currency_Type(Integer currency_id, String currency_type_name, String currency_type_short_name,
 			Date created_date, Date modified_date, Integer created_by, Integer modified_by, boolean active) {
 		super();
-		this.currency_type_id = currency_type_id;
+		this.currency_id = currency_id;
 		this.currency_type_name = currency_type_name;
 		this.currency_type_short_name = currency_type_short_name;
 		this.created_date = created_date;
@@ -52,11 +52,11 @@ public class Currency_Type {
 		this.modified_by = modified_by;
 		this.active = active;
 	}
-	public Integer getCurrency_type_id() {
-		return currency_type_id;
+	public Integer getCurrency_id() {
+		return currency_id;
 	}
-	public void setCurrency_type_id(Integer currency_type_id) {
-		this.currency_type_id = currency_type_id;
+	public void setCurrency_id(Integer currency_id) {
+		this.currency_id = currency_id;
 	}
 	public String getCurrency_type_name() {
 		return currency_type_name;
@@ -100,7 +100,6 @@ public class Currency_Type {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
-	
 	
 	
 	
