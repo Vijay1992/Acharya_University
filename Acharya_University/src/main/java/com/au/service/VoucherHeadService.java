@@ -36,4 +36,8 @@ public class VoucherHeadService {
 		vh_repo.delete(ay);
 	}
 
+	public List<VoucherHead> findById(Integer school_id) {
+		return vh_repo.findById123(school_id);
+	}
+
 }

@@ -18,7 +18,7 @@ public class FeeTemplateRequest {
 	private Integer school_id;
 	private Integer program_id;
 	private String program_sht; // na
-	private Integer currency_id;
+	private Integer currency_type_id;
 	private String currency_short; // na
 	private Integer fee_admission_category_id;
 	private String fee_admission_category; // na
@@ -97,12 +97,12 @@ public class FeeTemplateRequest {
 		this.program_sht = program_sht;
 	}
 
-	public Integer getCurrency_id() {
-		return currency_id;
+	public Integer getCurrency_type_id() {
+		return currency_type_id;
 	}
 
-	public void setCurrency_id(Integer currency_id) {
-		this.currency_id = currency_id;
+	public void setCurrency_type_id(Integer currency_type_id) {
+		this.currency_type_id = currency_type_id;
 	}
 
 	public String getCurrency_short() {

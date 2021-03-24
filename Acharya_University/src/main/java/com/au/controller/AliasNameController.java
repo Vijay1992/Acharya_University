@@ -16,60 +16,57 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.au.model.Program;
-import com.au.model.Tally;
-import com.au.service.TallyService;
+import com.au.model.AliasName;
+import com.au.service.AliasNameService;
 
 @RestController
 @RequestMapping("/api")
-public class TallyController {
+public class AliasNameController {
 
-	Logger log = LoggerFactory.getLogger(TallyController.class);
+	Logger log = LoggerFactory.getLogger(AliasNameController.class);
 
 	@Autowired
-	private TallyService ty_service;
+	private AliasNameService ans_service;
 
-	@PostMapping("/Tally")
-	public Tally saveTally(@RequestBody @Valid Tally tally) {
-		log.debug("Request {}", tally);
-		return ty_service.saveTally(tally);
+	@PostMapping("/AliasName")
+	public AliasName saveAliasName(@RequestBody @Valid AliasName aliasname) {
+		log.debug("Request {}", aliasname);
+		return ans_service.saveAliasName(aliasname);
 	}
 
-	@GetMapping("/Tally")
-	public List<Tally> listAll() {
-		return ty_service.listAll();
+	@GetMapping("/AliasName")
+	public List<AliasName> listAll() {
+		return ans_service.listAll();
 	}
 
-	@GetMapping("/Tally/{id}")
-	public ResponseEntity<Tally> get(@PathVariable Integer id) {
+	@GetMapping("/AliasName/{id}")
+	public ResponseEntity<AliasName> get(@PathVariable Integer id) {
 		try {
 
-			Tally product = ty_service.get(id);
+			AliasName product = ans_service.get(id);
 			log.debug("Request {}", id);
-			return new ResponseEntity<Tally>(product, HttpStatus.OK);
+			return new ResponseEntity<AliasName>(product, HttpStatus.OK);
 
 		} catch (NoSuchElementException e) {
-			return new ResponseEntity<Tally>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<AliasName>(HttpStatus.NOT_FOUND);
 		}
 	}
 
-	@PutMapping("/Tally/{id}")
-	public ResponseEntity<Tally> update(@RequestBody @Valid Tally tally, @PathVariable Integer id) {
+	@PutMapping("/AliasName/{id}")
+	public ResponseEntity<AliasName> update(@RequestBody @Valid AliasName aliasname, @PathVariable Integer id) {
 		try {
-			Tally existProduct = ty_service.get(id);
-			ty_service.saveTally(tally);
-			log.debug("Request {}", tally);
+			AliasName existProduct = ans_service.get(id);
+			ans_service.saveAliasName(aliasname);
+			log.debug("Request {}", aliasname);
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 	}
 
-	@DeleteMapping("/Tally/{id}")
+	@DeleteMapping("/AliasName/{id}")
 	public void delete(@PathVariable Integer id) {
-		ty_service.delete(id);
+		ans_service.delete(id);
 	}
-	
-	
+
 }

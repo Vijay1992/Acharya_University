@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.au.exception.ResourceNotFoundException;
+import com.au.model.ProgramSpecialization;
 import com.au.model.Tally;
 import com.au.repository.TallyRepository;
 
@@ -34,5 +35,8 @@ public class TallyService {
 		Tally ay = ty_repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Tally id Not Found:" + id));
 		ty_repo.delete(ay);
 	}
+
+	
+	
 
 }

@@ -70,7 +70,7 @@ public class FeeAdmissionSubCategoryController {
 	}
 	
 	@GetMapping("/FetchFeeAdmissionSubCategory/{fee_admission_category_id}") // (Behalf of fee_admission_category_id)
-	public List<String> fetch(@PathVariable Integer fee_admission_category_id) {
+	public List<FeeAdmissionSubCategory> fetch(@PathVariable Integer fee_admission_category_id) {
 		return fasc_service.findByfetchDetails(fee_admission_category_id);
 	}
 

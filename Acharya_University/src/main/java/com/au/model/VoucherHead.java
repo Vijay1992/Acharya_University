@@ -35,6 +35,13 @@ public class VoucherHead {
 	private String ledger_type;
 	private String voucher_type;
 	private String budget_head;
+	
+	
+
+	public VoucherHead() {
+		super();
+		
+	}
 
 	public Integer getVoucher_head_id() {
 		return voucher_head_id;

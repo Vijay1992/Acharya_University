@@ -11,7 +11,7 @@ import com.au.model.Program;
 @Repository
 public interface ProgramRepository extends JpaRepository<Program,Integer> {
 	
-	@Query("SELECT u FROM Program u where u.school_id=?1")
+	@Query("SELECT u FROM Program u where u.school_id=?1 and active=1")
 	public List<Program> findById123(Integer school_id);
 	
 	//@Query("SELECT count(u) FROM Program u where u.school_id=?1")

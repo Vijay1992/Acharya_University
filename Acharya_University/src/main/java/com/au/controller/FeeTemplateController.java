@@ -1,6 +1,7 @@
 
 package com.au.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
@@ -74,6 +75,12 @@ public class FeeTemplateController {
 	@PostMapping("/checkApi")
 	public FeeTemplate saveFeeTemplate(@RequestBody @Valid FeeTemplate board) {
 		return fts_service.saveFeeTemplate1(board);
+	}
+	
+	@PostMapping("/FeeTemplateDetails") // (Behalf of fee_template_id)
+	public List< HashMap<String,Object>> fetch(@RequestBody List<Integer> fee_template_id) {
+		List< HashMap<String,Object>> feetemplate = fts_service.findById(fee_template_id);
+		return feetemplate;
 	}
 
 }

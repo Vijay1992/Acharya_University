@@ -25,7 +25,7 @@ public class FeeTemplate {
 	private Integer program_id;
 	// private String program_specialization;
 	private String program_specialization_id;
-	private Integer currency_id;
+	private Integer currency_type_id;
 	private Integer fee_admission_category_id;
 	private Integer fee_admission_sub_category_id;
 	private Boolean Is_paid_at_board;
@@ -106,16 +106,17 @@ public class FeeTemplate {
 	 * public void setProgram_specialization(String program_specialization) {
 	 * this.program_specialization = program_specialization; }
 	 */
-	public Integer getCurrency_id() {
-		return currency_id;
-	}
-
-	public void setCurrency_id(Integer currency_id) {
-		this.currency_id = currency_id;
-	}
 
 	public Integer getFee_admission_category_id() {
 		return fee_admission_category_id;
+	}
+
+	public Integer getCurrency_type_id() {
+		return currency_type_id;
+	}
+
+	public void setCurrency_type_id(Integer currency_type_id) {
+		this.currency_type_id = currency_type_id;
 	}
 
 	public void setFee_admission_category_id(Integer fee_admission_category_id) {

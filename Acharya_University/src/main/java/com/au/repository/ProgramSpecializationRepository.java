@@ -13,7 +13,7 @@ public interface ProgramSpecializationRepository extends JpaRepository<ProgramSp
 	//@Query("SELECT u FROM Program u where u.school_id=?1")
 	//public List<Program> findById1(Integer );
 	
-	@Query(value="SELECT * FROM tbl_au_program_specialization where program_id=?1 and school_id=?2", nativeQuery= true)
+	@Query(value="SELECT * FROM tbl_au_program_specialization where school_id=?1 and program_id=?2 and active=1", nativeQuery= true)
 	public List<ProgramSpecialization> findById1(Integer program_id,Integer school_id );
 	
 	

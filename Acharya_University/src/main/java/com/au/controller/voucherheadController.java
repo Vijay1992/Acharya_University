@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.model.Program;
+import com.au.model.Tally;
 import com.au.model.VoucherHead;
 import com.au.service.VoucherHeadService;
 
@@ -67,6 +70,12 @@ public class voucherheadController {
 	@DeleteMapping("/VoucherHead/{id}")
 	public void delete(@PathVariable Integer id) {
 		vhs_service.delete(id);
+	}
+	
+	@GetMapping("/FetchVoucherHead/{school_id}") // (Behalf of schoolid)
+	public List<VoucherHead> fetch(@PathVariable Integer school_id) {
+		List<VoucherHead> voucherhead =  vhs_service.findById(school_id);
+		return voucherhead;
 	}
 
 }

@@ -36,7 +36,7 @@ public class FeeAdmissionSubCategoryService {
 		fasr_repo.delete(ay);
 	}
 
-	public List<String> findByfetchDetails(Integer fee_admission_category_id) {
+	public List<FeeAdmissionSubCategory> findByfetchDetails(Integer fee_admission_category_id) {
 		return fasr_repo.findById123(fee_admission_category_id);
 	}
 

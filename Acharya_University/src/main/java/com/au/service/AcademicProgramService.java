@@ -36,7 +36,7 @@ public class AcademicProgramService {
     	ap_repo.delete(ay);
     }
     
-    public List<Integer[]> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer program_id,Integer ac_year_id){
+    public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer program_id,Integer ac_year_id){
     	return ap_repo.getNumOfSemAndYearByProgram_IdAndAcYear_Id(program_id, ac_year_id);
     }
 }

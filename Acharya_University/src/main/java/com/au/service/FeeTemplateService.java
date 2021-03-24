@@ -1,6 +1,7 @@
 package com.au.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,11 +62,11 @@ public class FeeTemplateService {
 			ft.setAc_year_id(feetemplaterequest.getAc_year_id());
 			ft.setSchool_id(feetemplaterequest.getSchool_id());
 			ft.setProgram_id(feetemplaterequest.getProgram_id());
-			ft.setCurrency_id(feetemplaterequest.getCurrency_id());
+			ft.setCurrency_type_id(feetemplaterequest.getCurrency_type_id());
 			ft.setFee_admission_category_id(feetemplaterequest.getFee_admission_category_id());
 			ft.setFee_admission_sub_category_id(a);
 			ft.setNationality(feetemplaterequest.getNationality());
-			//ft.setProgram_specialization(feetemplaterequest.getProgram_specialization());
+			// ft.setProgram_specialization(feetemplaterequest.getProgram_specialization());
 			ft.setProgram_specialization_id(feetemplaterequest.getProgram_specialization_id());
 			ft.setProgram_type_id(feetemplaterequest.getProgram_type_id());
 			ft.setIs_nri(feetemplaterequest.getIs_nri());
@@ -82,12 +83,18 @@ public class FeeTemplateService {
 
 	}
 
+	
+	
 	public Integer countRecords(Integer id1, Integer id2, Integer id3) {
 		return ft_repo.findById123(id1, id2, id3);
 	}
 
 	public FeeTemplate saveFeeTemplate1(FeeTemplate academic) {
 		return ft_repo.save(academic);
+	}
+
+	public List< HashMap<String,Object>> findById(List<Integer> fee_template_id) {
+		return ft_repo.fetchFeeTemplateDetails(fee_template_id);
 	}
 
 }

@@ -71,7 +71,7 @@ public class AcademicProgramController {
 	}
 
 	@GetMapping("/FetchAcademicProgram/{program_id}/{ac_year_id}")
-	public List<Integer[]> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer program_id,
+	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer program_id,
 			@PathVariable Integer ac_year_id) {
 		return ap_service.getNumOfSemAndYearByProgram_IdAndAcYear_Id(program_id, ac_year_id);
 	}

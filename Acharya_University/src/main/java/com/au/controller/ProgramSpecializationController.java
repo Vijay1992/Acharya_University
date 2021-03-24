@@ -72,7 +72,7 @@ public class ProgramSpecializationController {
 	
 	@GetMapping("/FetchProgramSpecialization/{id1}/{id2}")      //(Behalf of schoolid and programid)
 	public List<ProgramSpecialization> fetch(@PathVariable Integer id1, @PathVariable Integer id2) {
-		List<ProgramSpecialization> school = (List<ProgramSpecialization>) pss_service.findById(id1,id2);
+		List<ProgramSpecialization> school = pss_service.findById(id1,id2);
 		return school;
 	}
 
