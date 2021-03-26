@@ -83,8 +83,6 @@ public class FeeTemplateService {
 
 	}
 
-	
-	
 	public Integer countRecords(Integer id1, Integer id2, Integer id3) {
 		return ft_repo.findById123(id1, id2, id3);
 	}
@@ -93,7 +91,7 @@ public class FeeTemplateService {
 		return ft_repo.save(academic);
 	}
 
-	public List< HashMap<String,Object>> findById(List<Integer> fee_template_id) {
+	public List<HashMap<String, Object>> findById(List<Integer> fee_template_id) {
 		return ft_repo.fetchFeeTemplateDetails(fee_template_id);
 	}
 

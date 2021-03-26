@@ -9,7 +9,11 @@ import com.au.model.VoucherHead;
 @Repository
 public interface VoucherHeadRepository extends JpaRepository<VoucherHead, Integer> {
 
-	@Query(value = "select * from tbl_au_voucher_head where school_id=?1", nativeQuery = true)
+	@Query(value = "select * from tbl_au_voucher_head where school_id=?1 and active=1", nativeQuery = true)
 	public List<VoucherHead> findById123(Integer school_id);
+
+	
+	@Query(value = "SELECT distinct count(*) FROM tbl_au_voucher_head where school_id=?1", nativeQuery = true)
+	public Integer findById12(Integer school_id);
 
 }

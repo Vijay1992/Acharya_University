@@ -1,5 +1,6 @@
 package com.au.service;
 
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,9 +35,8 @@ public class BoardSchoolAssignmentService {
 		bs_repo.delete(ay);
 	}
 
-	public List<String> findByfetchDetails(Integer school_id) {
-		return bs_repo.findById12(school_id);
-
+	public List<HashMap<String, String>> findByfetchDetails(Integer school_id) {
+		return bs_repo.findById1(school_id);
 	}
 
 	public Integer countRecords(Integer id) {

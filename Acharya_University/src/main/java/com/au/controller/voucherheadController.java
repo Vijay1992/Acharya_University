@@ -77,5 +77,10 @@ public class voucherheadController {
 		List<VoucherHead> voucherhead =  vhs_service.findById(school_id);
 		return voucherhead;
 	}
+	
+	@GetMapping("VoucherHeadCount/{school_id}") // no of count behalf of schoolid
+	public Integer countRecords(@PathVariable("school_id") Integer school_id) {
+		return vhs_service.countRecords(school_id);
+	}
 
 }

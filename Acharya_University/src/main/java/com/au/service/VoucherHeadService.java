@@ -40,4 +40,8 @@ public class VoucherHeadService {
 		return vh_repo.findById123(school_id);
 	}
 
+	public Integer countRecords(Integer school_id) {
+		return vh_repo.findById12(school_id);
+	}
+
 }

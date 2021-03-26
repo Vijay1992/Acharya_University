@@ -1,5 +1,6 @@
 package com.au.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
@@ -67,13 +68,14 @@ public class BoardSchoolAssignmentController {
 		bs_service.delete(id);
 	}
 
+	@GetMapping("/FetchBoardSchoolAssignment/{school_id}") // (Behalf of schoolid)
+	public List<HashMap<String, String>> fetch(@PathVariable Integer school_id) {
+		return bs_service.findByfetchDetails(school_id);
+	}
+
 	@GetMapping("BoardSchoolAssignmentCount/{id}") // no of count behalf of schoolid
 	public Integer countRecords(@PathVariable("id") Integer id) {
 		return bs_service.countRecords(id);
 	}
 
-	@GetMapping("/FetchBoardSchoolAssignment/{school_id}") // (Behalf of schoolid)
-	public List<String> fetch(@PathVariable Integer school_id) {
-		return bs_service.findByfetchDetails(school_id);
-	}
 }

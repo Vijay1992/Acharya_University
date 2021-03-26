@@ -29,15 +29,12 @@ public class Board {
 	private Date modified_date;
 	private Integer created_by;
 	private Integer modified_by;
+	private Boolean active;
 
-	/*
-	 * @ManyToOne
-	 * 
-	 * @Cascade(CascadeType.ALL)
-	 * 
-	 * @JoinColumn(name = "school_board_id", referencedColumnName = "school_id")
-	 * private Schools sch; // Fk
-	 */
+	public Board() {
+		super();
+	}
+
 	public Integer getBoard_unique_id() {
 		return board_unique_id;
 	}
@@ -92,6 +89,14 @@ public class Board {
 
 	public void setModified_by(Integer modified_by) {
 		this.modified_by = modified_by;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 }

@@ -28,6 +28,7 @@ public class AliasName {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+	private Boolean active;
 
 	public AliasName() {
 		super();
@@ -63,6 +64,14 @@ public class AliasName {
 
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
+	}
+
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 }
