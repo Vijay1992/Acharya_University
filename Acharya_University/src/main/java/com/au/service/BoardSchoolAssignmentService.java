@@ -1,5 +1,6 @@
 package com.au.service;
 
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,7 +39,7 @@ public class BoardSchoolAssignmentService {
     	return bs_repo.getBoardBySchool(school_id);
     }
     
-    public List<String> getBoardSchool(Integer school_id){
+    public List<HashMap<String, String>> getBoardSchool(Integer school_id){
     	return bs_repo.getBoardSchool(school_id);
     }
     

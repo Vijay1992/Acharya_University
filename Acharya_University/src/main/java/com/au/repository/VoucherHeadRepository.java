@@ -21,8 +21,15 @@ public interface VoucherHeadRepository extends JpaRepository<VoucherHead, Intege
 	public List<Integer> getSchools();
 	*/
 	
-	@Query(value = "SELECT count(*) FROM tbl_au_voucher_head where voucher_head=?1 and school_id=?2",nativeQuery = true)
-	public Integer findByVouHeadSchoolId(String voucher_head,HashMap<Integer, String> hashMap);
+/*	@Query(value = "SELECT count(*) FROM tbl_au_voucher_head where voucher_head=?1 and school_id=?2",nativeQuery = true)
+	public Integer findByVouHeadSchoolId(String voucher_head,Integer sid);
+	*/
+	
+	@Query(value = "SELECT school_id FROM tbl_au_voucher_head where voucher_head=?1  ",nativeQuery = true)
+	public List<Integer> findByVouHeadSchoolId(String voucher_head);
+
+	
+	
 	
 }
 

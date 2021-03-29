@@ -1,5 +1,6 @@
 package com.au.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -86,7 +87,17 @@ public class VoucherHeadController {
 		return vs.getVoucherBySchoolId(school_id);
 		
 	 }
+	/*
+	@GetMapping("/FetchVouHead/{vh}/{sid}")
+	public List<VoucherHead> findByVouHeadSchoolId(@PathVariable String vh,@PathVariable Integer sid) {
+		return vs.findByVouHeadSchoolId(vh,sid);
+	}
+	*/
 	
+	@GetMapping("/FetchVouHead/{vh}")
+	public List<Integer> findByVouHeadSchoolId(@PathVariable String vh) {
+		return vs.findByVouHeadSchoolId(vh);
+	}
 	
 }
 

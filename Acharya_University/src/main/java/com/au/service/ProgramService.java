@@ -3,9 +3,12 @@ package com.au.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ProgramNotFoundException;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.Program;
 import com.au.model.Schools;
@@ -22,8 +25,15 @@ public class ProgramService {
 		return pro_repo.findAll();
 	}
 	
-	public Program save_ProgramType(Program academic) {
-		return pro_repo.save(academic);
+	public ResponseEntity<Program> save_ProgramType(Program p) {
+		if(getProgramByPnameSchool(p.getProgram_name(), p.getSchool_id())>=1)
+		{
+			throw new ProgramNotFoundException("Program already exist");
+		}
+		else {		
+		//	return pro_repo.save(p);
+			return new ResponseEntity<Program>(pro_repo.save(p),HttpStatus.OK);
+		}
 	}
 	
 	public Program get(Integer id) {
@@ -46,5 +56,9 @@ public class ProgramService {
 	public Integer countRecords(Integer id) {
 		// TODO Auto-generated method stub
 		return pro_repo.countRecords(id);
+	}
+	
+	public Integer getProgramByPnameSchool(String program_name,Integer school_id) {
+		return pro_repo.getProgramByPnameSchool(program_name, school_id);
 	}
 }

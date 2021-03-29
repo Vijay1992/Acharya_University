@@ -1,11 +1,9 @@
 package com.au.controller;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,12 +36,19 @@ public class FeeTemplateController {
 		return fts_service.getTemplateName(feetemplate);
 	}
 
+	@GetMapping("/fetchFeeTemplate/{fee_admission_sub_category_id}")
+	public List<HashMap<String, Object>> listAll(@PathVariable Integer fee_admission_sub_category_id) {
+		return fts_service.listAll(fee_admission_sub_category_id);
+
+	}
+
+	/*
 	@GetMapping("/FeeTemplate")
 	public List<FeeTemplate> listAll() {
 		return fts_service.listAll();
 
-	}
-
+	}*/
+	
 	@GetMapping("/FeeTemplate/{id}")
 	public ResponseEntity<FeeTemplate> get(@PathVariable Integer id) {
 		try {
@@ -84,7 +89,7 @@ public class FeeTemplateController {
 	
 	@GetMapping("/fetchTemplates2/{fee_template_id}")
 	@ResponseBody
-	public List<String> getTemplates(@PathVariable("fee_template_id") List<String> fee_template_id){
+	public List<String> getTemplates(@RequestBody @PathVariable("fee_template_id") List<String> fee_template_id){
 		return fts_service.getTemplates(fee_template_id);
 	}
 	

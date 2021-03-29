@@ -1,5 +1,6 @@
 package com.au.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
@@ -79,10 +80,9 @@ public class BoardSchoolAssignmentController {
 	}
 	
 	@GetMapping("/FetchBoardSchoolAssignment/{school_id}")
-	public List<String> getBoardSchool(@PathVariable Integer school_id){
+	public List<HashMap<String, String>> getBoardSchool(@PathVariable Integer school_id){
 		return bs_service.getBoardSchool(school_id);
 	}
-	
 	
 }
 

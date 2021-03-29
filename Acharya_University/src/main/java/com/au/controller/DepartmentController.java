@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.exception.deptExceptionController;
 import com.au.model.Department;
 import com.au.service.DepartmentService;
 
@@ -37,7 +40,7 @@ public class DepartmentController {
 	
 	
 	@PostMapping("/dept")
-	public Department saveDept(@RequestBody @Valid Department dept) {
+	public ResponseEntity<Department> saveDept(@RequestBody @Valid Department dept) {
 		return deptService.save_Department(dept);
 	}
 	
@@ -69,4 +72,12 @@ public class DepartmentController {
 	public void delete(@PathVariable Integer id) {
 		deptService.delete(id);
 	}
+	
+	@GetMapping("/fetchDept/{dept_name}/{school_id}")
+	public Integer getDeptCountByDnameSchool(@PathVariable String dept_name,@PathVariable Integer school_id) {
+		return deptService.getDeptCountByDnameSchool(dept_name, school_id);
+	}
+	
+	 
+	
 }

@@ -19,8 +19,8 @@ public class FeeTemplateService {
 	@Autowired
 	private FeeTemplateRepository ft_repo;
 
-	public List<FeeTemplate> listAll() {
-		return ft_repo.findAll();
+	public List<HashMap<String, Object>> listAll( Integer fee_admission_sub_category_id) {
+		return ft_repo.findAll1(fee_admission_sub_category_id);
 	}
 
 	public FeeTemplate saveFeeTemplate(FeeTemplate ft) {

@@ -31,7 +31,8 @@ public class AliasName {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-
+	private Boolean active;
+	
 	public AliasName() {
 		super();
 	}
@@ -44,6 +45,19 @@ public class AliasName {
 		this.alias_name = alias_name;
 		this.created_date = created_date;
 		this.modified_date = modified_date;
+		this.active = active;
+	}
+
+
+
+	public Boolean getActive() {
+		return active;
+	}
+
+
+
+	public void setActive(Boolean active) {
+		this.active = active;
 	}
 
 

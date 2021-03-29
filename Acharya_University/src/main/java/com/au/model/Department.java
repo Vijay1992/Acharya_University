@@ -13,6 +13,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.http.HttpStatus;
 
 @Entity
 @Table(name = "tbl_au_dept")
@@ -48,7 +49,7 @@ public class Department {
 	private Integer priority;
 	
 	public Department() {
-		super();
+		
 	}
 
 	public Department(int dept_id, String dept_name, String dept_code, Date created_date, Date modified_date,
@@ -70,6 +71,10 @@ public class Department {
 		this.tag_id = tag_id;
 		this.service_oriented = service_oriented;
 		this.priority = priority;
+	}
+
+	public Department(String string, HttpStatus notFound) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getDept_id() {

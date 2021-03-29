@@ -43,6 +43,7 @@ public class Board {
 	
 	private Integer created_by;
 	private Integer modified_by;
+	private Boolean active;
 	/*
 	 * @ManyToOne
 	 * 
@@ -58,8 +59,11 @@ public class Board {
 
 	
 
+
+
+
 	public Board(Integer board_unique_id, String board_unique_name, String board_unique_short_name, Date created_date,
-			Date modified_date, Integer created_by, Integer modified_by) {
+			Date modified_date, Integer created_by, Integer modified_by, Boolean active) {
 		super();
 		this.board_unique_id = board_unique_id;
 		this.board_unique_name = board_unique_name;
@@ -68,8 +72,16 @@ public class Board {
 		this.modified_date = modified_date;
 		this.created_by = created_by;
 		this.modified_by = modified_by;
+		this.active = active;
 	}
 
+	public Boolean getActive() {
+		return active;
+	}
+
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 
 
 	public Integer getBoard_unique_id() {

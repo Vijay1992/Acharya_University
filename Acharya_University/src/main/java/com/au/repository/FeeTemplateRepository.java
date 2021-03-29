@@ -6,11 +6,42 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import com.au.model.Academic_year;
 import com.au.model.FeeTemplate;
 
 @Repository
 public interface FeeTemplateRepository extends JpaRepository<FeeTemplate, Integer> {
 
+	
+	@Query(value = "select new map (ft.fee_template_id as fee_template_id,"
+			+ "ft.fee_template_name as fee_template_name,"
+			+ "ft.ac_year_id as ac_year_id,"
+			+ "ft.school_id as school_id,"
+			+ "ft.program_id as program_id,"
+			+ "ft.program_specialization_id as program_specialization_id,"
+			+ "ft.currency_id as currency_type_id,"
+			+ "ft.fee_admission_category_id as fee_admission_category_id,"
+			+ "ft.fee_admission_sub_category_id as fee_admission_sub_category_id,"
+			+ "ft.is_nri as is_nri,"
+			+ "ft.is_paid_at_board as is_paid_at_board,"
+			+ "ft.nationality as nationality,"
+			+ "ft.program_type_id as program_type_id,"
+			+ "ft.created_date as created_date,"
+			+ "ft.modified_date as modified_date,"
+			+ "ft.active as active,"
+			+ "ft.remarks as remarks,"
+			+ "ft.created_by as created_by,"
+			+ "ft.modified_by as modified_by,"
+			+ "ft.approved_by as approved_by,"
+			+ "ft.approved_status as approved_status,"
+			+ "ft.approved_date as approved_date,"
+			+ "fasc.fee_admission_sub_category_name as fee_admission_sub_category_name)"
+			+ " from FeeTemplate as ft left join FeeAdmissionSubCategory as fasc"
+			+ " on ft.fee_admission_sub_category_id=fasc.fee_admission_sub_category_id  where ft.fee_admission_sub_category_id=?1")
+	public	List<HashMap<String, Object>>  findAll1(Integer fee_admission_sub_category_id);
+	
+	
 	@Query(value = "select count(*) from tbl_au_fee_template where ac_year_id = ?1 and program_id=?2 and fee_admission_category_id=?3", nativeQuery = true)
 	public Integer findById123(Integer id1, Integer id2, Integer id3);
 

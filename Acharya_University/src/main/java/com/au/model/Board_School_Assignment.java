@@ -23,7 +23,7 @@ public class Board_School_Assignment {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer board_school_assignment_id;
 
-	private Integer board_id;//fk
+	private Integer board_unique_id;//fk
 	private Integer school_id; //fk
 	
 	@Column(name = "created_date",updatable = false)
@@ -35,7 +35,7 @@ public class Board_School_Assignment {
 	@Temporal(TemporalType.TIMESTAMP)	
 	@UpdateTimestamp
 	private Date modified_date;
-	private boolean active;
+	private Boolean active;
 	
 	public Board_School_Assignment() {
 		super();
@@ -43,17 +43,35 @@ public class Board_School_Assignment {
 	
 	
 	
-	public Board_School_Assignment(Integer board_school_assignment_id, Integer board_id, Integer school_id,
-			Date created_date, Date modified_date, boolean active) {
+	
+
+
+
+	public Board_School_Assignment(Integer board_school_assignment_id, Integer board_unique_id, Integer school_id,
+			Date created_date, Date modified_date, Boolean active) {
 		super();
 		this.board_school_assignment_id = board_school_assignment_id;
-		this.board_id = board_id;
+		this.board_unique_id = board_unique_id;
 		this.school_id = school_id;
 		this.created_date = created_date;
 		this.modified_date = modified_date;
 		this.active = active;
 	}
 
+
+	public Integer getBoard_unique_id() {
+		return board_unique_id;
+	}
+
+
+	public void setBoard_unique_id(Integer board_unique_id) {
+		this.board_unique_id = board_unique_id;
+	}
+
+
+	public Boolean getActive() {
+		return active;
+	}
 
 
 	public Integer getBoard_school_assignment_id() {
@@ -62,12 +80,7 @@ public class Board_School_Assignment {
 	public void setBoard_school_assignment_id(Integer board_school_assignment_id) {
 		this.board_school_assignment_id = board_school_assignment_id;
 	}
-	public Integer getBoard_id() {
-		return board_id;
-	}
-	public void setBoard_id(Integer board_id) {
-		this.board_id = board_id;
-	}
+	
 	public Integer getSchool_id() {
 		return school_id;
 	}
@@ -101,13 +114,13 @@ public class Board_School_Assignment {
 
 
 
-	public boolean isActive() {
+	public Boolean isActive() {
 		return active;
 	}
 
 
 
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 	

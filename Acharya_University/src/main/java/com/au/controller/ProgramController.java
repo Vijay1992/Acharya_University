@@ -33,7 +33,7 @@ public class ProgramController {
 	private ProgramService pro_service;
 
 	@PostMapping("/Program")
-	public Program saveProgram(@RequestBody @Valid Program p) {
+	public ResponseEntity<Program> saveProgram(@RequestBody @Valid Program p) {
 		return pro_service.save_ProgramType(p);
 	}
 
@@ -82,9 +82,14 @@ public class ProgramController {
 			return school;
 	}
 	
-	@GetMapping("pro1/{id}")
+	@GetMapping("/pro1/{id}")
 	public Integer countRecords(@PathVariable("id")Integer id) {
 		return pro_service.countRecords(id);
+	}
+	
+	@GetMapping("/fetchProgram/{program_name}/{school_id}")
+	public Integer getProgramByPnameSchool(@PathVariable String program_name,@PathVariable Integer school_id) {
+		return pro_service.getProgramByPnameSchool(program_name, school_id);
 	}
 	
 }
