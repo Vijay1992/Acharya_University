@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,6 +22,7 @@ public class Schools {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer school_id;
+	@NotBlank
 	private String school_name;
 
 	@CreationTimestamp
@@ -29,14 +33,17 @@ public class Schools {
 	@UpdateTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date modified_date;
+	@NotNull
 	private Integer org_id;
-
+    @NotBlank
 	private String school_name_short;
-	private String school_desc;
+    @NotBlank
+    private String school_desc;
 	private Integer created_by;
 	private Integer modified_by;
 	private boolean active;
 	private boolean week_off;
+	@NotBlank
 	private String job_type;
 	private String ref_no;
 	private String email_id;

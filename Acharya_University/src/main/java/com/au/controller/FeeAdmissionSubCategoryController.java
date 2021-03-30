@@ -23,7 +23,7 @@ import com.au.service.FeeAdmissionSubCategoryService;
 @RequestMapping("/api")
 public class FeeAdmissionSubCategoryController {
 	
-	Logger log = LoggerFactory.getLogger(AcademicYearController.class);
+	Logger log = LoggerFactory.getLogger(FeeAdmissionSubCategoryController.class);
 
 	@Autowired
 	private FeeAdmissionSubCategoryService fasc_service;

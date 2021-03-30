@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -18,8 +20,9 @@ public class AcademicProgram {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer academic_program_id;
-
+    @NotNull
 	private Integer ac_year_id; // FK
+    @NotNull
 	private Integer program_id; // FK
 
 	@Column(updatable = false)

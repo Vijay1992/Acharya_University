@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,8 @@ import com.au.service.FeeTemplateService;
 @RestController
 @RequestMapping("/api")
 public class FeeTemplateController {
+
+	Logger log = LoggerFactory.getLogger(FeeTemplateController.class);
 
 	@Autowired
 	private FeeTemplateService fts_service;
@@ -66,7 +70,7 @@ public class FeeTemplateController {
 		fts_service.delete(id);
 	}
 
-	@GetMapping("FeeTemplateCount/{id1}/{id2}/{id3}") // no of count behalf of schoolid
+	@GetMapping("/FeeTemplateCount/{id1}/{id2}/{id3}") // no of count behalf of schoolid
 	public Integer countRecords(@PathVariable("id1") Integer id1, @PathVariable("id2") Integer id2,
 			@PathVariable("id3") Integer id3) {
 		return fts_service.countRecords(id1, id2, id3);
@@ -76,11 +80,15 @@ public class FeeTemplateController {
 	public FeeTemplate saveFeeTemplate(@RequestBody @Valid FeeTemplate board) {
 		return fts_service.saveFeeTemplate1(board);
 	}
-	
+
 	@PostMapping("/FeeTemplateDetails") // (Behalf of fee_template_id)
-	public List< HashMap<String,Object>> fetch(@RequestBody List<Integer> fee_template_id) {
-		List< HashMap<String,Object>> feetemplate = fts_service.findById(fee_template_id);
-		return feetemplate;
+	public List<HashMap<String, Object>> fetch1(@RequestBody List<Integer> fee_template_id) {
+		return fts_service.findById(fee_template_id);
+	}
+
+	@GetMapping("/FeeAdmissionSubCategoryDetail/{fee_admission_sub_category_id}") // (Behalf of fee_template_id)
+	public List<HashMap<String, Object>> fetch(@RequestBody @PathVariable Integer fee_admission_sub_category_id) {
+		return fts_service.findByFeeAdmissionSubCategory(fee_admission_sub_category_id);
 	}
 
 }

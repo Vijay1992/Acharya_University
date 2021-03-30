@@ -53,10 +53,12 @@ public class FeeTemplateService {
 			feeTemp += feetemplaterequest.getFee_admission_category().length() > 1
 					? feetemplaterequest.getFee_admission_category().substring(0, 1)
 					: feetemplaterequest.getFee_admission_category();
-			feeTemp += (ft_repo.findById123(feetemplaterequest.getAc_year_id(),
+			feeTemp += (ft_repo.findById(feetemplaterequest.getAc_year_id(),
 					feetemplaterequest.getFee_admission_category_id(), feetemplaterequest.getProgram_id()) + 1);
 			feeTemp += feetemplaterequest.getFee_admission_sub_category_id().get(a);
-			feeTemp += feetemplaterequest.getCurrency_short();
+			feeTemp += feetemplaterequest.getCurrency_short().length() >1
+					? feetemplaterequest.getCurrency_short().substring(0, 1)
+					: feetemplaterequest.getCurrency_short();
 
 			ft.setFee_template_name(feeTemp);
 			ft.setAc_year_id(feetemplaterequest.getAc_year_id());
@@ -84,7 +86,7 @@ public class FeeTemplateService {
 	}
 
 	public Integer countRecords(Integer id1, Integer id2, Integer id3) {
-		return ft_repo.findById123(id1, id2, id3);
+		return ft_repo.findById(id1, id2, id3);
 	}
 
 	public FeeTemplate saveFeeTemplate1(FeeTemplate academic) {
@@ -94,5 +96,11 @@ public class FeeTemplateService {
 	public List<HashMap<String, Object>> findById(List<Integer> fee_template_id) {
 		return ft_repo.fetchFeeTemplateDetails(fee_template_id);
 	}
+
+	public  List< HashMap<String,Object>> findByFeeAdmissionSubCategory(Integer fee_admission_sub_category_id) {	
+		return ft_repo.fetchFeeTemplateDetail(fee_admission_sub_category_id);
+	}
+
+
 
 }

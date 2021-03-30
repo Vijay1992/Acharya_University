@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -19,7 +21,9 @@ public class AcademicYear {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer ac_year_id;
+	@NotBlank
 	private String ac_year;
+	@NotBlank
 	private String ac_year_code;
 
 	@Column(updatable = false)

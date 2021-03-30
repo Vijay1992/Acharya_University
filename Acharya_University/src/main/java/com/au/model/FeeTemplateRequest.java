@@ -2,11 +2,9 @@ package com.au.model;
 
 import java.util.Date;
 import java.util.HashMap;
-
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 

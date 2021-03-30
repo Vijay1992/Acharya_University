@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,12 +25,8 @@ public class AcademicProgramController {
 
 	Logger log = LoggerFactory.getLogger(AcademicProgramController.class);
 
+	@Autowired
 	private AcademicProgramService ap_service;
-
-	public AcademicProgramController(AcademicProgramService ap_service) {
-		super();
-		this.ap_service = ap_service;
-	}
 
 	@PostMapping("/AcademicProgram")
 	public ResponseEntity<AcademicProgram> saveAcademicYear(@RequestBody @Valid AcademicProgram bs) {
@@ -70,9 +67,9 @@ public class AcademicProgramController {
 		ap_service.delete(id);
 	}
 
-	@GetMapping("/FetchAcademicProgram/{program_id}/{ac_year_id}")
-	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer program_id,
-			@PathVariable Integer ac_year_id) {
-		return ap_service.getNumOfSemAndYearByProgram_IdAndAcYear_Id(program_id, ac_year_id);
+	@GetMapping("/FetchAcademicProgram/{ac_year_id}/{program_id}")
+	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer ac_year_id,
+			@PathVariable Integer program_id) {
+		return ap_service.getNumOfSemAndYearByProgram_IdAndAcYear_Id(ac_year_id,program_id);
 	}
 }

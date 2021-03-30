@@ -35,7 +35,7 @@ public class BoardSchoolAssignmentService {
 		bs_repo.delete(ay);
 	}
 
-	public List<HashMap<String, String>> findByfetchDetails(Integer school_id) {
+	public List<HashMap<String, Object>> findByfetchDetails(Integer school_id) {
 		return bs_repo.findById1(school_id);
 	}
 

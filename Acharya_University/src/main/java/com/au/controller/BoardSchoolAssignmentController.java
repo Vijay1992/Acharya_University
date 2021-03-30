@@ -69,7 +69,7 @@ public class BoardSchoolAssignmentController {
 	}
 
 	@GetMapping("/FetchBoardSchoolAssignment/{school_id}") // (Behalf of schoolid)
-	public List<HashMap<String, String>> fetch(@PathVariable Integer school_id) {
+	public List<HashMap<String, Object>> fetch(@PathVariable Integer school_id) {
 		return bs_service.findByfetchDetails(school_id);
 	}
 
