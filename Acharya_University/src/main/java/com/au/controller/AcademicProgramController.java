@@ -70,9 +70,14 @@ public class AcademicProgramController {
 		ap_service.delete(id);
 	}
 
-	@GetMapping("/fetchAcademicProgram/{program_id}/{ac_year_id}")
-	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer program_id,@PathVariable Integer ac_year_id)
+	@GetMapping("/fetchAcademicProgram/{ac_year_id}/{program_id}")
+	public List<AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(@PathVariable Integer ac_year_id,@PathVariable Integer program_id)
 	{
-		return ap_service.getNumOfSemAndYearByProgram_IdAndAcYear_Id(program_id, ac_year_id);
+		return ap_service.getNumOfSemAndYearByProgram_IdAndAcYear_Id(ac_year_id, program_id);
 	}
+	
+	@GetMapping("/fetchAcademicProgram1/{ac_year_id}/{program_id}")
+	 public Integer getProgram(@PathVariable Integer ac_year_id,@PathVariable Integer  program_id) {
+		 return ap_service.getProgram(ac_year_id, program_id);
+	 }
 }

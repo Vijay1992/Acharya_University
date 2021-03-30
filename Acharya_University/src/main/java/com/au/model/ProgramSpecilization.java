@@ -2,11 +2,17 @@ package com.au.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "tbl_au_program_specialization")
@@ -23,8 +29,17 @@ public class ProgramSpecilization {
 	private Integer dept_id;
 	private Integer created_by;
 	private Integer modified_by;
+	
+	@Column(name = "created_date",updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)	
+	@CreationTimestamp
 	private Date created_date;
+
+	@Column(name = "modified_date")
+	@Temporal(TemporalType.TIMESTAMP)	
+	@UpdateTimestamp
 	private Date modified_date;
+
 	private Boolean active;
 	public ProgramSpecilization() {
 		super();

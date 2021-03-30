@@ -78,5 +78,11 @@ public class ProgramSpecilizationController {
 	public Integer countRecords(@PathVariable("school_id") Integer id) {
 	return pr_service.countRecords(id);
 	}
-
+	
+	@GetMapping("ProgramSpecializationCount1/{school_id}/{dept_id}/{program_id}/{auid_format}")
+	public Integer getProgramSpecilization(@PathVariable Integer school_id,@PathVariable Integer dept_id,
+			@PathVariable Integer program_id,@PathVariable String auid_format) {
+			
+		return pr_service.getProgramSpecilization(school_id, dept_id, program_id, auid_format);
+	}
 }

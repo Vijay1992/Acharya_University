@@ -24,4 +24,8 @@ public interface ProgramRepository extends JpaRepository<Program,Integer> {
 	 @Query(value = "SELECT count(*) FROM au_db1.tbl_au_program where program_name=?1 and school_id=?2",nativeQuery = true)
 	 public Integer getProgramByPnameSchool(String program_name,Integer school_id);
 	
+
+     @Query(value = "SELECT * FROM tbl_au_program where school_id=?1 and active=1",nativeQuery = true)
+	 public List<Program> getProgramBySchool(Integer school_id);
+	 
 }

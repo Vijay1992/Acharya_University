@@ -30,7 +30,7 @@ public class FeeTemplateController {
 	private FeeTemplateService fts_service;
 
 	Logger log = LoggerFactory.getLogger(FeeTemplateController.class);
-	
+
 	@PostMapping("/FeeTemplate")
 	public List<FeeTemplate> saveFeeTemplate(@RequestBody @Valid FeeTemplateRequest feetemplate) {
 		return fts_service.getTemplateName(feetemplate);
@@ -42,13 +42,12 @@ public class FeeTemplateController {
 
 	}
 
-	/*
 	@GetMapping("/FeeTemplate")
 	public List<FeeTemplate> listAll() {
 		return fts_service.listAll();
 
-	}*/
-	
+	}
+
 	@GetMapping("/FeeTemplate/{id}")
 	public ResponseEntity<FeeTemplate> get(@PathVariable Integer id) {
 		try {
@@ -76,43 +75,34 @@ public class FeeTemplateController {
 	public void delete(@PathVariable Integer id) {
 		fts_service.delete(id);
 	}
-	
-	@GetMapping("FeeTemplateCount/{id1}/{id2}/{id3}") // no of count behalf of schoolid
-	public Integer countRecords(@PathVariable("id1") Integer id1,  @PathVariable("id2") Integer id2,@PathVariable("id3") Integer id3) {
-		return fts_service.countRecords(id1,id2,id3);
+
+	@GetMapping("FeeTemplateCount/{ac_year_id}/{program_id}/{fee_admission_category_id}") // no of count behalf of
+																							// schoolid
+	public Integer countRecords(@PathVariable("ac_year_id") Integer id1, @PathVariable("program_id") Integer id2,
+			@PathVariable("fee_admission_category_id") Integer id3) {
+		return fts_service.countRecords(id1, id2, id3);
 	}
-	
+
 	@PostMapping("/checkApi")
 	public FeeTemplate saveFeeTemplate(@RequestBody @Valid FeeTemplate board) {
 		return fts_service.saveFeeTemplate1(board);
 	}
-	
+
 	@GetMapping("/fetchTemplates2/{fee_template_id}")
 	@ResponseBody
-	public List<String> getTemplates(@RequestBody @PathVariable("fee_template_id") List<String> fee_template_id){
+	public List<String> getTemplates(@RequestBody @PathVariable("fee_template_id") List<String> fee_template_id) {
 		return fts_service.getTemplates(fee_template_id);
 	}
-	
-	
-/*	@PostMapping("/getTemplates") //Behalf of school_id
-	public List<HashMap<String, Object>> getTemplates1(@RequestBody List<Integer> fee_template_id){
-		return fts_service.getTemplates1(fee_template_id);
-	}
-	*/
-	
+
+	/*
+	  @PostMapping("/getTemplates") //Behalf of school_id public
+	  List<HashMap<String, Object>> getTemplates1(@RequestBody List<Integer>
+	  fee_template_id){ return fts_service.getTemplates1(fee_template_id); }
+ */
+
 	@PostMapping("/FeeTemplateDetails") // (Behalf of fee_template_id)
-	public List< HashMap<String,Object>> fetch(@RequestBody List<Integer> fee_template_id) {
-	List< HashMap<String,Object>> feetemplate = fts_service.findById(fee_template_id);
-	return feetemplate;
+	public List<HashMap<String, Object>> fetch(@RequestBody List<Integer> fee_template_id) {
+		return fts_service.findById(fee_template_id);
 	}
+
 }
-
-
-
-
-
-
-
-
-
-

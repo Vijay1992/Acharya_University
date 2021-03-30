@@ -92,4 +92,9 @@ public class ProgramController {
 		return pro_service.getProgramByPnameSchool(program_name, school_id);
 	}
 	
+	
+	@GetMapping("/fetchProgram1/{school_id}")
+	 public List<Program> getProgramBySchool(@PathVariable Integer school_id){
+		return pro_service.getProgramBySchool(school_id);
+	}
 }

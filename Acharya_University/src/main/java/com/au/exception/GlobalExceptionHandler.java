@@ -28,6 +28,14 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity(error, HttpStatus.NOT_FOUND);
 	}
 
+	@ExceptionHandler(ProgramSpecilizationNotFoundException.class)
+	public ResponseEntity<?> handleAPIException(ProgramSpecilizationNotFoundException exception, WebRequest request) {
+
+		ErrorDetails error = new ErrorDetails(new Date(), exception.getMessage(), request.getDescription(false));
+		return new ResponseEntity(error, HttpStatus.NOT_FOUND);
+	}
+	
+	
 	// handle global exception
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<?> handleGlobalException(Exception exception, WebRequest request) {

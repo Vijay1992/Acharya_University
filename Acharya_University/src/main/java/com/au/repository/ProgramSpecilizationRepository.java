@@ -17,5 +17,8 @@ public interface ProgramSpecilizationRepository extends JpaRepository<ProgramSpe
 
 	@Query(value=" SELECT count(*) FROM tbl_au_program where school_id=?1",nativeQuery = true)
 	public Integer findById2(Integer school_id);
+
 	
+	@Query(value = "SELECT count(*) FROM tbl_au_program_specialization where school_id=?1 and dept_id=?2 and  program_id=?3 and  auid_format=?4",nativeQuery = true)
+	public Integer getProgramSpecilization(Integer  school_id ,Integer dept_id,Integer program_id ,String auid_format);
 }

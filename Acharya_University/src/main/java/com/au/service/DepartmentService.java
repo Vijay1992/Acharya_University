@@ -53,4 +53,13 @@ public class DepartmentService
     public Integer getDeptCountByDnameSchool(String dept_name,Integer school_id) {
     	return deptrepo.getDeptCountByDnameSchool(dept_name, school_id);
     }
+    
+    
+    public List<Department> getDeptBySchholId(Integer school_id){
+    	return deptrepo.getDeptBySchholId(school_id);
+    }
 }
+
+
+
+

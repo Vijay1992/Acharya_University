@@ -61,4 +61,9 @@ public class ProgramService {
 	public Integer getProgramByPnameSchool(String program_name,Integer school_id) {
 		return pro_repo.getProgramByPnameSchool(program_name, school_id);
 	}
+	
+	
+	 public List<Program> getProgramBySchool(Integer school_id){
+		 return pro_repo.getProgramBySchool(school_id);
+	 }
 }

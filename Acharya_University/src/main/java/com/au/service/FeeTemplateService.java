@@ -23,6 +23,10 @@ public class FeeTemplateService {
 		return ft_repo.findAll1(fee_admission_sub_category_id);
 	}
 
+	public List<FeeTemplate> listAll( ) {
+		return ft_repo.findAll();
+	}
+	
 	public FeeTemplate saveFeeTemplate(FeeTemplate ft) {
 		return ft_repo.save(ft);
 	}
@@ -102,7 +106,13 @@ public class FeeTemplateService {
 */
 	
 	public List< HashMap<String,Object>> findById(List<Integer> fee_template_id) {
+/*
+List<HashMap<String, Object>> l = ft_repo.fetchFeeTemplateDetails(fee_template_id);
+		for(HashMap<String, Object> ll:l)
+		System.out.println(ll);
+*/
 		return ft_repo.fetchFeeTemplateDetails(fee_template_id);
 		}
+
 }
 

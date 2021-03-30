@@ -2,6 +2,7 @@ package com.au.service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +34,9 @@ public class VoucherHeadService {
 			System.out.println("=" + a);
 			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());
 			System.out.println("==" + schools);
-			if (schools.contains(a)) {
+			
+		if(schools.contains(a)) {
+		//	 if(schools.contains(obj.toString().)){
 				throw new VoucherSchoolFoundException(" already exist");
 			} else {
 				VoucherHead vou1 = new VoucherHead();
@@ -51,6 +54,7 @@ public class VoucherHeadService {
 				save_VoucherHead(vou1);
 				list.add(vou1);
 			}
+			
 			System.out.println("===" + schools);
 
 		});

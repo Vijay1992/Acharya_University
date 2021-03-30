@@ -78,6 +78,9 @@ public class DepartmentController {
 		return deptService.getDeptCountByDnameSchool(dept_name, school_id);
 	}
 	
-	 
+	@GetMapping("/fetchdept1/{school_id}")
+	public List<Department> getDeptBySchholId(@PathVariable Integer school_id){
+    	return deptService.getDeptBySchholId(school_id);
+    }
 	
 }

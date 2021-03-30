@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.AcademicProgramNotFoundException;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.AcademicProgram;
 import com.au.repository.AcademicProgramRepository;
@@ -23,8 +24,15 @@ public class AcademicProgramService {
 		return ap_repo.findAll();
 	}
 	
-	public AcademicProgram save_AcademicProgram(AcademicProgram academic) {
-		return ap_repo.save(academic);
+	public AcademicProgram save_AcademicProgram(AcademicProgram a) {
+		
+		if(getProgram(a.getAc_year_id(), a.getProgram_id())>=1) {
+			throw new AcademicProgramNotFoundException("AcademicProgram already exist");
+		}
+		else
+		{
+			return ap_repo.save(a);
+		}
 	}
 	
 	public AcademicProgram get(Integer id) {
@@ -38,7 +46,12 @@ public class AcademicProgramService {
     	ap_repo.delete(ay);
     }
     
-    public List< AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer program_id,Integer ac_year_id){
-    	return ap_repo.getNumOfSemAndYearByProgram_IdAndAcYear_Id(program_id, ac_year_id);
+    public List< AcademicProgram> getNumOfSemAndYearByProgram_IdAndAcYear_Id(Integer ac_year_id,Integer program_id){
+    	return ap_repo.getNumOfSemAndYearByProgram_IdAndAcYear_Id(ac_year_id, program_id);
     }
+    
+    public Integer getProgram(Integer ac_year_id,Integer  program_id) {
+    	return ap_repo.getProgram(ac_year_id, program_id);
+    }
+    
 }

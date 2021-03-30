@@ -2,10 +2,13 @@ package com.au.service;
 
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.au.exception.ProgramSpecilizationNotFoundException;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.Academic_year;
 import com.au.model.ProgramSpecilization;
@@ -22,8 +25,16 @@ public class ProgramSpecilizationService {
 		return ps_repo.findAll();
 	}
 	
-	public ProgramSpecilization save_ProgramSpecilization(ProgramSpecilization p) {
-		return ps_repo.save(p);
+	public ProgramSpecilization save_ProgramSpecilization(ProgramSpecilization p)
+	{
+		if(getProgramSpecilization(p.getSchool_id(), p.getDept_id(), p.getProgram_id(), p.getAuid_format())>=1) {
+			throw new RuntimeException("ProgramSpecilization already Exist");
+			//throw new ProgramSpecilizationNotFoundException("ProgramSpecilization already Exist");
+		}
+		else
+		{
+			return ps_repo.save(p);
+		}
 	}
 	
 	public ProgramSpecilization get(Integer id) {
@@ -52,4 +63,8 @@ public class ProgramSpecilizationService {
 		return ps_repo.findById2(id);
 	}
     
+	public Integer getProgramSpecilization(Integer school_id,Integer dept_id,
+			Integer program_id,String auid_format) {
+		return ps_repo.getProgramSpecilization(school_id, dept_id, program_id, auid_format);
+	}
 }
