@@ -22,6 +22,7 @@ public class AliasName {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer alias_id;
 	private String alias_name;
+	
 
 	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -100,6 +101,14 @@ public class AliasName {
 
 	public void setAlias_name(String alias_name) {
 		this.alias_name = alias_name;
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "AliasName [alias_id=" + alias_id + ", alias_name=" + alias_name + ", created_date=" + created_date
+				+ ", modified_date=" + modified_date + ", active=" + active + "]";
 	}
 	
 	

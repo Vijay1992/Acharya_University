@@ -2,9 +2,7 @@ package com.au.controller;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,4 +66,11 @@ public class AliasNameController {
 	public void delete(@PathVariable Integer id) {
 		a_service.delete(id);
 	}
-}
+	
+	@GetMapping("/alias1")
+	 public List<String> getAliasNames(){
+		return a_service.getAliasNames();
+	 }
+	 }
+	
+

@@ -36,8 +36,8 @@ public class VoucherHeadController {
 	private VoucherHeadService vs;
 	
 	@PostMapping("/VoucherHead")
-	public List<VoucherHead> saveVoucherHead(@RequestBody @Valid VoucherHeadRequest  vou,Model model) {
-		model.addAttribute("msg", "Voucher Head inserted Successfully");
+	public List<VoucherHead> saveVoucherHead(@RequestBody @Valid VoucherHeadRequest  vou) {
+//		model.addAttribute("msg", "Voucher Head inserted Successfully");
 		return vs.getAllVouchers(vou);
 	}
 
@@ -97,6 +97,11 @@ public class VoucherHeadController {
 	@GetMapping("/FetchVouHead/{vh}")
 	public List<Integer> findByVouHeadSchoolId(@PathVariable String vh) {
 		return vs.findByVouHeadSchoolId(vh);
+	}
+	
+	@GetMapping("/fetch1/{voucher_head}/{sid}")
+	public Integer findByVouHeadSchoolId(@PathVariable String voucher_head,@PathVariable Integer sid) {
+		return vs.findByVouHeadSchoolId1(voucher_head, sid);
 	}
 	
 }

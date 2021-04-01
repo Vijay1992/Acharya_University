@@ -12,8 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.au.exception.ResourceNotFoundException;
 import com.au.exception.VoucherSchoolFoundException;
+import com.au.model.AliasName;
 import com.au.model.VoucherHead;
 import com.au.model.VoucherHeadRequest;
+import com.au.repository.AliasNameRepository;
 import com.au.repository.VoucherHeadRepository;
 
 @Service
@@ -23,6 +25,9 @@ public class VoucherHeadService {
 	@Autowired
 	private VoucherHeadRepository vou_repo;
 
+	@Autowired
+	AliasNameRepository a_repo;
+
 	public List<VoucherHead> listAll() {
 		return vou_repo.findAll();
 	}
@@ -31,14 +36,35 @@ public class VoucherHeadService {
 		List<VoucherHead> list = new ArrayList<VoucherHead>();
 
 		vou.getSchool_id().keySet().stream().forEach(a -> {
-			System.out.println("=" + a);
+			// System.out.println("=" + a);
 			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());
-			System.out.println("==" + schools);
+		//	System.out.println("==" + schools);
+
+			List<AliasName> al = a_repo.findAll();
+
+			String vh = vou.getVoucher_head();
+			AliasName al1 = new AliasName();
+
+			for (AliasName list1 : al) {
+				List<String> list2 = a_repo.getAliasNames();
+System.out.println("------------------"+list2);
+				if (vh.equals(list1.getAlias_name()))
+					System.out.println("already exist123");
+				else 
+				{	
+					if(vh.contains(list1.getAlias_name()))
+					{					}
+					al1.setAlias_name(vh);
+				}
+			}
+			a_repo.save(al1);
+
 			
-		if(schools.contains(a)) {
-		//	 if(schools.contains(obj.toString().)){
-				throw new VoucherSchoolFoundException(" already exist");
+			if (schools.contains(a)) 
+			{
+				throw new RuntimeException("already exist");
 			} else {
+
 				VoucherHead vou1 = new VoucherHead();
 
 				vou1.setVoucher_head(vou.getVoucher_head());
@@ -54,9 +80,6 @@ public class VoucherHeadService {
 				save_VoucherHead(vou1);
 				list.add(vou1);
 			}
-			
-			System.out.println("===" + schools);
-
 		});
 		return list;
 	}
@@ -69,24 +92,28 @@ public class VoucherHeadService {
 	 * 
 	 * // System.out.println("=====" + vou_repo.findByVouHeadSchoolId(null, null));
 	 * 
-	 * Map<Integer, String> map = new HashMap<>(); //Integer i =
-	 * vou_repo.findByVouHeadSchoolId(vou.getVoucher_head(), vou.getSchool_id());
+	 * Map<Integer, String> map = new HashMap<>(); // Integer i
+	 * =vou_repo.findByVouHeadSchoolId(vou.getVoucher_head(), //
+	 * vou.getSchool_id());
 	 * 
-	 * VoucherHead v1 = new VoucherHead();
+	 * for(int i=0;i<vou.getSchool_id().keySet().size();i++) { //
+	 * vou.getSchool_id().keySet().stream().forEach(a -> {
+	 * System.out.println("---"+findByVouHeadSchoolId1(vou.getVoucher_head(),vou.
+	 * getSchool_id().size()));
 	 * 
-	 * if (vou_repo.findByVouHeadSchoolId(vou.getVoucher_head(),
-	 * findByVouHeadSchoolId(vou.getVoucher_head(), vou.getSchool_id()))) >= 1) {
-	 * throw new VoucherSchoolFoundException("Voucher School Already Exist"); } else
-	 * { vou.getSchool_id().keySet().stream().forEach(a -> { VoucherHead vou1 = new
-	 * VoucherHead(); vou1.setVoucher_head(vou.getVoucher_head());
-	 * vou1.setSchool_id(a); vou1.setTally_id(vou.getTally_id());
+	 * if(findByVouHeadSchoolId1(vou.getVoucher_head(),vou.getSchool_id().size())
+	 * >=1) { throw new RuntimeException("already exist"); } else { VoucherHead vou1
+	 * = new VoucherHead(); vou1.setVoucher_head(vou.getVoucher_head());
+	 * vou1.setSchool_id(vou.getSchool_id().keySet().size());
+	 * vou1.setTally_id(vou.getTally_id());
 	 * vou1.setVoucher_type(vou.getVoucher_type());
 	 * vou1.setBudget_head(vou.getBudget_head());
 	 * vou1.setLedger_id(vou.getLedger_id());
 	 * vou1.setCreated_by(vou.getCreated_by());
 	 * vou1.setModified_by(vou.getModified_by()); vou1.setActive(vou.getActive());
-	 * save_VoucherHead(vou1); list.add(vou1); }); } return list; }
+	 * save_VoucherHead(vou1); list.add(vou1); } // }); } return list; }
 	 */
+
 	public VoucherHead save_VoucherHead(VoucherHead voucher) {
 		return vou_repo.save(voucher);
 	}
@@ -107,6 +134,10 @@ public class VoucherHeadService {
 
 	public List<Integer> findByVouHeadSchoolId(String vh) {
 		return vou_repo.findByVouHeadSchoolId(vh);
+	}
+
+	public Integer findByVouHeadSchoolId1(String voucher_head, Integer sid) {
+		return vou_repo.findByVouHeadSchoolId(voucher_head, sid);
 	}
 
 }

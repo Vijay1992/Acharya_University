@@ -23,6 +23,7 @@ public class ProgramSpecilization {
 	private Integer program_specialization_id;
 	private String program_specialization_name;
 	private String program_specialization_short_name;
+	@Column(unique = true)
 	private String auid_format;
 	private Integer program_id;
 	private Integer school_id;

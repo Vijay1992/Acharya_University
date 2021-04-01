@@ -24,12 +24,11 @@ public class VoucherHead {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer voucher_head_id;
-	@NotBlank
+//	@NotBlank
 	private String voucher_head;
 //	private HashMap<Integer, String>  school_id;    //fk
-	@NotNull
+//	@NotNull
 	private Integer  school_id;   
-	@com.sun.istack.NotNull
 	private Integer tally_id;     //fk
 
 	private Integer created_by;
@@ -45,11 +44,11 @@ public class VoucherHead {
 	private Date modified_date;
 	
 	private Boolean active;
-	@NotBlank
+//	@NotBlank
 	private String ledger_id;
-	@NotBlank
+//	@NotBlank
 	private String voucher_type;
-	@NotBlank
+//	@NotBlank
 	private String budget_head;
 	
 	public VoucherHead() {

@@ -14,4 +14,9 @@ public interface AliasNameRepository extends JpaRepository<AliasName, Integer> {
 	@Query(value = "SELECT * FROM tbl_au_alias_name where active=true",nativeQuery =  true)
 	public	List<AliasName>  findAll();
 	
+	
+	
+	@Query(value = "SELECT alias_name FROM tbl_au_alias_name  where active=true",nativeQuery = true)
+	public List<String> getAliasNames();
+	
 }
