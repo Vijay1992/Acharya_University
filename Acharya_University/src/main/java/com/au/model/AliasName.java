@@ -32,7 +32,7 @@ public class AliasName {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
-	private Boolean active;
+	private Boolean active=true;
 	
 	public AliasName() {
 		super();

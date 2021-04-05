@@ -12,6 +12,10 @@ import com.au.model.FeeTemplate;
 public interface FeeTemplateRepository extends JpaRepository<FeeTemplate, Integer> {
 
 	
+	@Query(value = "select f from FeeTemplate f where fee_template_id=?1")
+	public FeeTemplate findByfee_template_id(Integer fee_template_id);
+	
+	
 	@Query(value = "select new map (ft.fee_template_id as fee_template_id,"
 			+ "ft.fee_template_name as fee_template_name,"
 			+ "ft.ac_year_id as ac_year_id,"

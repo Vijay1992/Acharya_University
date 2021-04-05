@@ -1,17 +1,11 @@
 package com.au.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.au.exception.ResourceNotFoundException;
-import com.au.exception.VoucherSchoolFoundException;
 import com.au.model.AliasName;
 import com.au.model.VoucherHead;
 import com.au.model.VoucherHeadRequest;
@@ -21,7 +15,6 @@ import com.au.repository.VoucherHeadRepository;
 @Service
 @Transactional
 public class VoucherHeadService {
-
 	@Autowired
 	private VoucherHeadRepository vou_repo;
 
@@ -33,35 +26,42 @@ public class VoucherHeadService {
 	}
 
 	public List<VoucherHead> getAllVouchers(VoucherHeadRequest vou) {
+
 		List<VoucherHead> list = new ArrayList<VoucherHead>();
 
+		
+		List<AliasName> al = a_repo.findAll();
+		System.out.println(al);
+
+		String vh = vou.getVoucher_head();
+		// System.out.println("=="+vh);
+		AliasName al1 = new AliasName();
+
+		List<String> list2 = a_repo.getAliasNames();
+		System.out.println(list2);
+		for (AliasName list1 : al) {
+			//System.out.println("="+list1.getAlias_name());
+			if (vh.contains(list1.getAlias_name())) {
+				System.out.println("already Exist1234");
+			}	
+			else {
+				
+			}
+		}
+		al1.setAlias_name(vh);
+		a_repo.save(al1);
+		
+		
+		
 		vou.getSchool_id().keySet().stream().forEach(a -> {
 			// System.out.println("=" + a);
 			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());
-		//	System.out.println("==" + schools);
-
-			List<AliasName> al = a_repo.findAll();
-
-			String vh = vou.getVoucher_head();
-			AliasName al1 = new AliasName();
-
-			for (AliasName list1 : al) {
-				List<String> list2 = a_repo.getAliasNames();
-System.out.println("------------------"+list2);
-				if (vh.equals(list1.getAlias_name()))
-					System.out.println("already exist123");
-				else 
-				{	
-					if(vh.contains(list1.getAlias_name()))
-					{					}
-					al1.setAlias_name(vh);
-				}
-			}
-			a_repo.save(al1);
+			// System.out.println("==" + schools);
 
 			
-			if (schools.contains(a)) 
-			{
+		
+			
+			if (schools.contains(a)) {
 				throw new RuntimeException("already exist");
 			} else {
 
@@ -139,5 +139,4 @@ System.out.println("------------------"+list2);
 	public Integer findByVouHeadSchoolId1(String voucher_head, Integer sid) {
 		return vou_repo.findByVouHeadSchoolId(voucher_head, sid);
 	}
-
 }

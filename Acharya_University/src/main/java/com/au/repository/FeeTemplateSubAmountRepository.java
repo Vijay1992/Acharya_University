@@ -8,4 +8,7 @@ import com.au.model.FeeTemplateSubAmount;
 @Repository
 public interface FeeTemplateSubAmountRepository extends JpaRepository<FeeTemplateSubAmount, Integer> {
 
+	
+	
+	
 }

@@ -129,10 +129,6 @@ public class Academic_year {
 		this.current_year = current_year;
 	}
 
-	@Override
-	public String toString() {
-		return ac_year;
-	}
 
 
 

@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.dto.FeeTemplateAmount;
 import com.au.model.FeeTemplateSubAmount;
 import com.au.service.FeeTemplateSubAmountService;
 
@@ -30,10 +32,16 @@ public class FeeTemplateSubAmountController {
 	
 	Logger log = LoggerFactory.getLogger(FeeTemplateSubAmountController.class);
 	
-	@PostMapping("/FeeTemplateSubAmount")
+	/*@PostMapping("/FeeTemplateSubAmount")
 	public ResponseEntity<FeeTemplateSubAmount> saveAcademicYear(@RequestBody @Valid FeeTemplateSubAmount bs) {
 		FeeTemplateSubAmount bs1 = fee_service.save_FeeTemplateSubAmount(bs);
 		return new ResponseEntity<FeeTemplateSubAmount>(bs1, HttpStatus.CREATED);
+	}*/
+	
+	@PostMapping("/FeeTemplateSubAmount")
+	public FeeTemplateSubAmount saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateAmount feetemplatesubamount) {
+	log.debug("Request {}", feetemplatesubamount);
+	return fee_service.saveFeeTemplateTotalAmount(feetemplatesubamount);
 	}
 
 	@GetMapping("/FeeTemplateSubAmount")
@@ -57,7 +65,7 @@ public class FeeTemplateSubAmountController {
 	public ResponseEntity<FeeTemplateSubAmount> update(@RequestBody FeeTemplateSubAmount bs, @PathVariable Integer id) {
 		try {
 			FeeTemplateSubAmount existProduct = fee_service.get(id);
-			fee_service.save_FeeTemplateSubAmount(bs);
+			fee_service.saveFeeTemplateSubAmount(bs);
 			return new ResponseEntity<FeeTemplateSubAmount>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {
 			return new ResponseEntity<FeeTemplateSubAmount>(HttpStatus.NOT_FOUND);
