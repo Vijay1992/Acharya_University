@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.au.dto.FeeTemplateAmount;
 import com.au.model.FeeTemplateSubAmount;
 import com.au.service.FeeTemplateSubAmountService;
 
@@ -28,8 +29,15 @@ public class FeeTemplateSubAmountController {
 	@Autowired
 	private FeeTemplateSubAmountService ftsa_service;
 
+	@PostMapping("/FeeTemplateSubAmount1")
+	public FeeTemplateSubAmount saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateAmount feetemplatesubamount) {
+		log.debug("Request {}", feetemplatesubamount);
+		return ftsa_service.saveFeeTemplateTotalAmount(feetemplatesubamount);
+	}
+
 	@PostMapping("/FeeTemplateSubAmount")
-	public FeeTemplateSubAmount saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount) {
+	public FeeTemplateSubAmount saveFeeTemplateSubAmount(
+			@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount) {
 		log.debug("Request {}", feetemplatesubamount);
 		return ftsa_service.saveFeeTemplateSubAmount(feetemplatesubamount);
 	}
@@ -48,12 +56,14 @@ public class FeeTemplateSubAmountController {
 			return new ResponseEntity<FeeTemplateSubAmount>(product, HttpStatus.OK);
 
 		} catch (NoSuchElementException e) {
+
 			return new ResponseEntity<FeeTemplateSubAmount>(HttpStatus.NOT_FOUND);
 		}
 	}
 
 	@PutMapping("/FeeTemplateSubAmount/{id}")
-	public ResponseEntity<FeeTemplateSubAmount> update(@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount,@PathVariable Integer id) {
+	public ResponseEntity<FeeTemplateSubAmount> update(@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount,
+			@PathVariable Integer id) {
 		try {
 			FeeTemplateSubAmount existProduct = ftsa_service.get(id);
 			ftsa_service.saveFeeTemplateSubAmount(feetemplatesubamount);
@@ -68,5 +78,4 @@ public class FeeTemplateSubAmountController {
 	public void delete(@PathVariable Integer id) {
 		ftsa_service.delete(id);
 	}
-
 }

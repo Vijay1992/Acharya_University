@@ -1,10 +1,17 @@
 package com.au.model;
 
+import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 @Table(name = "user_details")
@@ -14,6 +21,20 @@ public class UserAuthentication {
 	private int id;
 	private String username;
 	private String password;
+	private Integer role_id;
+	private String usertype;
+	private Boolean status;
+	@Email
+	private String email;
+	private String usercode;
+	@Column(updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	@CreationTimestamp
+	private Date created_date;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@UpdateTimestamp
+	private Date modified_date;
 
 	public UserAuthentication() {
 		super();
@@ -48,6 +69,62 @@ public class UserAuthentication {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public Integer getRole_id() {
+		return role_id;
+	}
+
+	public void setRole_id(Integer role_id) {
+		this.role_id = role_id;
+	}
+
+	public String getUsertype() {
+		return usertype;
+	}
+
+	public void setUsertype(String usertype) {
+		this.usertype = usertype;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsercode() {
+		return usercode;
+	}
+
+	public void setUsercode(String usercode) {
+		this.usercode = usercode;
+	}
+
+	public Date getCreated_date() {
+		return created_date;
+	}
+
+	public void setCreated_date(Date created_date) {
+		this.created_date = created_date;
+	}
+
+	public Date getModified_date() {
+		return modified_date;
+	}
+
+	public void setModified_date(Date modified_date) {
+		this.modified_date = modified_date;
 	}
 
 }

@@ -101,6 +101,4 @@ public class FeeTemplateService {
 		return ft_repo.fetchFeeTemplateDetail(fee_admission_sub_category_id);
 	}
 
-
-
 }

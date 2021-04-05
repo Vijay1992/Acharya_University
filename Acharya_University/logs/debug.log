@@ -1,24 +1,28 @@
-2021-03-26 09:43:07 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
+2021-04-05 09:41:48 [http-nio-8080-exec-4] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@102c7e5e
+2021-04-05 09:43:36 [http-nio-8080-exec-1] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@5ceb3d39
+2021-04-05 09:45:40 [http-nio-8080-exec-1] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@339f623e
+2021-04-05 10:24:59 [http-nio-8080-exec-1] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@60a7f44c
+2021-04-05 11:57:10 [http-nio-8080-exec-3] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@b2754e7
+2021-04-05 11:58:16 [http-nio-8080-exec-4] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@5787e0af
+2021-04-05 11:58:50 [http-nio-8080-exec-5] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@21f37605
+2021-04-05 11:59:38 [http-nio-8080-exec-6] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@7e8574b
+2021-04-05 12:53:23 [http-nio-8080-exec-1] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.model.FeeTemplateSubAmount@584c07ff
+2021-04-05 13:16:56 [http-nio-8080-exec-6] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.model.FeeTemplateSubAmount@349392b2
+2021-04-05 15:35:06 [http-nio-8080-exec-5] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.model.FeeTemplateSubAmount@316ce93d
+2021-04-05 15:35:57 [http-nio-8080-exec-2] DEBUG c.a.c.FeeTemplateSubAmountController -
+				Request com.au.dto.FeeTemplateAmount@415b8780
+2021-04-05 17:55:08 [http-nio-8080-exec-10] DEBUG c.a.c.AcademicYearController -
 				Request 1
-2021-03-26 12:08:57 [http-nio-8080-exec-3] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@66122cec
-2021-03-26 12:10:14 [http-nio-8080-exec-8] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@2012a475
-2021-03-26 12:10:59 [http-nio-8080-exec-9] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@213353a9
-2021-03-26 12:11:22 [http-nio-8080-exec-4] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@2e88a117
-2021-03-26 12:11:43 [http-nio-8080-exec-10] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@5b075f6f
-2021-03-26 12:12:12 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@65cb805d
-2021-03-26 12:12:30 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@2cd8eb50
-2021-03-26 12:12:45 [http-nio-8080-exec-5] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@5fdd7251
-2021-03-26 12:17:21 [http-nio-8080-exec-8] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@14780cdb
-2021-03-26 12:17:40 [http-nio-8080-exec-7] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@2a3e4271
-2021-03-26 12:17:58 [http-nio-8080-exec-6] DEBUG c.a.c.AcademicYearController -
-				Request com.au.model.FeeAdmissionSubCategory@5a5754b2
+2021-04-05 18:39:53 [http-nio-8080-exec-5] DEBUG c.a.c.AcademicYearController -
+				Request 1

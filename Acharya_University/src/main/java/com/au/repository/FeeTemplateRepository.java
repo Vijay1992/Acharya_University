@@ -40,7 +40,7 @@ public interface FeeTemplateRepository extends JpaRepository<FeeTemplate, Intege
 
 	@Query(value = "select new map(fasc.fee_admission_sub_category_id as fee_admission_sub_category_id,"
 			+ "fasc.fee_admission_sub_category_name as fee_admission_sub_category_name) "
-			+ "from FeeTemplate ft left join FeeAdmissionSubCategory as fasc "
+			+ "from FeeTemplate ft left join FeeAdmissionSubCategory fasc "
 			+ "on ft.fee_admission_sub_category_id=fasc.fee_admission_sub_category_id where ft.fee_admission_sub_category_id=?1")
 	public List<HashMap<String, Object>> fetchFeeTemplateDetail(Integer fee_admission_sub_category_id);
 
@@ -65,5 +65,8 @@ public interface FeeTemplateRepository extends JpaRepository<FeeTemplate, Intege
 	 * "on ft.fee_admission_sub_category_id=fasc.fee_admission_sub_category_id ")
 	 * public List<HashMap<String, Object>> findAll1();
 	 */
+
+	@Query(value = "select f from FeeTemplate f where fee_template_id=?1")
+	public FeeTemplate findByfee_template_id(Integer fee_template_id);
 
 }

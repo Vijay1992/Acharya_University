@@ -70,3 +70,24 @@ public class AliasNameController {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+INSERT INTO tbl_au_alias_name(alias_name)
+SELECT distinct voucher_head
+FROM tbl_au_voucher_head
+WHERE NOT EXISTS(SELECT *
+FROM tbl_au_alias_name
+WHERE (tbl_au_voucher_head.voucher_head=tbl_au_alias_name.alias_name)
+)
+*/

@@ -10,7 +10,7 @@ import com.au.model.BoardSchoolAssignment;
 @Repository
 public interface BoardSchoolAssignmentRepository extends JpaRepository<BoardSchoolAssignment, Integer> {
 
-	@Query(value = "select new map (boa.board_unique_name as board_unique_name ,boa.board_unique_short_name as board_unique_short_name)"
+	@Query(value = "select new map (boa.board_unique_id as board_unique_id,boa.board_unique_name as board_unique_name ,boa.board_unique_short_name as board_unique_short_name)"
 			+ " from BoardSchoolAssignment as bs left join Board as boa on boa.board_unique_id= bs.board_unique_id where bs.school_id =?1 and bs.active=true")
 	public List<HashMap<String, Object>> findById1(Integer school_id);
 

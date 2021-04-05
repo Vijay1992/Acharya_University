@@ -37,6 +37,20 @@ public class FeeTemplate {
 	private Date approved_date;
 	private Integer created_by;
 	private Integer modified_by;
+	private Integer fee_year1_amt;
+	private Integer fee_year2_amt;
+	private Integer fee_year3_amt;
+	private Integer fee_year4_amt;
+	private Integer fee_year5_amt;
+	private Integer fee_year6_amt;
+	private Integer fee_year7_amt;
+	private Integer fee_year8_amt;
+	private Integer fee_year9_amt;
+	private Integer fee_year10_amt;
+	private Integer fee_year11_amt;
+	private Integer fee_year12_amt;
+	private Integer fee_year_total_amount;
+
 	@Column(updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -100,23 +114,16 @@ public class FeeTemplate {
 		this.program_specialization_id = program_specialization_id;
 	}
 
-	/*
-	 * public String getProgram_specialization() { return program_specialization; }
-	 * 
-	 * public void setProgram_specialization(String program_specialization) {
-	 * this.program_specialization = program_specialization; }
-	 */
-
-	public Integer getFee_admission_category_id() {
-		return fee_admission_category_id;
-	}
-
 	public Integer getCurrency_type_id() {
 		return currency_type_id;
 	}
 
 	public void setCurrency_type_id(Integer currency_type_id) {
 		this.currency_type_id = currency_type_id;
+	}
+
+	public Integer getFee_admission_category_id() {
+		return fee_admission_category_id;
 	}
 
 	public void setFee_admission_category_id(Integer fee_admission_category_id) {
@@ -201,6 +208,110 @@ public class FeeTemplate {
 
 	public void setModified_by(Integer modified_by) {
 		this.modified_by = modified_by;
+	}
+
+	public Integer getFee_year1_amt() {
+		return fee_year1_amt;
+	}
+
+	public void setFee_year1_amt(Integer fee_year1_amt) {
+		this.fee_year1_amt = fee_year1_amt;
+	}
+
+	public Integer getFee_year2_amt() {
+		return fee_year2_amt;
+	}
+
+	public void setFee_year2_amt(Integer fee_year2_amt) {
+		this.fee_year2_amt = fee_year2_amt;
+	}
+
+	public Integer getFee_year3_amt() {
+		return fee_year3_amt;
+	}
+
+	public void setFee_year3_amt(Integer fee_year3_amt) {
+		this.fee_year3_amt = fee_year3_amt;
+	}
+
+	public Integer getFee_year4_amt() {
+		return fee_year4_amt;
+	}
+
+	public void setFee_year4_amt(Integer fee_year4_amt) {
+		this.fee_year4_amt = fee_year4_amt;
+	}
+
+	public Integer getFee_year5_amt() {
+		return fee_year5_amt;
+	}
+
+	public void setFee_year5_amt(Integer fee_year5_amt) {
+		this.fee_year5_amt = fee_year5_amt;
+	}
+
+	public Integer getFee_year6_amt() {
+		return fee_year6_amt;
+	}
+
+	public void setFee_year6_amt(Integer fee_year6_amt) {
+		this.fee_year6_amt = fee_year6_amt;
+	}
+
+	public Integer getFee_year7_amt() {
+		return fee_year7_amt;
+	}
+
+	public void setFee_year7_amt(Integer fee_year7_amt) {
+		this.fee_year7_amt = fee_year7_amt;
+	}
+
+	public Integer getFee_year8_amt() {
+		return fee_year8_amt;
+	}
+
+	public void setFee_year8_amt(Integer fee_year8_amt) {
+		this.fee_year8_amt = fee_year8_amt;
+	}
+
+	public Integer getFee_year9_amt() {
+		return fee_year9_amt;
+	}
+
+	public void setFee_year9_amt(Integer fee_year9_amt) {
+		this.fee_year9_amt = fee_year9_amt;
+	}
+
+	public Integer getFee_year10_amt() {
+		return fee_year10_amt;
+	}
+
+	public void setFee_year10_amt(Integer fee_year10_amt) {
+		this.fee_year10_amt = fee_year10_amt;
+	}
+
+	public Integer getFee_year11_amt() {
+		return fee_year11_amt;
+	}
+
+	public void setFee_year11_amt(Integer fee_year11_amt) {
+		this.fee_year11_amt = fee_year11_amt;
+	}
+
+	public Integer getFee_year12_amt() {
+		return fee_year12_amt;
+	}
+
+	public void setFee_year12_amt(Integer fee_year12_amt) {
+		this.fee_year12_amt = fee_year12_amt;
+	}
+
+	public Integer getFee_year_total_amount() {
+		return fee_year_total_amount;
+	}
+
+	public void setFee_year_total_amount(Integer fee_year_total_amount) {
+		this.fee_year_total_amount = fee_year_total_amount;
 	}
 
 	public Date getCreated_date() {

@@ -16,9 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.au.model.Program;
-import com.au.model.Tally;
 import com.au.model.VoucherHead;
 import com.au.service.VoucherHeadService;
 
