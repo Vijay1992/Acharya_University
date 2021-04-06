@@ -29,40 +29,29 @@ public class VoucherHeadService {
 
 		List<VoucherHead> list = new ArrayList<VoucherHead>();
 
-		
 		List<AliasName> al = a_repo.findAll();
-		System.out.println(al);
+		//System.out.println(al);
 
 		String vh = vou.getVoucher_head();
 		// System.out.println("=="+vh);
 		AliasName al1 = new AliasName();
 
 		List<String> list2 = a_repo.getAliasNames();
-		System.out.println(list2);
-		for (AliasName list1 : al) {
-			//System.out.println("="+list1.getAlias_name());
-			if (vh.contains(list1.getAlias_name())) {
-				System.out.println("already Exist1234");
-			}	
-			else {
-				
-			}
+		if (list2.contains(vh)) {
+			System.out.println("already Exist1234");
+		} else {
+			al1.setAlias_name(vh);
+			a_repo.save(al1);
 		}
-		al1.setAlias_name(vh);
-		a_repo.save(al1);
-		
-		
-		
+
 		vou.getSchool_id().keySet().stream().forEach(a -> {
 			// System.out.println("=" + a);
 			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());
-			// System.out.println("==" + schools);
-
-			
 		
 			
 			if (schools.contains(a)) {
 				throw new RuntimeException("already exist");
+		//		System.out.println("already exist");
 			} else {
 
 				VoucherHead vou1 = new VoucherHead();
