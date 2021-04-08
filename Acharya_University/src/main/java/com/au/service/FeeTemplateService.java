@@ -7,9 +7,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.au.dto.FeeTemplateRequest;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.FeeTemplate;
-import com.au.model.FeeTemplateRequest;
 import com.au.repository.FeeTemplateRepository;
 
 @Service

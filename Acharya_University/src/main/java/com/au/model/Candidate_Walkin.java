@@ -63,6 +63,7 @@ public class Candidate_Walkin {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+	
 	private Boolean active;
 	
 	@Column(updatable = false)
@@ -143,6 +144,7 @@ public class Candidate_Walkin {
 	private String voucher_code;
 	private Integer form_id;
 	private Integer npf_status;
+	
 	public Candidate_Walkin() {
 		super();
 	}

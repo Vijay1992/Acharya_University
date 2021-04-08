@@ -14,6 +14,9 @@ import com.au.model.VoucherHead;
 
 @Repository
 public interface VoucherHeadRepository extends JpaRepository<VoucherHead, Integer>{
+	
+	@Query(value = "SELECT school_id FROM au_db1.tbl_au_voucher_head where voucher_head=?1 and active=1",nativeQuery = true)
+	public List<Integer> getSchoolByVHead(String vh);
 
 	@Query(value = "SELECT * FROM tbl_au_voucher_head where school_id=?1",nativeQuery = true)
 	public List<VoucherHead> getVoucherBySchoolId(Integer school_id);

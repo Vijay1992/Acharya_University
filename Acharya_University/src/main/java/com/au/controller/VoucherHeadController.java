@@ -1,17 +1,13 @@
 package com.au.controller;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.validation.Valid;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.au.dto.VoucherHeadRequest;
 import com.au.model.VoucherHead;
-import com.au.model.VoucherHeadRequest;
 import com.au.service.VoucherHeadService;
 @CrossOrigin(origins =  "http://localhost:3000")
 @RestController
@@ -103,7 +99,11 @@ public class VoucherHeadController {
 	public Integer findByVouHeadSchoolId(@PathVariable String voucher_head,@PathVariable Integer sid) {
 		return vs.findByVouHeadSchoolId1(voucher_head, sid);
 	}
-	
+
+	@GetMapping("/fetch2/{vh}")
+	public List<Integer> getSchoolByVHead(@PathVariable String vh){
+		return vs.getSchoolByVHead(vh);
+	}
 }
 
 

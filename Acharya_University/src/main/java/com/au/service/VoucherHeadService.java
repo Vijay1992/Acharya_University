@@ -5,10 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.au.dto.VoucherHeadRequest;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.AliasName;
 import com.au.model.VoucherHead;
-import com.au.model.VoucherHeadRequest;
 import com.au.repository.AliasNameRepository;
 import com.au.repository.VoucherHeadRepository;
 
@@ -25,15 +26,16 @@ public class VoucherHeadService {
 		return vou_repo.findAll();
 	}
 
+	public List<Integer> getSchoolByVHead(String vh){
+		return vou_repo.getSchoolByVHead(vh);
+	}
+	
+	
 	public List<VoucherHead> getAllVouchers(VoucherHeadRequest vou) {
 
 		List<VoucherHead> list = new ArrayList<VoucherHead>();
 
-		List<AliasName> al = a_repo.findAll();
-		//System.out.println(al);
-
 		String vh = vou.getVoucher_head();
-		// System.out.println("=="+vh);
 		AliasName al1 = new AliasName();
 
 		List<String> list2 = a_repo.getAliasNames();
@@ -45,15 +47,11 @@ public class VoucherHeadService {
 		}
 
 		vou.getSchool_id().keySet().stream().forEach(a -> {
-			// System.out.println("=" + a);
-			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());
-		
 			
-			if (schools.contains(a)) {
-				throw new RuntimeException("already exist");
-		//		System.out.println("already exist");
+			List<Integer> schools = findByVouHeadSchoolId(vou.getVoucher_head());	
+			if (schools.contains(a)) {	
+				System.out.println("already exist");
 			} else {
-
 				VoucherHead vou1 = new VoucherHead();
 
 				vou1.setVoucher_head(vou.getVoucher_head());
@@ -65,7 +63,7 @@ public class VoucherHeadService {
 				vou1.setCreated_by(vou.getCreated_by());
 				vou1.setModified_by(vou.getModified_by());
 				vou1.setActive(vou.getActive());
-
+				
 				save_VoucherHead(vou1);
 				list.add(vou1);
 			}
@@ -73,36 +71,7 @@ public class VoucherHeadService {
 		return list;
 	}
 
-	/*
-	 * public List<VoucherHead> getAllVouchers(VoucherHeadRequest vou) {
-	 * List<VoucherHead> list = new ArrayList<VoucherHead>();
-	 * System.out.println("--------------------------------------------------------"
-	 * );
-	 * 
-	 * // System.out.println("=====" + vou_repo.findByVouHeadSchoolId(null, null));
-	 * 
-	 * Map<Integer, String> map = new HashMap<>(); // Integer i
-	 * =vou_repo.findByVouHeadSchoolId(vou.getVoucher_head(), //
-	 * vou.getSchool_id());
-	 * 
-	 * for(int i=0;i<vou.getSchool_id().keySet().size();i++) { //
-	 * vou.getSchool_id().keySet().stream().forEach(a -> {
-	 * System.out.println("---"+findByVouHeadSchoolId1(vou.getVoucher_head(),vou.
-	 * getSchool_id().size()));
-	 * 
-	 * if(findByVouHeadSchoolId1(vou.getVoucher_head(),vou.getSchool_id().size())
-	 * >=1) { throw new RuntimeException("already exist"); } else { VoucherHead vou1
-	 * = new VoucherHead(); vou1.setVoucher_head(vou.getVoucher_head());
-	 * vou1.setSchool_id(vou.getSchool_id().keySet().size());
-	 * vou1.setTally_id(vou.getTally_id());
-	 * vou1.setVoucher_type(vou.getVoucher_type());
-	 * vou1.setBudget_head(vou.getBudget_head());
-	 * vou1.setLedger_id(vou.getLedger_id());
-	 * vou1.setCreated_by(vou.getCreated_by());
-	 * vou1.setModified_by(vou.getModified_by()); vou1.setActive(vou.getActive());
-	 * save_VoucherHead(vou1); list.add(vou1); } // }); } return list; }
-	 */
-
+	
 	public VoucherHead save_VoucherHead(VoucherHead voucher) {
 		return vou_repo.save(voucher);
 	}

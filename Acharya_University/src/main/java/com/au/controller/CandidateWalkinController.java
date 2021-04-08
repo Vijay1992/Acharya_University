@@ -31,7 +31,7 @@ public class CandidateWalkinController {
 	Logger log = LoggerFactory.getLogger(CandidateWalkinController.class);
 	
 	@PostMapping("/Candidate_Walkin")
-	public Candidate_Walkin saveAcademicYear(@RequestBody @Valid Candidate_Walkin c) {
+	public Candidate_Walkin saveCandidateWalkin(@RequestBody @Valid Candidate_Walkin c) {
 		return can_service.save_Candidate_Walkin(c);
 	}
 	

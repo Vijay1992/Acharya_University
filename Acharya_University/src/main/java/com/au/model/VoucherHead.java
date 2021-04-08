@@ -169,6 +169,21 @@ public class VoucherHead {
 		this.budget_head = budget_head;
 	}
 
+	@Override
+	public String toString() {
+		return "VoucherHead [voucher_head_id=" + voucher_head_id + ", voucher_head=" + voucher_head + ", school_id="
+				+ school_id + ", tally_id=" + tally_id + ", created_by=" + created_by + ", modified_by=" + modified_by
+				+ ", created_date=" + created_date + ", modified_date=" + modified_date + ", active=" + active
+				+ ", ledger_id=" + ledger_id + ", voucher_type=" + voucher_type + ", budget_head=" + budget_head
+				+ ", getVoucher_head_id()=" + getVoucher_head_id() + ", getVoucher_head()=" + getVoucher_head()
+				+ ", getSchool_id()=" + getSchool_id() + ", getTally_id()=" + getTally_id() + ", getCreated_by()="
+				+ getCreated_by() + ", getModified_by()=" + getModified_by() + ", getCreated_date()="
+				+ getCreated_date() + ", getModified_date()=" + getModified_date() + ", getActive()=" + getActive()
+				+ ", getLedger_id()=" + getLedger_id() + ", getVoucher_type()=" + getVoucher_type()
+				+ ", getBudget_head()=" + getBudget_head() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
 	
 	
 	
