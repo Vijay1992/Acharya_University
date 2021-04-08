@@ -1,6 +1,8 @@
 package com.au.model;
 
 import java.util.Date;
+
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +32,9 @@ public class Student {
 	private String phone_no;
 	@Email
 	private String email;
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	//@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@Basic
+	@Temporal(TemporalType.DATE)
 	private Date doa;
 
 	@Column(updatable = false)

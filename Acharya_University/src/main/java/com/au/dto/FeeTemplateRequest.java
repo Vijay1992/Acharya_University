@@ -1,4 +1,4 @@
-package com.au.model;
+package com.au.dto;
 
 import java.util.Date;
 import java.util.HashMap;

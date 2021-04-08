@@ -3,8 +3,6 @@ package com.au;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
@@ -24,7 +22,7 @@ public class AcharyaUniversityApplication {
 		return new Docket(DocumentationType.SWAGGER_2).select().paths(PathSelectors.ant("/api/**"))
 				.apis(RequestHandlerSelectors.basePackage("com.au.controller")).build();
 	}
-	
+
 	/*
 	 * @Bean public WebMvcConfigurer corsConfigurer() { return new
 	 * WebMvcConfigurer() {
@@ -33,5 +31,5 @@ public class AcharyaUniversityApplication {
 	 * registry.addMapping("/api/AcademicYear")
 	 * .allowedOrigins("http://localhost:3000"); } }; }
 	 */
-	 
+
 }

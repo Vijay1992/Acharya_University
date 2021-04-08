@@ -21,7 +21,6 @@ public class UserAuthentication {
 	private int id;
 	private String username;
 	private String password;
-	private Integer role_id;
 	private String usertype;
 	private Boolean status;
 	@Email
@@ -38,13 +37,6 @@ public class UserAuthentication {
 
 	public UserAuthentication() {
 		super();
-	}
-
-	public UserAuthentication(int id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
 	}
 
 	public int getId() {
@@ -69,14 +61,6 @@ public class UserAuthentication {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Integer getRole_id() {
-		return role_id;
-	}
-
-	public void setRole_id(Integer role_id) {
-		this.role_id = role_id;
 	}
 
 	public String getUsertype() {

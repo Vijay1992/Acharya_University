@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.dto.FeeTemplateRequest;
 import com.au.model.FeeTemplate;
-import com.au.model.FeeTemplateRequest;
 import com.au.service.FeeTemplateService;
 
 @RestController
