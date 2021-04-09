@@ -65,7 +65,6 @@ public class UserAuthenticationController {
 	    }      
 	}
 	
-	
 	@DeleteMapping("/UserAuthentication/{id}")
 	public void delete(@PathVariable Integer id) {
 		uservice.delete(id);

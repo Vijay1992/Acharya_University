@@ -68,9 +68,9 @@ public class AcademicYearController {
 	    try {
 	    	Academic_year existProduct = ac_service.get(id);
 	    	ac_service.save_Academic_Year(ac_year);
-	        return new ResponseEntity<>(HttpStatus.OK);
+	        return new ResponseEntity<Academic_year>(HttpStatus.OK);
 	    } catch (NoSuchElementException e) {
-	        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	        return new ResponseEntity<Academic_year>(HttpStatus.NOT_FOUND);
 	    }      
 	}
 	

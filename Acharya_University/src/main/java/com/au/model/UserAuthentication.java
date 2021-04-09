@@ -37,6 +37,8 @@ public class UserAuthentication {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+	private Integer created_by;
+	private Integer modified_by;
 	
 	
 	public UserAuthentication() {

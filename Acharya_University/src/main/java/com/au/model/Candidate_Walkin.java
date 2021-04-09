@@ -34,7 +34,7 @@ public class Candidate_Walkin {
 	private String candidate_sex;
 	
 	//@DateTimeFormat(pattern = "yyyy-mm-dd")
-	@Basic
+	//@Basic
 	@Temporal(TemporalType.DATE)
 	private Date date_of_birth;
 
