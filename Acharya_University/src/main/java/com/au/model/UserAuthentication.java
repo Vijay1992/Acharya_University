@@ -34,6 +34,8 @@ public class UserAuthentication {
 	@Temporal(TemporalType.TIMESTAMP)
 	@UpdateTimestamp
 	private Date modified_date;
+	private Integer created_by;
+	private Integer modified_by;
 
 	public UserAuthentication() {
 		super();
@@ -109,6 +111,22 @@ public class UserAuthentication {
 
 	public void setModified_date(Date modified_date) {
 		this.modified_date = modified_date;
+	}
+
+	public Integer getCreated_by() {
+		return created_by;
+	}
+
+	public void setCreated_by(Integer created_by) {
+		this.created_by = created_by;
+	}
+
+	public Integer getModified_by() {
+		return modified_by;
+	}
+
+	public void setModified_by(Integer modified_by) {
+		this.modified_by = modified_by;
 	}
 
 }

@@ -5,25 +5,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name ="tbl_au_organization")
+@Table(name = "tbl_au_organization")
 public class Organization {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int org_id;
-	@NotBlank
 	private String org_name;
-	@NotBlank
 	private String org_type;
 
-	public Organization(int org_id, @NotBlank String org_name, @NotBlank String org_type) {
+	
+
+	public Organization() {
 		super();
-		this.org_id = org_id;
-		this.org_name = org_name;
-		this.org_type = org_type;
 	}
 
 	public int getOrg_id() {
