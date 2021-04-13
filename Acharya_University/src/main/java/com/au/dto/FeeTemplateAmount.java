@@ -1,13 +1,14 @@
 package com.au.dto;
 
+import java.util.List;
 import com.au.model.FeeTemplate;
 import com.au.model.FeeTemplateSubAmount;
 
 public class FeeTemplateAmount {
-	
+
 	FeeTemplate ft;
-	
-	FeeTemplateSubAmount ftsa;
+
+	List<FeeTemplateSubAmount> ftsa;
 
 	public FeeTemplate getFt() {
 		return ft;
@@ -17,15 +18,12 @@ public class FeeTemplateAmount {
 		this.ft = ft;
 	}
 
-	public FeeTemplateSubAmount getFtsa() {
+	public List<FeeTemplateSubAmount> getFtsa() {
 		return ftsa;
 	}
 
-	public void setFtsa(FeeTemplateSubAmount ftsa) {
+	public void setFtsa(List<FeeTemplateSubAmount> ftsa) {
 		this.ftsa = ftsa;
 	}
-	
-	
-	
 
 }

@@ -18,6 +18,7 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.au.dto.FileRequest;
 
 @Service
 public class AmazonClientService {
@@ -34,42 +35,41 @@ public class AmazonClientService {
 	private String secretKey;
 
 	private Logger logger = LoggerFactory.getLogger(AmazonClientService.class);
-	
+
 	@PostConstruct
 	private void initializeAmazon() {
 		AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
 		this.s3client = new AmazonS3Client(credentials);
 	}
 
-	public String uploadFile(MultipartFile multipartFile) throws IOException {
+	public FileRequest uploadFile(MultipartFile multipartFile) throws IOException {
 
-		String fileUrl = "";
+		FileRequest filerequest = new FileRequest();
 		try {
 			File file = convertMultiPartToFile(multipartFile);
 			String fileName = generateFileName(multipartFile);
-			fileUrl = endpointUrl + "/" + bucketName + "/" + fileName;
+			filerequest.setBucketName(bucketName);
+			filerequest.setFileName(fileName);
+			filerequest.setPath(bucketName + "/" + fileName);
+			filerequest.setEndpointUrl(endpointUrl + "/" + bucketName + "/" + fileName);
 			uploadFileTos3bucket(fileName, file);
 			file.delete();
-		} /*catch (Exception e) {
-			e.printStackTrace();
-		}*/
-		catch (AmazonServiceException ase) {
-	          logger.info("Caught an AmazonServiceException from GET requests, rejected reasons:");
-	          logger.info("Error Message:    " + ase.getMessage());
-	          logger.info("HTTP Status Code: " + ase.getStatusCode());
-	          logger.info("AWS Error Code:   " + ase.getErrorCode());
-	          logger.info("Error Type:       " + ase.getErrorType());
-	          logger.info("Request ID:       " + ase.getRequestId());
-	          
-	          
-	            } catch (AmazonClientException ace) {
-	              logger.info("Caught an AmazonClientException: ");
-	                logger.info("Error Message: " + ace.getMessage());
-	            } catch (IOException ioe) {
-	              logger.info("IOE Error Message: " + ioe.getMessage());
-	              
-	            }
-		return fileUrl;
+		} catch (AmazonServiceException ase) {
+			logger.info("Caught an AmazonServiceException from GET requests, rejected reasons:");
+			logger.info("Error Message:    " + ase.getMessage());
+			logger.info("HTTP Status Code: " + ase.getStatusCode());
+			logger.info("AWS Error Code:   " + ase.getErrorCode());
+			logger.info("Error Type:       " + ase.getErrorType());
+			logger.info("Request ID:       " + ase.getRequestId());
+
+		} catch (AmazonClientException ace) {
+			logger.info("Caught an AmazonClientException: ");
+			logger.info("Error Message: " + ace.getMessage());
+		} catch (IOException ioe) {
+			logger.info("IOE Error Message: " + ioe.getMessage());
+
+		}
+		return filerequest;
 
 	}
 
@@ -80,9 +80,8 @@ public class AmazonClientService {
 	}
 
 	private void uploadFileTos3bucket(String fileName, File file) {
-		s3client.putObject(
-				new PutObjectRequest(bucketName, fileName, file));
-				//.withCannedAcl(CannedAccessControlList.PublicRead));
+		s3client.putObject(new PutObjectRequest(bucketName, fileName, file));
+		// .withCannedAcl(CannedAccessControlList.PublicRead));
 	}
 
 	private String generateFileName(MultipartFile multiPart) {
@@ -98,3 +97,29 @@ public class AmazonClientService {
 	}
 
 }
+
+/*
+ * 
+ * String fileUrl = ""; try { File file = convertMultiPartToFile(multipartFile);
+ * String fileName = generateFileName(multipartFile); fileUrl = endpointUrl +
+ * "/" + bucketName + "/" + fileName; uploadFileTos3bucket(fileName, file);
+ * file.delete(); }
+ */ /*
+	 * catch (Exception e) { e.printStackTrace(); }
+	 */ /*
+		 * catch (AmazonServiceException ase) { logger.
+		 * info("Caught an AmazonServiceException from GET requests, rejected reasons:"
+		 * ); logger.info("Error Message:    " + ase.getMessage());
+		 * logger.info("HTTP Status Code: " + ase.getStatusCode());
+		 * logger.info("AWS Error Code:   " + ase.getErrorCode());
+		 * logger.info("Error Type:       " + ase.getErrorType());
+		 * logger.info("Request ID:       " + ase.getRequestId());
+		 * 
+		 * 
+		 * } catch (AmazonClientException ace) {
+		 * logger.info("Caught an AmazonClientException: ");
+		 * logger.info("Error Message: " + ace.getMessage()); } catch (IOException ioe)
+		 * { logger.info("IOE Error Message: " + ioe.getMessage());
+		 * 
+		 * } return fileUrl;
+		 */

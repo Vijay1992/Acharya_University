@@ -30,16 +30,21 @@ public class FeeTemplateSubAmountController {
 	private FeeTemplateSubAmountService ftsa_service;
 
 	@PostMapping("/FeeTemplateSubAmount1")
-	public FeeTemplateSubAmount saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateAmount feetemplatesubamount) {
+	public List<FeeTemplateSubAmount> saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateAmount feetemplatesubamount) {
 		log.debug("Request {}", feetemplatesubamount);
 		return ftsa_service.saveFeeTemplateTotalAmount(feetemplatesubamount);
 	}
+	
+	@PostMapping("/FeeTemplateSubAmount2")
+	public List<FeeTemplateSubAmount> saveFeeTemplateSubAmount2(@RequestBody @Valid List<FeeTemplateSubAmount> feetemplatesubamount) {
+		log.debug("Request {}", feetemplatesubamount);
+		return ftsa_service.saveFeeTemplateTotalAmount2(feetemplatesubamount);
+	}
 
 	@PostMapping("/FeeTemplateSubAmount")
-	public FeeTemplateSubAmount saveFeeTemplateSubAmount(
-			@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount) {
+	public FeeTemplateSubAmount saveFeeTemplateSubAmount(@RequestBody @Valid FeeTemplateSubAmount feetemplatesubamount) {
 		log.debug("Request {}", feetemplatesubamount);
-		return ftsa_service.saveFeeTemplateSubAmount(feetemplatesubamount);
+		return ftsa_service.saveFeeTemplateSubAmount1(feetemplatesubamount);
 	}
 
 	@GetMapping("/FeeTemplateSubAmount")
@@ -66,7 +71,7 @@ public class FeeTemplateSubAmountController {
 			@PathVariable Integer id) {
 		try {
 			FeeTemplateSubAmount existProduct = ftsa_service.get(id);
-			ftsa_service.saveFeeTemplateSubAmount(feetemplatesubamount);
+			ftsa_service.saveFeeTemplateSubAmount1(feetemplatesubamount);
 			log.debug("Request {}", feetemplatesubamount);
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {

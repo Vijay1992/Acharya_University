@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.au.dto.FileRequest;
 import com.au.service.AmazonClientService;
 
-
 @RestController
-@RequestMapping("/v1/storage/")
+@RequestMapping("/api")
 public class BucketController {
 
 	private AmazonClientService amazonClient;
@@ -23,7 +24,7 @@ public class BucketController {
 	}
 
 	@PostMapping("/uploadFile")
-	public String uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
+	public FileRequest uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
 		return this.amazonClient.uploadFile(file);
 	}
 

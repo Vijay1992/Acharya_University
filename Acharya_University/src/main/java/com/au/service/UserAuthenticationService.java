@@ -50,7 +50,7 @@ public class UserAuthenticationService {
 	public UserAuthentication saveUserRole(UserRoleRequest userrolerequest) {
 
 		UserAuthentication userauthentication = new UserAuthentication();
-		userauthentication.setId(userrolerequest.getId());
+		userauthentication.setUser_id(userrolerequest.getId());
 		userauthentication.setEmail(userrolerequest.getEmail());
 		userauthentication.setUsercode(userrolerequest.getUsercode());
 		userauthentication.setUsertype(userrolerequest.getUsertype());
@@ -67,26 +67,29 @@ public class UserAuthenticationService {
 
 		userrolerequest.getRole_id().stream().forEach(u -> {
 			UserRole userrole = new UserRole();
-			userrole.setId(user.getId());
+			userrole.setId(user.getUser_id());
 			userrole.setRole_id(u);
 			urr_repo.save(userrole);
 		});
 
-		String content = "Hello your user name:" + userauthentication.getUsername() + ",and password is:"+ pass;
+		String content = "Hello your user name: " + userauthentication.getUsername() + ", and password is: " + pass;
 		sendSimpleEmail(userrolerequest.getEmail(), content, "Don't Reply");
 		return user;
 	}
 
 	public void sendSimpleEmail(String toEmail, String body, String subject) {
 		SimpleMailMessage message = new SimpleMailMessage();
+		try {
+			message.setFrom("vikashkumar@acharya.ac.in");
+			message.setTo(toEmail);
+			message.setText(body);
+			message.setSubject(subject);
 
-		message.setFrom("vikash.singh.mind@gmail.com");
-		message.setTo(toEmail);
-		message.setText(body);
-		message.setSubject(subject);
+			mailsender.send(message);
+			System.out.println("Mail Send...");
 
-		mailsender.send(message);
-		System.out.println("Mail Send...");
-
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

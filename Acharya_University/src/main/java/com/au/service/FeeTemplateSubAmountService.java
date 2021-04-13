@@ -1,6 +1,7 @@
 package com.au.service;
 
 import java.util.List;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,8 +26,13 @@ public class FeeTemplateSubAmountService {
 		return ftsa_repo.findAll();
 	}
 
-	public FeeTemplateSubAmount saveFeeTemplateSubAmount(FeeTemplateSubAmount feetemplatesubamount) {
+	public FeeTemplateSubAmount saveFeeTemplateSubAmount1(@Valid FeeTemplateSubAmount feetemplatesubamount) {
 		return ftsa_repo.save(feetemplatesubamount);
+
+	}
+
+	public List<FeeTemplateSubAmount> saveFeeTemplateSubAmount(List<FeeTemplateSubAmount> feetemplatesubamount) {
+		return ftsa_repo.saveAll(feetemplatesubamount);
 	}
 
 	public FeeTemplateSubAmount get(Integer id) {
@@ -43,7 +49,7 @@ public class FeeTemplateSubAmountService {
 		ftsa_repo.delete(ay);
 	}
 
-	public FeeTemplateSubAmount saveFeeTemplateTotalAmount(FeeTemplateAmount feetemplate) {
+	public List<FeeTemplateSubAmount> saveFeeTemplateTotalAmount(FeeTemplateAmount feetemplate) {
 
 		FeeTemplate feetemplate1 = ftr_repo.findByfee_template_id(feetemplate.getFt().getFee_template_id());
 		feetemplate1.setFee_year1_amt(feetemplate.getFt().getFee_year1_amt());
@@ -61,8 +67,12 @@ public class FeeTemplateSubAmountService {
 		feetemplate1.setFee_year_total_amount(feetemplate.getFt().getFee_year_total_amount());
 		ftr_repo.save(feetemplate1);
 		return saveFeeTemplateSubAmount(feetemplate.getFtsa());
-		//FeeTemplateSubAmount fts = saveFeeTemplateSubAmount(feetemplate.getFtsa());
-		//return fts;
-		
+		// FeeTemplateSubAmount fts = saveFeeTemplateSubAmount(feetemplate.getFtsa());
+		// return fts;
+
+	}
+
+	public List<FeeTemplateSubAmount> saveFeeTemplateTotalAmount2( List<FeeTemplateSubAmount> feetemplatesubamount) {
+		return ftsa_repo.saveAll(feetemplatesubamount);
 	}
 }
