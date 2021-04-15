@@ -3,6 +3,7 @@ package com.au.service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Date;
 import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
@@ -33,6 +34,8 @@ public class AmazonClientService {
 	private String accessKey;
 	@Value("${amazonProperties.secretKey}")
 	private String secretKey;
+
+	private final long EXPIRATION_TIME = 1000 * 60 * 60;
 
 	private Logger logger = LoggerFactory.getLogger(AmazonClientService.class);
 
@@ -74,13 +77,21 @@ public class AmazonClientService {
 	}
 
 	public String deleteFileFromS3Bucket(String fileUrl) {
-		String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
-		s3client.deleteObject(new DeleteObjectRequest(bucketName + "/", fileName));
+		try {
+			String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+			System.out.println(fileName);
+			//s3client.deleteObject(new DeleteObjectRequest(bucketName + "/", fileName));
+			 s3client.deleteObject(bucketName, fileName);
+			 System.out.println("enter in try block");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "Successfully deleted";
 	}
 
 	private void uploadFileTos3bucket(String fileName, File file) {
-		s3client.putObject(new PutObjectRequest(bucketName, fileName, file));
+		final String uniqueFileName = LocalDate.now() + "/" + fileName; // file.getName()
+		s3client.putObject(new PutObjectRequest(bucketName, uniqueFileName, file));
 		// .withCannedAcl(CannedAccessControlList.PublicRead));
 	}
 
