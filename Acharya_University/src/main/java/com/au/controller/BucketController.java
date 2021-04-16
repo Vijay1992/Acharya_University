@@ -1,7 +1,6 @@
 package com.au.controller;
 
 import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,22 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import com.au.service.AmazonClient;
-
+import com.au.dto.FileRequestDto;
+import com.au.service.AmazonClientService;
 
 @RestController
-@RequestMapping("/v1/storage/")
+@RequestMapping("/api")
 public class BucketController {
 
-	private AmazonClient amazonClient;
-
 	@Autowired
-	BucketController(AmazonClient amazonClient) {
-		this.amazonClient = amazonClient;
+	private AmazonClientService amazonClient;
+/*
+	@Autowired
+	BucketController(AmazonClientService amazonClient) {
+		this.amazonClient = amazonClient;  
 	}
-
+*/
 	@PostMapping("/uploadFile")
-	public String uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
+	public FileRequestDto uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
 		return this.amazonClient.uploadFile(file);
 	}
 

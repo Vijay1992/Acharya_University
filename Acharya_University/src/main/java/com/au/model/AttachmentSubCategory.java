@@ -24,7 +24,7 @@ public class AttachmentSubCategory {
 	private Integer attachments_subcategory_id;
 	private Integer attachments_category_id;
 	private String attachments_subcategory_name;
-	private String std_attachments_subcategory_name_short;
+	private String attachments_subcategory_name_short;
 	
 	@Column(name = "created_date",updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)	
@@ -68,12 +68,12 @@ public class AttachmentSubCategory {
 		this.attachments_subcategory_name = attachments_subcategory_name;
 	}
 
-	public String getStd_attachments_subcategory_name_short() {
-		return std_attachments_subcategory_name_short;
+	public String getAttachments_subcategory_name_short() {
+		return attachments_subcategory_name_short;
 	}
 
-	public void setStd_attachments_subcategory_name_short(String std_attachments_subcategory_name_short) {
-		this.std_attachments_subcategory_name_short = std_attachments_subcategory_name_short;
+	public void setAttachments_subcategory_name_short(String attachments_subcategory_name_short) {
+		this.attachments_subcategory_name_short = attachments_subcategory_name_short;
 	}
 
 	public Date getCreated_date() {

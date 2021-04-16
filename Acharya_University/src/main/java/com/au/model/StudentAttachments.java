@@ -12,17 +12,16 @@ import javax.persistence.TemporalType;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-
 @Entity
 @Table(name = "tbl_au_student_attachment")
 public class StudentAttachments {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer student_attachments_id;
+	private Integer attachments_id;
 	private Integer student_id;
-	private String stu_attachments_file_name;
-	private String stu_attachments_file_path;
+	private String attachments_file_name;
+	private String attachments_file_path;
 	
 	private String educational_attach;
 	private String personal_attach;
@@ -49,12 +48,12 @@ public class StudentAttachments {
 		super();
 	}
 
-	public Integer getStudent_attachments_id() {
-		return student_attachments_id;
+	public Integer getAttachments_id() {
+		return attachments_id;
 	}
 
-	public void setStudent_attachments_id(Integer student_attachments_id) {
-		this.student_attachments_id = student_attachments_id;
+	public void setAttachments_id(Integer attachments_id) {
+		this.attachments_id = attachments_id;
 	}
 
 	public Integer getStudent_id() {
@@ -65,20 +64,20 @@ public class StudentAttachments {
 		this.student_id = student_id;
 	}
 
-	public String getStu_attachments_file_name() {
-		return stu_attachments_file_name;
+	public String getAttachments_file_name() {
+		return attachments_file_name;
 	}
 
-	public void setStu_attachments_file_name(String stu_attachments_file_name) {
-		this.stu_attachments_file_name = stu_attachments_file_name;
+	public void setAttachments_file_name(String attachments_file_name) {
+		this.attachments_file_name = attachments_file_name;
 	}
 
-	public String getStu_attachments_file_path() {
-		return stu_attachments_file_path;
+	public String getAttachments_file_path() {
+		return attachments_file_path;
 	}
 
-	public void setStu_attachments_file_path(String stu_attachments_file_path) {
-		this.stu_attachments_file_path = stu_attachments_file_path;
+	public void setAttachments_file_path(String attachments_file_path) {
+		this.attachments_file_path = attachments_file_path;
 	}
 
 	public String getEducational_attach() {
@@ -160,6 +159,11 @@ public class StudentAttachments {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
+
 	
+
+
+
+
 	
 }

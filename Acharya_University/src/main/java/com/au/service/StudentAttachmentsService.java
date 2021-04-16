@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.Academic_year;
@@ -22,8 +23,14 @@ public class StudentAttachmentsService {
 		return s_repo.findAll();
 	}
 	
-	public StudentAttachments saveStudentAttachments(StudentAttachments academic) {
-		return s_repo.save(academic);
+	/*public String saveFileToS3Bucket(MultipartFile file) {
+		 s_repo.save(file);
+		return "";
+	}*/
+	
+	public StudentAttachments saveStudentAttachments(StudentAttachments s) 
+	{				
+		return s_repo.save(s);
 	}
 	
 	public StudentAttachments get(Integer id) {

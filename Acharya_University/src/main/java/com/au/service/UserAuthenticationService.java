@@ -46,12 +46,9 @@ public class UserAuthenticationService {
 		UserAuthentication ay = uar_repo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("User Not Found:" + id));
 		uar_repo.delete(ay);
-	}
-
-	
+	}	
 	
 	public UserAuthentication saveUserRole(UserRoleRequest userrolerequest) {
-
 		UserAuthentication userauthentication = new UserAuthentication();
 		userauthentication.setId(userrolerequest.getId());
 		userauthentication.setEmail(userrolerequest.getEmail());
@@ -66,6 +63,7 @@ public class UserAuthenticationService {
 		String passwordEncoder1 = passwordEncoder.encode(pass);
 		System.out.println(passwordEncoder1);
 		userauthentication.setPassword(passwordEncoder1);
+
 		UserAuthentication user = saveUserAuthentication(userauthentication);
 
 		userrolerequest.getRole_id().stream().forEach(u -> {
@@ -75,7 +73,7 @@ public class UserAuthenticationService {
 		urr_repo.save(userrole);
 		});
 
-		String content = "Hello your user name:" + userauthentication.getUsername() + ",and password is: "+ pass;
+		String content = "Hello your user name:" + userauthentication.getUsername() + ",and password is: "+ pass +" and Email is :"+ userauthentication.getEmail();
 		sendSimpleEmail(userrolerequest.getEmail(), content, "Don't Reply");
 		return user;
 		}
@@ -88,12 +86,12 @@ public class UserAuthenticationService {
 		message.setText(body);
 		message.setSubject(subject);
 
+		//message.setCc("vikashkumar@acharya.ac.in");
 		mailSender.send(message);
 		System.out.println("Mail Send...");
 
 		}
 
-	
 	
 	/*
 	public UserAuthentication saveUserRole(UserRoleRequest userrolerequest) {

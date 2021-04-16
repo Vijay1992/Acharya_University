@@ -35,6 +35,8 @@ public class FeeTemplateSubAmountService {
 	public FeeTemplateSubAmount saveFeeTemplateSubAmount(FeeTemplateSubAmount feetemplatesubamount) {
 		return fee_repo.save(feetemplatesubamount);
 		}
+	
+	
 	public FeeTemplateSubAmount get(Integer id) {
         return fee_repo.findById(id)
         		.orElseThrow(()-> new ResourceNotFoundException("FeeTemplateSubAmount Not Found:"+id));

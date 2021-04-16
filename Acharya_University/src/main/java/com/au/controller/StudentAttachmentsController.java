@@ -29,11 +29,12 @@ public class StudentAttachmentsController {
 
 	@Autowired
 	private StudentAttachmentsService s_service;
-
+	
 	Logger log = LoggerFactory.getLogger(StudentAttachmentsController.class);
 	
 	@PostMapping("/StudentAttachments")
 	public StudentAttachments saveStudentAttachments(@RequestBody @Valid StudentAttachments s) {
+		
 		return s_service.saveStudentAttachments(s);
 	}
 	

@@ -18,10 +18,10 @@ public class ApplicantDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer applicant_id;
 	
 	private String qualifying_exam_year;
-	private Integer Std_id;
+	private Integer std_id;
 	private String board_university;
 	private String college_name;
 	private String subjects_studied;
@@ -54,29 +54,73 @@ public class ApplicantDetails {
 	private String remarks;
 	private Integer passed_year;
 	private Integer candidate_id;
-	
+	                
 	public ApplicantDetails() {
 		super();
 	}
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	
+	
+	public ApplicantDetails(Integer applicant_id, String qualifying_exam_year, Integer std_id, String board_university,
+			String college_name, String subjects_studied, Integer marks_total, Integer total_obtained,
+			float percentage_scored, String entrance_exam_name, String state, Integer year_of_entrance,
+			float entrance_score, String first_language, String second_language, String auid, Integer created_by,
+			Integer modified_by, Date created_date, Date modified_date, Date qualifying_year, String remarks,
+			Integer passed_year, Integer candidate_id) {
+		super();
+		this.applicant_id = applicant_id;
+		this.qualifying_exam_year = qualifying_exam_year;
+		this.std_id = std_id;
+		this.board_university = board_university;
+		this.college_name = college_name;
+		this.subjects_studied = subjects_studied;
+		this.marks_total = marks_total;
+		this.total_obtained = total_obtained;
+		this.percentage_scored = percentage_scored;
+		this.entrance_exam_name = entrance_exam_name;
+		this.state = state;
+		this.year_of_entrance = year_of_entrance;
+		this.entrance_score = entrance_score;
+		this.first_language = first_language;
+		this.second_language = second_language;
+		this.auid = auid;
+		this.created_by = created_by;
+		this.modified_by = modified_by;
+		this.created_date = created_date;
+		this.modified_date = modified_date;
+		this.qualifying_year = qualifying_year;
+		this.remarks = remarks;
+		this.passed_year = passed_year;
+		this.candidate_id = candidate_id;
+	}
+
+
+	public Integer getApplicant_id() {
+		return applicant_id;
+	}
+
+
+	public void setApplicant_id(Integer applicant_id) {
+		this.applicant_id = applicant_id;
+	}
+
+
 	public String getQualifying_exam_year() {
 		return qualifying_exam_year;
 	}
 	public void setQualifying_exam_year(String qualifying_exam_year) {
 		this.qualifying_exam_year = qualifying_exam_year;
 	}
+	
 	public Integer getStd_id() {
-		return Std_id;
+		return std_id;
 	}
+
+
 	public void setStd_id(Integer std_id) {
-		Std_id = std_id;
+		this.std_id = std_id;
 	}
+
+
 	public String getBoard_university() {
 		return board_university;
 	}
@@ -205,6 +249,21 @@ public class ApplicantDetails {
 	}
 	public void setCandidate_id(Integer candidate_id) {
 		this.candidate_id = candidate_id;
+	}
+
+
+	@Override
+	public String toString() {
+		return "ApplicantDetails [applicant_id=" + applicant_id + ", qualifying_exam_year=" + qualifying_exam_year
+				+ ", std_id=" + std_id + ", board_university=" + board_university + ", college_name=" + college_name
+				+ ", subjects_studied=" + subjects_studied + ", marks_total=" + marks_total + ", total_obtained="
+				+ total_obtained + ", percentage_scored=" + percentage_scored + ", entrance_exam_name="
+				+ entrance_exam_name + ", state=" + state + ", year_of_entrance=" + year_of_entrance
+				+ ", entrance_score=" + entrance_score + ", first_language=" + first_language + ", second_language="
+				+ second_language + ", auid=" + auid + ", created_by=" + created_by + ", modified_by=" + modified_by
+				+ ", created_date=" + created_date + ", modified_date=" + modified_date + ", qualifying_year="
+				+ qualifying_year + ", remarks=" + remarks + ", passed_year=" + passed_year + ", candidate_id="
+				+ candidate_id + "]";
 	}
 
 	

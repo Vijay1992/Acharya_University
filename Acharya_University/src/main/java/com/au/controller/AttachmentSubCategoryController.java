@@ -32,7 +32,6 @@ public class AttachmentSubCategoryController {
 	
 	Logger log = LoggerFactory.getLogger(AttachmentSubCategoryController.class);
 	
-	
 	@PostMapping("/AttachmentSubCategory")
 	public AttachmentSubCategory saveAttachmentSubCategory(@RequestBody @Valid AttachmentSubCategory a) {
 		return a_service.saveAttachmentSubCategory(a);
@@ -42,7 +41,6 @@ public class AttachmentSubCategoryController {
 	public List<AttachmentSubCategory> listAll(){
 		return a_service.listAll();
 	}
-
 	
 	@GetMapping("/AttachmentSubCategory/{id}")
 	public ResponseEntity<AttachmentSubCategory> get(@PathVariable Integer id) {
@@ -66,7 +64,6 @@ public class AttachmentSubCategoryController {
 	        return new ResponseEntity<AttachmentSubCategory>(HttpStatus.NOT_FOUND);
 	    }      
 	}
-	
 	
 	@DeleteMapping("/AttachmentSubCategory/{id}")
 	public void delete(@PathVariable Integer id) {

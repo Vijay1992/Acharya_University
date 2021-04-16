@@ -1,5 +1,6 @@
 package com.au.controller;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -18,22 +19,33 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.au.dto.Candidate_walkinRequest;
 import com.au.model.Candidate_Walkin;
-import com.au.service.CandidateWalkinService;
+import com.au.service.CandidateWalkInService;
 
 @RestController
 @RequestMapping("/api")
 public class CandidateWalkinController {
 
 	@Autowired
-	private CandidateWalkinService can_service;
+	private CandidateWalkInService can_service;
 	
 	Logger log = LoggerFactory.getLogger(CandidateWalkinController.class);
 	
 	@PostMapping("/Candidate_Walkin")
-	public Candidate_Walkin saveCandidateWalkin(@RequestBody @Valid Candidate_Walkin c) {
+	public Candidate_Walkin saveCandidateWalkin(@RequestBody @Valid Candidate_walkinRequest c) throws IOException  {
+	
+		return can_service.getcandidates(c);
+	}
+	
+	/*
+	@PostMapping("/Candidate_Walkin")
+	public Candidate_Walkin saveCandidateWalkin(@RequestBody @Valid Candidate_Walkin c) throws IOException  {
+		System.out.println("---");
 		return can_service.save_Candidate_Walkin(c);
 	}
+	*/
 	
 	@GetMapping("/Candidate_Walkin")
 	public List<Candidate_Walkin> listAll(){
@@ -54,7 +66,7 @@ public class CandidateWalkinController {
 	}
 
 	@PutMapping("/Candidate_Walkin/{id}")
-	public ResponseEntity<Candidate_Walkin> update(@RequestBody Candidate_Walkin c, @PathVariable Integer id) {
+	public ResponseEntity<Candidate_Walkin> update(@RequestBody Candidate_Walkin c, @PathVariable Integer id) throws IOException  {
 	    try {
 	    	Candidate_Walkin existProduct = can_service.get(id);
 	    	can_service.save_Candidate_Walkin(c);
