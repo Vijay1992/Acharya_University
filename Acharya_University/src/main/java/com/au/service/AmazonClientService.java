@@ -19,7 +19,6 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.au.dto.FileRequest;
 
 @Service
 public class AmazonClientService {
@@ -34,8 +33,8 @@ public class AmazonClientService {
 	private String accessKey;
 	@Value("${amazonProperties.secretKey}")
 	private String secretKey;
-
-	private final long EXPIRATION_TIME = 1000 * 60 * 60;
+	@Value("${amazonProperties.keyexpression}")
+	private String keyexpression;
 
 	private Logger logger = LoggerFactory.getLogger(AmazonClientService.class);
 
@@ -45,19 +44,20 @@ public class AmazonClientService {
 		this.s3client = new AmazonS3Client(credentials);
 	}
 
-	public FileRequest uploadFile(MultipartFile multipartFile) throws IOException {
+	public String uploadFile(MultipartFile multipartFile) throws IOException {
 
-		FileRequest filerequest = new FileRequest();
+		String fileUrl = "";
 		try {
 			File file = convertMultiPartToFile(multipartFile);
 			String fileName = generateFileName(multipartFile);
-			filerequest.setBucketName(bucketName);
-			filerequest.setFileName(fileName);
-			filerequest.setPath(bucketName + "/" + fileName);
-			filerequest.setEndpointUrl(endpointUrl + "/" + bucketName + "/" + fileName);
+			fileUrl = endpointUrl + "/" + bucketName + "/" + fileName;
 			uploadFileTos3bucket(fileName, file);
 			file.delete();
-		} catch (AmazonServiceException ase) {
+		}
+		/*
+		 * catch (Exception e) { e.printStackTrace(); }
+		 */
+		catch (AmazonServiceException ase) {
 			logger.info("Caught an AmazonServiceException from GET requests, rejected reasons:");
 			logger.info("Error Message:    " + ase.getMessage());
 			logger.info("HTTP Status Code: " + ase.getStatusCode());
@@ -72,17 +72,16 @@ public class AmazonClientService {
 			logger.info("IOE Error Message: " + ioe.getMessage());
 
 		}
-		return filerequest;
-
+		return fileUrl;
 	}
 
 	public String deleteFileFromS3Bucket(String fileUrl) {
 		try {
 			String fileName = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
 			System.out.println(fileName);
-			//s3client.deleteObject(new DeleteObjectRequest(bucketName + "/", fileName));
-			 s3client.deleteObject(bucketName, fileName);
-			 System.out.println("enter in try block");
+			s3client.deleteObject(new DeleteObjectRequest(bucketName + "/", fileName));
+			// s3client.deleteObject(bucketName, fileName);
+			System.out.println("enter in try block");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

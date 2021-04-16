@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import com.au.dto.FileRequest;
 import com.au.model.Attachments;
 import com.au.service.AttachmentsService;
 
@@ -33,6 +36,11 @@ public class AttachmentsController {
 	public Attachments saveAttachments(@RequestBody @Valid Attachments attachments) throws IOException {
 		log.debug("Request {}", attachments);
 		return as_service.saveAttachments(attachments);
+	}
+	
+	@PostMapping("/uploadFile")
+	public FileRequest uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
+		return as_service.uploadFile1(file);
 	}
 
 	@GetMapping("/Attachments")

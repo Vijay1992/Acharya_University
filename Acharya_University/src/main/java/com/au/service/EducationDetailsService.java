@@ -1,9 +1,6 @@
 package com.au.service;
 
 import java.util.List;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,7 +11,7 @@ import com.au.repository.EducationDetailsRepository;
 @Service
 @Transactional
 public class EducationDetailsService {
-	
+
 	@Autowired
 	private EducationDetailsRepository edr_repo;
 
@@ -39,12 +36,5 @@ public class EducationDetailsService {
 				.orElseThrow(() -> new ResourceNotFoundException("EducationDetails id Not Found:" + id));
 		edr_repo.delete(ay);
 	}
-
-	public EducationDetails saveEducationDetails1(@Valid EducationDetails educationdetails) {
-		return edr_repo.save(educationdetails);
-		
-		
-	}
-
 
 }

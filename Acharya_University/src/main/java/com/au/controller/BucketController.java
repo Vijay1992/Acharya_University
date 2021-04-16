@@ -23,8 +23,8 @@ public class BucketController {
 		this.amazonClient = amazonClient;
 	}
 
-	@PostMapping("/uploadFile")
-	public FileRequest uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
+	@PostMapping("/uploadFile1")
+	public String uploadFile(@RequestPart(value = "file") MultipartFile file) throws IOException {
 		return this.amazonClient.uploadFile(file);
 	}
 

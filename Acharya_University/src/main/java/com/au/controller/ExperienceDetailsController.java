@@ -54,11 +54,11 @@ public class ExperienceDetailsController {
 	}
 
 	@PutMapping("/ExperienceDetails/{id}")
-	public ResponseEntity<ExperienceDetails> update(@RequestBody @Valid ExperienceDetails experiencedetails,
+	public ResponseEntity<ExperienceDetails> update(@RequestBody @Valid List<ExperienceDetails> experiencedetails,
 			@PathVariable Integer id) {
 		try {
 			ExperienceDetails existProduct = eds_service.get(id);
-			eds_service.saveExperienceDetails1(experiencedetails);
+			eds_service.saveExperienceDetails(experiencedetails);
 			log.debug("Request {}", experiencedetails);
 			return new ResponseEntity<>(HttpStatus.OK);
 		} catch (NoSuchElementException e) {
