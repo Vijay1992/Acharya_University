@@ -23,7 +23,9 @@ public class FeeTemplateRequest
 		private String currency_short; // na
 		private Integer fee_admission_category_id;
 		private String fee_admission_category;  //na
+		
 		private HashMap<Integer, String> fee_admission_sub_category_id;
+
 		private Boolean Is_paid_at_board;    //na
 		private String nationality;
 		private Boolean Is_nri;               //na

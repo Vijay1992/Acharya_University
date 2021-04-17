@@ -29,7 +29,9 @@ public class FeeTemplate
 	private String program_specialization_id;
 	private Integer currency_id;
 	private Integer fee_admission_category_id;
+
 	private Integer fee_admission_sub_category_id;
+
 	private Boolean is_paid_at_board;
 	private String nationality;
 	private Boolean is_nri;

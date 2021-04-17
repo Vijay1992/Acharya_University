@@ -1,28 +1,21 @@
-package com.au.model;
+package com.au.dto;
 
 import java.util.Date;
+import java.util.HashMap;
+
 import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity
-@Table(name = "tbl_au_student_attachment")
-public class StudentAttachments {
+public class StudentAttachmentsDto {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer attachments_id;
 	private Integer student_id;
 	private String attachments_file_name;
 	
-	private String attachments_file_path;
+	private  HashMap<Integer,String> attachments_file_path;
 	
 	private String educational_attach;
 	private String personal_attach;
@@ -45,16 +38,8 @@ public class StudentAttachments {
 	private Integer modified_by;
 	private Boolean active;
 	
-	public StudentAttachments() {
+	public StudentAttachmentsDto() {
 		super();
-	}
-
-	public Integer getAttachments_id() {
-		return attachments_id;
-	}
-
-	public void setAttachments_id(Integer attachments_id) {
-		this.attachments_id = attachments_id;
 	}
 
 	public Integer getStudent_id() {
@@ -73,11 +58,11 @@ public class StudentAttachments {
 		this.attachments_file_name = attachments_file_name;
 	}
 
-	public String getAttachments_file_path() {
+	public HashMap<Integer, String> getAttachments_file_path() {
 		return attachments_file_path;
 	}
 
-	public void setAttachments_file_path(String attachments_file_path) {
+	public void setAttachments_file_path(HashMap<Integer, String> attachments_file_path) {
 		this.attachments_file_path = attachments_file_path;
 	}
 
@@ -160,11 +145,7 @@ public class StudentAttachments {
 	public void setActive(Boolean active) {
 		this.active = active;
 	}
-
 	
-
-
-
-
+	
 	
 }

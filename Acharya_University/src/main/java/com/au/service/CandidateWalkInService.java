@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.amazonaws.services.s3.AmazonS3;
 import com.au.dto.Candidate_walkinRequest;
+import com.au.dto.StudentAttachmentsDto;
 import com.au.exception.ResourceNotFoundException;
 import com.au.model.ApplicantDetails;
 import com.au.model.Candidate_Walkin;
@@ -122,24 +123,33 @@ public class CandidateWalkInService {
 		pg.setRemarks(cd.getPgapp().getRemarks());
 		pg_repo.save(pg);
 
-		StudentAttachments stu_attach = new StudentAttachments();
+		
 		c1 = can_repo.findByCandidateId(cd.getCd().getCandidate_id());
-	
-		stu_attach.setCandidate_id(c1.getCandidate_id());
-		stu_attach.setAttachments_subcategory_id(cd.getStu_attach().getAttachments_subcategory_id());
-		stu_attach.setEducational_attach(cd.getStu_attach().getEducational_attach());
-		stu_attach.setModified_by(cd.getStu_attach().getModified_by());
-		stu_attach.setModified_date(cd.getStu_attach().getModified_date());
-		stu_attach.setPersonal_attach(cd.getStu_attach().getPersonal_attach());
-		stu_attach.setQualification_attach(cd.getStu_attach().getQualification_attach());
-		stu_attach.setAttachments_file_name(cd.getStu_attach().getAttachments_file_name());
-		stu_attach.setAttachments_file_path(cd.getStu_attach().getAttachments_file_path());		
-		stu_attach.setStudent_id(cd.getStu_attach().getStudent_id());
-		sa_repo.save(stu_attach);
+		
+		StudentAttachmentsDto stdto = new StudentAttachmentsDto();
+		StudentAttachments stu_attach = new StudentAttachments();		
+		
+		stdto.getAttachments_file_path().values().stream().forEach((u)->{
+		stu_attach.setCandidate_id(cd.getCd().getCandidate_id());
+			stu_attach.setAttachments_subcategory_id(cd.getStu_attach().getAttachments_subcategory_id());
+			stu_attach.setEducational_attach(cd.getStu_attach().getEducational_attach());
+			stu_attach.setModified_by(cd.getStu_attach().getModified_by());
+			stu_attach.setModified_date(cd.getStu_attach().getModified_date());
+			stu_attach.setPersonal_attach(cd.getStu_attach().getPersonal_attach());
+			stu_attach.setQualification_attach(cd.getStu_attach().getQualification_attach());
+			stu_attach.setAttachments_file_name(cd.getStu_attach().getAttachments_file_name());
+			stu_attach.setAttachments_file_path(cd.getStu_attach().getAttachments_file_path());		
+			stu_attach.setAttachments_file_path(u);		
 
+			stu_attach.setStudent_id(cd.getStu_attach().getStudent_id());
+			sa_repo.save(stu_attach);
+		
+		});
+		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
 		return c1;
 	}
 /*

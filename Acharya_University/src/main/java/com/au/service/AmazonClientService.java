@@ -96,8 +96,7 @@ public class AmazonClientService {
 	}
 
 	public String generateFileName(MultipartFile multiPart) {
-//		return new Date().getTime() +"_"+ LocalDate.now().getDayOfMonth() +"-"+ LocalDate.now().getMonthValue() +"-"+ LocalDate.now().getYear() +"/"+ multiPart.getOriginalFilename().replace(" ", "_");
-		return new Date().getTime() +"_"+ LocalDate.now().getDayOfMonth() +"-"+ LocalDate.now().getMonthValue() +"-"+ LocalDate.now().getYear() +"/"+ multiPart.getOriginalFilename().replace(" ", "_");
+		return new Date().getTime() +"_"+ multiPart.getOriginalFilename().replace(" ", "_");
 
 	}
 }

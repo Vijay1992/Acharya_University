@@ -1,0 +1,7 @@
+http://192.168.0.30:8080/api/FetchAcademicYear-    ac_year_id,ac_year
+2)http://192.168.0.30:8080/api/Program       -     program_id,program_short_name
+3)http://192.168.0.30:8080/api/CurrencyType  -     currency_type_id,currency_type_short_name
+4)http://192.168.0.30:8080/api/FeeAdmissionCategory  - fee_admission_category_id,fee_admission_category_short_name
+5)http://192.168.0.30:8080/api/FeeAdmissionSubCategory   -  fee_admission_sub_category_id,fee_admission_sub_category_short_name
+6)http://192.168.0.30:8080/api/school                    -  school_id
+7)http://192.168.0.30:8080/api/ProgramType               - program_type_id
